@@ -1,6 +1,6 @@
-courseId: courseID 
+courseId: sss_programiranje2
 lang: en
-title: Petljadoc Course
+title: Програмирање II за информатичке профиле у електротехничким школама
 description:
   willLearn: 
     - Preview of Petljadoc course
@@ -23,22 +23,13 @@ description:
 
 
 lessons:
-  - title: Lesson 1
+  - title: Увод
     guid: 70f8c6f2-e2ee-407b-8e75-3f48d8cd3e8a
     description: Your first lesson. Description is not required attribute
-    folder: 1_Lesson
+    folder: 0_Uvod
     activities:
       - type: reading
-        title: Intro
-        file: intro.rst 
+        title: Увод
+        file: Uvod.rst 
         description: #Optional
         guid: 7cb81219-5f60-4ab1-9a4f-9584a89ced29
-      - type: video
-        title: Video activity for your lesson
-        decription: Nice video
-        url: https://www.youtube.com/watch?v=2KYuzJKemXw
-        guid: 7d84f04f-2a71-4392-a192-c294f52768f6
-      - type: quiz
-        title: Test your students
-        file: quiz.rst
-        guid: 698a1998-8341-4f3c-abbc-1dfd4416debe

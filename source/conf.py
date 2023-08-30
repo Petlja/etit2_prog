@@ -10,15 +10,14 @@ project = 'Програмирање II за информатичке профи�
 copyright = '2023, Фондација Петља'
 author = 'Петља'
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [ "myst_parser",
                "sphinx_design",
                "sphinx_copybutton",
-                "petlja_sphinx_extensions.extensions.notes",
-                "petlja_sphinx_extensions.extensions.multiple_choice"  ,            
-                "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
+              # "sphinxpackagingtool.builder.petlja_builder",
+               "petlja_sphinx_extensions.extensions.notes",
+               "petlja_sphinx_extensions.extensions.multiple_choice",            
+               "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
 
 myst_enable_extensions = [ "colon_fence",
                            "dollarmath",
@@ -30,8 +29,27 @@ import petlja_sphinx_extensions
 html_static_path = petlja_sphinx_extensions.extensions.static_dirs()
 
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
 html_title = 'Програмирање II за информатичке профиле у електротехничким школама'
-html_theme = 'furo'
+
+
+html_theme = 'alabaster'
+html_theme_options = {
+    'show_powered_by' : False,
+    'caption_font_size': '32px',
+    'caption_font_family': 'Source Sans Pro',
+    #code_font_size: Font size of code block text.
+    #code_font_family: Font family of code block text. Defaults to 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace.
+    'font_family': 'Source Sans Pro',
+    'font_size': '16px',
+    #head_font_family: Font family of headings. Defaults to 'Garamond', 'Georgia',
+    'pre_bg' : '#f8f8f8'
+}
+html_css_files = [
+    'https://fonts.googleapis.com/css?family=Source+Sans+Pro',
+]
+html_context = {
+    'theme_nosidebar': True,
+}
+html_show_copyright = False
+html_show_sourcelink = False
+

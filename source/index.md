@@ -13,7 +13,7 @@ long_description: >
             <br>Овај курс Фондација Петља објавила je под лиценцом <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Autorstvo 4.0 Međunarodna Licenca (CC BY 4.0)</a>.
         </p>
 will_learn: ["Једнодимензионални низови", "...",]
-needed: ["Visual Studio Community Edition", "Flowgorithm"]
+needed: ["Visual Studio Code", "Flowgorithm"]
 useful: 
     - C language documentation:
         learn.microsoft.com/en-us/cpp/c-language/?view=msvc-170
@@ -33,4 +33,5 @@ III разреду. Курс је такође намењен свима кој�
 :caption: Садржај
 
 0_1d_niz/index
+1_pointer/index
 ```

@@ -196,3 +196,168 @@ Pronadjeno je 2 elemenata a poslednji je na rednom broju 4 odnosno sa indeksom 3
 :width: 80%
 :align: center
 ```
+
+Напишите код као у предходном случају, али променимо га тако да се извршавање
+прекида када нађемо тражени елемент
+
+```c
+#include <stdio.h> 
+main()
+{
+	int a[100], n, t, i, indeks = -1;
+	printf("Unesi koliko elemenata niza unosis ");
+	scanf("%d", &n);
+	printf("Unesi %d elemenat niza: \n", n);
+	for (i = 0; i <= n - 1; i++)
+	{
+		printf("a[%d]=", i);
+		scanf("%d", &a[i]);
+	}
+	printf("Unesi elemenat koji trazis ");
+	scanf("%d", &t);
+	for (i = 0; i < n; i++)
+	{
+		if (a[i] == t)
+		{
+			indeks = i;
+			break;
+		}
+	}
+	if (indeks == -1)
+		printf("U nizu ne postoji trazeni element");
+	else
+		printf("Pronadjen je element na rednom broju %d odnosno sa indeksom %d", indeks + 1, indeks);
+}
+```
+
+Примећујемо да циклус за упоређивање променили тако што смо додали наредбу break
+када се пронађе тражена вредност
+
+Ако се тражена вредност налази у низу добићемо на излазу:
+
+Излаз:
+
+```text
+Unesi koliko elemenata niza unosis 5
+Unesi 5 elemenat niza:
+a[0]=1
+a[1]=2
+a[2]=2
+a[3]=3
+a[4]=8
+Unesi elemenat koji trazis 2
+Pronadjen je element na rednom broju 2 odnosno sa indeksom 1
+```
+
+Питање:
+
+Да ли се ова претрага може урадити помоћу while или do while циклуса. Ако може написати код за претраживање?
+
+Одговор: Може
+
+```c
+#include <stdio.h> 
+main()
+{
+	int a[100], n, t, i, indeks = -1;
+	printf("Unesi koliko elemenata niza unosis ");
+	scanf("%d", &n);
+	printf("Unesi %d elemenata niza: \n", n);
+	for (i = 0; i < n; i++)
+	{
+		printf("a[%d]=", i);
+		scanf("%d", &a[i]);
+	}
+	printf("\nUnesi broj koji trazimo u nizu: ");
+	scanf("%d", &t); i = 0;
+	do
+	{
+		if (a[i] == t)
+			indeks = i;
+		i++;
+	} while (i < n && indeks < 0);
+	if (indeks == -1)
+		printf("U nizu ne postoji trazeni element");
+	else
+		printf("Pronadjen je element na rednom broju %d odnosno sa indeksom %d", indeks + 1, indeks);
+}
+```
+
+На излазу као и у предходном случају добијамо редни број односно индекс првог
+пронађеног елемента у низу.
+
+Излаз:
+
+```text
+Unesi koliko elemenata niza unosis 5
+Unesi 5 elemenata niza:
+a[0]=1
+a[1]=2
+a[2]=2
+a[3]=3
+a[4]=8
+Unesi broj koji trazimo u nizu: 2
+Pronadjen je element na rednom broju 2 odnosno sa indeksom 1
+```
+
+У случају да не постоји елемент добићемо одговор да у "Низу не постоји тражени елемент"
+
+Секвенцијално претраживање можемо користити када број елемената низа није велики.
+
+## Бинарно претраживање
+
+Шта можемо да урадимо када имамо огроман број елемената нпр милион или милијарду.
+Секвенцијалним начином то може да потраје.
+
+На пример имамо сто хиљада елемената и баш је сто хиљадити тај. То значи сто хиљада
+упоређивања а то траје.
+
+Хајде да размислимо. Посматрајмо један уређени целобројни низ
+a[10]={1,2,3,4,5,6,7,8,9,10}. Тражимо на пример вредност t=2.
+
+```{image} images/Picture3.png
+:width: 80%
+:align: center
+```
+
+Да пробамо. Поделимо низ  на пола и проверимо да ли је тражена вредност t баш једнака
+тој вредности елемента низа са индексом који се налази у средини низа.
+
+Тражимо индекс елемента који се налази у средини низа srednji.
+
+srednji је индекс елемента у средини, donji је индекс првог елемента низа а gornji је
+индекс последњег елемента у низу.
+
+Рачунамо srednji=(donji+gornj)/2. У нашем случају srednji=(0+9)/2.
+
+С обзиром да је у питању целобројно дељење индекс елемента на средини је srednji=4.
+
+```{image} images/Picture4.png
+:width: 80%
+:align: center
+```
+
+Ако је тражена вредност t једнака вредности елемента на том индексу одлично прекидамо
+претраживање и тражени индекс је баш тај.
+
+А шта ако није?
+
+Проверавамо да ли је a[srednj]==t. У нашем случају видимо да то није тачно па настављамо даље.
+
+Пошто је низ уређен тражени елемент се налази или лево или десно од средине. Проверавамо да ли
+се тражени елемент већи или мањи од елемента у средини.
+
+Ако је низ растући и ако је a[srednji]>t то значи да се елемент налази са леве стране средњег
+елемента у супротном он се налази са десне стране.
+
+Код нас је a[srednji]>t. Сада одбацујемо све елементе са десне стране јер знамо да се тражени
+елемент налази лево од средине.
+
+Преостали низ поново делимо на пола. Сада је donji=0 gornji=srednji-1=3
+
+Рачунамо srednji=(donji+gornji)/2.  У нашем случају srednji=(0+3)/2. Као и  у предходном
+случају у питању целобројно дељење и индекс елемента на средини је srednji =1.
+
+
+
+

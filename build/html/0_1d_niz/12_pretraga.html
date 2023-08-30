@@ -463,7 +463,7 @@ Pronadjen je element na rednom broju 2 odnosno sa indeksom 1
 упоређивања а то траје.</p>
 <p>Хајде да размислимо. Посматрајмо један уређени целобројни низ
 a[10]={1,2,3,4,5,6,7,8,9,10}. Тражимо на пример вредност t=2.</p>
-<a class="reference internal image-reference" href="0_1d_niz/images/Picture3.png"><img alt="0_1d_niz/images/Picture3.png" class="align-center" src="0_1d_niz/images/Picture3.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture3.png"><img alt="../_images/Picture3.png" class="align-center" src="../_images/Picture3.png" style="width: 80%;" /></a>
 <p>Да пробамо. Поделимо низ  на пола и проверимо да ли је тражена вредност t баш једнака
 тој вредности елемента низа са индексом који се налази у средини низа.</p>
 <p>Тражимо индекс елемента који се налази у средини низа srednji.</p>
@@ -471,7 +471,7 @@ a[10]={1,2,3,4,5,6,7,8,9,10}. Тражимо на пример вредност 
 индекс последњег елемента у низу.</p>
 <p>Рачунамо srednji=(donji+gornj)/2. У нашем случају srednji=(0+9)/2.</p>
 <p>С обзиром да је у питању целобројно дељење индекс елемента на средини је srednji=4.</p>
-<a class="reference internal image-reference" href="0_1d_niz/images/Picture4.png"><img alt="0_1d_niz/images/Picture4.png" class="align-center" src="0_1d_niz/images/Picture4.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture4.png"><img alt="../_images/Picture4.png" class="align-center" src="../_images/Picture4.png" style="width: 80%;" /></a>
 <p>Ако је тражена вредност t једнака вредности елемента на том индексу одлично прекидамо
 претраживање и тражени индекс је баш тај.</p>
 <p>А шта ако није?</p>
@@ -485,6 +485,105 @@ a[10]={1,2,3,4,5,6,7,8,9,10}. Тражимо на пример вредност 
 <p>Преостали низ поново делимо на пола. Сада је donji=0 gornji=srednji-1=3</p>
 <p>Рачунамо srednji=(donji+gornji)/2.  У нашем случају srednji=(0+3)/2. Као и  у предходном
 случају у питању целобројно дељење и индекс елемента на средини је srednji =1.</p>
+<a class="reference internal image-reference" href="../_images/Picture5.png"><img alt="../_images/Picture5.png" class="align-center" src="../_images/Picture5.png" style="width: 70%;" /></a>
+<p>Проверавамо да ли је a[srednji]==t. У нашем случају видимо да је то сада тачно и прекидамо
+претрагу јер смо нашли тражену вредност на индексу srednji =1.</p>
+<p>Задатак: Пробајте ово исто да урадите али да је тражена вредност t=6.</p>
+<p>Бинарно претраживање је корисно када имате огроман број елемената. На пример ако имате 1000
+елемената. При првој подели број елемената где се тражи вредност пада на 500. При следећој
+на 250 и тако редом.</p>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
+<p>ОБРАТИ ПАЖЊУ Бинарно претраживање може да се ради само код уређеног низа (било да је растући
+ии опадајући)</p>
+
+    </div></div>
+<p>Како би изгледао циклус који ради дељење низа на пола и проверу где се налази тражени елемент.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">donji</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">gornji</span><span class="o">=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="n">donji</span><span class="o">&lt;=</span><span class="n">gornji</span><span class="o">&amp;&amp;</span><span class="n">indeks</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">srednji</span><span class="o">=</span><span class="p">(</span><span class="n">donji</span><span class="o">+</span><span class="n">gornji</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">srednji</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">)</span>
+<span class="w">       </span><span class="n">indeks</span><span class="o">=</span><span class="n">srednji</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">srednji</span><span class="p">])</span>
+<span class="w">       </span><span class="n">gornji</span><span class="o">=</span><span class="n">srednji</span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">       </span><span class="n">donji</span><span class="o">=</span><span class="n">srednji</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Задатак: Користећи while циклус изнад написати програм за бинарно претраживање
+уређеног низа.</p>
+<p>Решење:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="n">main</span><span class="w"> </span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">n</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">indeks</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">donji</span><span class="p">,</span><span class="n">gornji</span><span class="p">,</span><span class="n">srednji</span><span class="p">;</span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unesi koliko elemenata niza unosis &quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">	</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unesi elemente u rastucеm redosledu:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">  		</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;a[%d]=&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+<span class="w">		</span><span class="n">scanf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unesi elemenat koji trazis &quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="w">	</span><span class="n">donji</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">	</span><span class="n">gornji</span><span class="o">=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">	</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">	</span><span class="k">while</span><span class="p">(</span><span class="n">donji</span><span class="o">&lt;=</span><span class="n">gornji</span><span class="o">&amp;&amp;</span><span class="n">indeks</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">    	</span><span class="n">srednji</span><span class="o">=</span><span class="p">(</span><span class="n">donji</span><span class="o">+</span><span class="n">gornji</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    		</span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">srednji</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">)</span>
+<span class="w">       		</span><span class="n">indeks</span><span class="o">=</span><span class="n">srednji</span><span class="p">;</span>
+<span class="w">    		</span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">srednji</span><span class="p">])</span>
+<span class="w">       		</span><span class="n">gornji</span><span class="o">=</span><span class="n">srednji</span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    		</span><span class="k">else</span>
+<span class="w">       		</span><span class="n">donji</span><span class="o">=</span><span class="n">srednji</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">indeks</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">   		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Trazeni element postoji sa indeksom %d&quot;</span><span class="p">,</span><span class="n">indeks</span><span class="p">);</span>
+<span class="w">	</span><span class="k">else</span>
+<span class="w">    		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Trazeni element ne postoji&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Можете приметити да и овде користимо промењиву indeks и додељујемо јој почетну
+вредност -1. То значи да уколико он не промени вредност приликом подела тражени
+елемент не постоји у низу.</p>
+<p>Излаз:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Unesi koliko elemenata niza unosis 15
+Unesi elemente u rastucm redosledu:
+a[0]=1
+a[1]=2
+a[2]=4
+a[3]=5
+a[4]=5
+a[5]=6
+a[6]=7
+a[7]=8
+a[8]=9
+a[9]=11
+a[10]=23
+a[11]=45
+a[12]=46
+a[13]=78
+a[14]=99
+Unesi elemenat koji trazis 5
+Trazeni element postoji sa indeksom 3
+</pre></div>
+</div>
+<p>Домаћи: Пробај овај задатак да допуниш тако што ћеш пре бинарног претраживања
+проверити да ли је низ уређен. Уколико није исписати поруку „Пре бинарног
+претраживања низ мора да се уреди”.</p>
 </section>
 </section>
 

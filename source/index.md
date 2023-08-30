@@ -1,12 +1,17 @@
 ---
-alias: etit1_prog
-short_descripiton: Програмирање I за информатичке профиле у електротехничким школама
+alias: etit2_prog
+short_descripiton: Програмирање II за информатичке профиле у електротехничким школама
 long_description: >
         Овај курс је намењен ученицима електротехничких школа образовног профила
         Електротехничар информационих технологија за предмет Програмирање у II разреду,
         односно, образовног профила Електротехничар рачунара за предмет Програмирање у
         III разреду. Курс је такође намењен свима који желе да науче програмирање у програмском
         језику C.
+        <p>
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+            <br>Овај курс Фондација Петља објавила je под лиценцом <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Autorstvo 4.0 Međunarodna Licenca (CC BY 4.0)</a>.
+        </p>
 will_learn: ["Једнодимензионални низови", "...",]
 needed: ["Visual Studio Community Edition", "Flowgorithm"]
 useful: 

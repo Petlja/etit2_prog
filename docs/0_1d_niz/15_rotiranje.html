@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Претраживање низова" href="12_pretraga.html" /><link rel="prev" title="Једнодимензионални низови" href="index.html" />
+<link rel="index" title="Индекс" href="../genindex.html" /><link rel="search" title="Претрага" href="../search.html" /><link rel="next" title="Сажимање низова" href="16_sazimanje.html" /><link rel="prev" title="Инвертовање низова" href="14_invertovanje.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>Једнодимензионални низови - Програмирање II за информатичке профиле у електротехничким школама</title>
+        <title>Ротирање низа - Програмирање II за информатичке профиле у електротехничким школама</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -139,7 +139,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -162,11 +162,11 @@
   <p class="caption" role="heading"><span class="caption-text">Садржај</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Једнодимензионални низови</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Једнодимензионални низови</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Једнодимензионални низови</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_uvod.html">Једнодимензионални низови</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_pretraga.html">Претраживање низова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_uredjivanje.html">Уређивање низова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="14_invertovanje.html">Инвертовање низова</a></li>
-<li class="toctree-l2"><a class="reference internal" href="15_rotiranje.html">Ротирање низа</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Ротирање низа</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16_sazimanje.html">Сажимање низова</a></li>
 <li class="toctree-l2"><a class="reference internal" href="17_prosirivanje.html">Проширивање (експандовање) низа</a></li>
 </ul>
@@ -199,95 +199,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Једнодимензионални низови<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<p>Шта ћеш научити?</p>
-<p>Научићеш:</p>
-<ul class="simple">
-<li><p>шта је секвенцијално а шта бинарно претраживање низа</p></li>
-<li><p>како да пронађеш елемент како у уређеном тако и неуређеном низу</p></li>
-<li><p>како да уредиш низ од најмањег ка највећем елементу и обрнито</p></li>
-<li><p>како да помериш елементе за одређен број места у лево односно у десно</p></li>
-<li><p>како да обрнеш елементе низа</p></li>
-<li><p>како да избациш одређени елемент са жељене позиције</p></li>
-<li><p>како да убациш елемент на жељену позицију</p></li>
-</ul>
-<p>Потребно за овај курс</p>
-<p>Развојно окружење Dev C/C++, Code Blocks ili Visual Studio Code sa C/C++ или окружење на Петљи</p>
-<section id="id2">
-<h2>Увод<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>На почетку хајде да се подсетимо шта смо у Програмирању 1 научили о низовима. Са знањем које сте
-стекли у Програмирању 1 пробајте да решите следећи квиз</p>
-
-    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-        <div class="image-background"></div>
-        <div class="petlja-problem-box-icon-holder"> </div>
-        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
-    <multiple-choice question="Који од понуђених дефиниција дефинишу низ:"  answer1="Низ је основни тип података који се састоји од више података истог типа."  answer2="Низ је сложени тип података који се састоји од више података различитог типа"  answer3="Низ је основни тип података који се састоји од једног податка."  answer4="Низ је сложени тип података који се састоји од више података истог типа"  correct-answers="4">
-    
-      </multiple-choice>
-    </div>
-    
-    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-        <div class="image-background"></div>
-        <div class="petlja-problem-box-icon-holder"> </div>
-        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
-    <multiple-choice question="Дате су наредбе за декларисање и иницијализацију једнодомензионалног низа (доделу почетних вредности ) целих бројева у програмском језику Ц. Шта мислите које су наредбе исправно написане а које не. Пробајте да образложите зашто су неисправе поједине наредбе."  answer1="int a[5]={'1', '2', '3', '4', '5'};"  correct-answers="1,3,5">
-    
-      </multiple-choice>
-    </div>
-    <p>Из предходно наведеног закљујемо:</p>
-<ul class="simple">
-<li><p>На почетку морамо резервисати довољно простора за све елементе низа при дефинисању низа</p></li>
-<li><p>Низ се мора састојати од елемената истог типа (простих или изведених)</p></li>
-<li><p>Број елемената низа у угластим заградама може се изоставити само приликом доделе почетних вредности (иницијализације) када број елемената у витичастој загради дефинишу број елемената низа.</p></li>
-</ul>
-<p>Поставља се питање шта се дешава ако резервишемо више места него што имамо унетих елемената.
-У том случају се преостала места попуњавају нулама.</p>
-<p>Пробајте да напишете следећи код:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span>
-<span class="n">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span><span class="n">i</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Након извршавања програма на излазу ћемо добити:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>a[0]=1
-a[1]=2
-a[2]=3
-a[3]=0
-a[4]=0
-</pre></div>
-</div>
-<p>Видимо да су прва три елемента односно индекси 0,1,2 добили вредности из доделе а последња два
-елемента односно индекси 3 и 4 вредности 0.</p>
-<p>Шта можемо још да закључимо. У С језику као и у већини програмских језика индекс низа почиње
-од 0. Тако да је први елемент има индекс 0 а рецимо трећи елеменат индекс 2.</p>
-<p>Обратите пажњу често се у задацима каже „елемент на позицији..” а не „индекс елемента..” што
-суштински мења како поставку тако ирешење задатка.</p>
-<p>Хајде сада да видимо шта све можемо да урадимо са низом.</p>
-<p>Можемо да:</p>
-<ul class="simple">
-<li><p>тражимо елемент у низу</p></li>
-<li><p>уредимо низ (од најмањег ка највећем елементу и обрнуто)</p></li>
-<li><p>ротирамо елементе низа (померамо за одређен број места улево или удесно)</p></li>
-<li><p>инертујемо низ (обрнемо редослед елемената)</p></li>
-<li><p>сажмемо низ (избацимо жељени елемент)</p></li>
-<li><p>проширимо низ (убацимо жељени елемент)</p></li>
-</ul>
-<p>Цео курс ћемо радити са низовима који садрже целе бројеве. Хајде да кренемо редом.</p>
-</section>
+<h1>Ротирање низа<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 </section>
 
         </article>
@@ -295,23 +214,23 @@ a[4]=0
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="12_pretraga.html">
+          <a class="next-page" href="16_sazimanje.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Претраживање низова</div>
+                <div class="title">Сажимање низова</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="14_invertovanje.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Једнодимензионални низови</div>
+                <div class="title">Инвертовање низова</div>
                 
               </div>
             </a>
@@ -333,27 +252,8 @@ a[4]=0
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Једнодимензионални низови</a><ul>
-<li><a class="reference internal" href="#id2">Увод</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

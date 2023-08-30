@@ -12,3 +12,4 @@ package-conf.json
 export
 .venv
 build
+docs

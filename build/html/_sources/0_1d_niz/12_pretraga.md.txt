@@ -33,7 +33,7 @@
 Шта онда. Песма је могла бити прва на реду а могла је бити и послењдња. Значи пустали
 би једну по једну док  не би нашли "ону праву ".
 
-Или рецимо давно заборављени грамофон. 
+Или рецимо давно заборављени грамофон.
 
 Уколико имамо списак песама као код грамофонских плоча није проблем тачно знамо на
 којој је позицији односно индексу. А шта ако немамамо списак Поново морамо пустати
@@ -97,7 +97,7 @@ main ()
 
 Први циклус служи да се унесу елементи низа док се другим циклусом приступа сваком
 елементу низа и проверава се да ли је елемент једнак траженој вредности. Уколико јесте
-промењива indeks добија вредност индекса елемента који је једнак траженој вредности. 
+промењива indeks добија вредност индекса елемента који је једнак траженој вредности.
 
 Ако ниједан елемент није једнак траженој вредности indeks остаје -1 и то ћемо искористити
 у последњем if else услову.
@@ -125,74 +125,74 @@ Pronadjen je element na rednom broju 4 odnosno sa indeksom 3
 
 Излаз:
 
-.. code:: c
-
-    Unesi koliko elemenata niza unosis 5
-    Unesi 5 elemenat niza:
-    a[0]=5
-    a[1]=1
-    a[2]=2
-    a[3]=2
-    a[4]=3
-    Unesi elemenat koji trazis 6
-    U nizu ne postoji trazeni element
+```text
+Unesi koliko elemenata niza unosis 5
+Unesi 5 elemenat niza:
+a[0]=5
+a[1]=1
+a[2]=2
+a[3]=2
+a[4]=3
+Unesi elemenat koji trazis 6
+U nizu ne postoji trazeni element
+```
 
 Задатак: Пробај да промениш део кода тако да ти преброји колико има тражених елемената у низу
 
 Решење:
 
-.. code:: c
-
-    #include <stdio.h> 
-    main ()
-    {
-        int a[100],n,t,i,indeks=-1,br=0;
-        printf("Unesi koliko elemenata niza unosis ");
-        scanf("%d",&n);
-        printf ("Unesi %d elemenat niza: \n",n);
-        for (i=0; i<=n-1; i++)
-        { 
-            printf ("a[%d]=",i);
-            scanf ("%d",&a[i]);
-        }
-        printf("Unesi elemenat koji trazis ");
-        scanf("%d",&t);
-        for(i=0;i<n;i++)
-        {
-            if(a[i]==t)
-            {
-                indeks = i;
-                br++;
-            }
-        
-        }
-        if(indeks==-1)
-            printf("U nizu ne postoji trazeni element");
-        else
-            printf("Pronadjeno je %d elemenata a poslednji je na rednom broju %d odnosno sa indeksom %d",br,indeks+1,indeks);
+```c
+#include <stdio.h> 
+main ()
+{
+    int a[100],n,t,i,indeks=-1,br=0;
+    printf("Unesi koliko elemenata niza unosis ");
+    scanf("%d",&n);
+    printf ("Unesi %d elemenat niza: \n",n);
+    for (i=0; i<=n-1; i++)
+    { 
+        printf ("a[%d]=",i);
+        scanf ("%d",&a[i]);
     }
+    printf("Unesi elemenat koji trazis ");
+    scanf("%d",&t);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==t)
+        {
+            indeks = i;
+            br++;
+        }
+    
+    }
+    if(indeks==-1)
+        printf("U nizu ne postoji trazeni element");
+    else
+        printf("Pronadjeno je %d elemenata a poslednji je na rednom broju %d odnosno sa indeksom %d",br,indeks+1,indeks);
+}
+```
 
 Излаз:
 
-.. code:: c
+```text
+Unesi koliko elemenata niza unosis 5
+Unesi 5 elemenat niza:
+a[0]=5
+a[1]=1
+a[2]=2
+a[3]=2
+a[4]=3
+Unesi elemenat koji trazis 2
+Pronadjeno je 2 elemenata a poslednji je na rednom broju 4 odnosno sa indeksom 3
+```
 
-    Unesi koliko elemenata niza unosis 5
-    Unesi 5 elemenat niza:
-    a[0]=5
-    a[1]=1
-    a[2]=2
-    a[3]=2
-    a[4]=3
-    Unesi elemenat koji trazis 2
-    Pronadjeno je 2 elemenata a poslednji je na rednom broju 4 odnosno sa indeksom 3
-
-Ово је био пример једног неуређеног низа. 
+Ово је био пример једног неуређеног низа.
 
 Секвенцијално претраживање уређеног низа
 
 Посматрајмо један уређен низ.
 
-.. image:: images/Picture2.png
-   :scale: 100%
-   :align: center
-
+```{image} images/Picture2.png
+:width: 80%
+:align: center
+```

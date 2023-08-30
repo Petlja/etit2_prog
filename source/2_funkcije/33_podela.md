@@ -50,7 +50,7 @@ int abs(int x)
 
 Пример функције која не враћа вредност:
 
-```c
+```text
 void Pozdrav()
 {
     printf (“Ova f-ja ne vraca vrednost!);

@@ -23,7 +23,7 @@ int zbir(int a, int b)
 
 …правилан позив у главном програму би гласио:
 
-```c
+```text
 main()
 {
 	int a,b,z;
@@ -59,7 +59,7 @@ main()
 
 Уколико je функција типа void, односно не враћа вредност, позива се једноставном наредбом.
 
-```c
+```text
 void Pozdrav()
 {
     printf (“Ova f-ja ne vraca vrednost!);

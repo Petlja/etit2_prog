@@ -207,6 +207,171 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Инвертовање низова<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>Инвертовање представља замену чланова низа тако да први постане задњи, други
+предзадњи тако редом. Постоје два начина</p>
+<ul class="simple">
+<li><p>без увођења новог низа</p></li>
+<li><p>уз увођење новог низа</p></li>
+</ul>
+<p>Погледајмо како изгледа циклус за инвертовање без увођење новог низа</p>
+<a class="reference internal image-reference" href="../_images/Picture40.png"><img alt="../_images/Picture40.png" class="align-center" src="../_images/Picture40.png" style="width: 30%;" /></a>
+<p>Задатак: Иницијализујте један низ од шест целобројних елемената a[6]={1,5,3,2,4,6}.
+На основу горњег циклуса написати програм за инвертовање.</p>
+<p>Решење:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="n">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">},</span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">;</span><span class="w"> </span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Uneti niz:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">    		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">--</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">     		</span><span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">;</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Invertovani niz :</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">    		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Излаз:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Uneti niz:
+a[0]=1
+a[1]=5
+a[2]=3
+a[3]=2
+a[4]=4
+a[5]=6
+
+Invertovani niz :
+a[0]=6
+a[1]=4
+a[2]=2
+a[3]=3
+a[4]=5
+a[5]=1
+</pre></div>
+</div>
+<p>Хајде да анализирамо корак по корак шта се дешава кроз циклус</p>
+<p>Промењива b нам служи да привремено сачувамо вредност низа коју
+замењујено другом вредношћу.</p>
+<a class="reference internal image-reference" href="../_images/Picture41.png"><img alt="../_images/Picture41.png" class="align-center" src="../_images/Picture41.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture42.png"><img alt="../_images/Picture42.png" class="align-center" src="../_images/Picture42.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture43.png"><img alt="../_images/Picture43.png" class="align-center" src="../_images/Picture43.png" style="width: 70%;" /></a>
+<p>Приметићете да у овом случају нисмо уводили нови низ.</p>
+<p>Задатак : Иницијализујте један низ од шест целобројних елемената a[6]={1,5,3,2,4,6}.
+Пробајте да направите програм за инвертовање низа уз увођење новог низа користећи
+циклус</p>
+<a class="reference internal image-reference" href="../_images/Picture44.png"><img alt="../_images/Picture44.png" class="align-center" src="../_images/Picture44.png" style="width: 70%;" /></a>
+<p>Решење:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="n">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">},</span><span class="n">b</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">;</span><span class="w"> </span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Uneti niz:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">    	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      		</span><span class="n">b</span><span class="p">[</span><span class="mi">5</span><span class="o">-</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Invertovani niz :</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">6</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">    		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Добија се идентичан излаз као и без увођења новог низа</p>
+<p>У овом случају ћемо један по један елемент из низа а уносити у низ b. Први
+члан низа а пресликавамо у последњи низа b. Други члан низа а пресликавамо
+у претпоследњи низа b. И тако редом.</p>
+<p>Хајде да анализирамо корак по корак шта се дешава кроз циклус</p>
+<a class="reference internal image-reference" href="../_images/Picture45.png"><img alt="../_images/Picture45.png" class="align-center" src="../_images/Picture45.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture46.png"><img alt="../_images/Picture46.png" class="align-center" src="../_images/Picture46.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture47.png"><img alt="../_images/Picture47.png" class="align-center" src="../_images/Picture47.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture48.png"><img alt="../_images/Picture48.png" class="align-center" src="../_images/Picture48.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture49.png"><img alt="../_images/Picture49.png" class="align-center" src="../_images/Picture49.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/Picture50.png"><img alt="../_images/Picture50.png" class="align-center" src="../_images/Picture50.png" style="width: 70%;" /></a>
+<p>Задатак: Написати програм којим се уноси n елемената целобројног низа,
+а затим се врши инвертовање унетог низа на оба начина. Исписати инвертоване
+низове.</p>
+<p>Решење без увођења новог низа:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="n">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span><span class="n">n</span><span class="p">;</span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unesi koliko elemenata niza unosis &quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">	</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unesi %d elemenata niza: </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">  		</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;a[%d]=&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+<span class="w">		</span><span class="n">scanf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Uneti niz:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">  		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">--</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">    		</span><span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">;</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Invertovani niz :</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">  		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Решење са увођењем новог низа:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="n">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span><span class="n">n</span><span class="p">;</span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unesi koliko elemenata niza unosis &quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">	</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unesi %d elemenata niza: </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">  		</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;a[%d]=&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+<span class="w">		</span><span class="n">scanf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      		</span><span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">	</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Invertovani niz :</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="p">{</span><span class="w"> </span>
+<span class="w">  		</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d]=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Излаз:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Unesi koliko elemenata niza unosis 5
+Unesi 5 elemenata niza:
+a[0]=1
+a[1]=2
+a[2]=3
+a[3]=4
+a[4]=5
+
+Invertovani niz :
+a[0]=5
+a[1]=4
+a[2]=3
+a[3]=2
+a[4]=1
+</pre></div>
+</div>
 </section>
 
         </article>

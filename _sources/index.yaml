@@ -5,9 +5,10 @@ description:
   willLearn: 
     - Preview of Petljadoc course
   requirements:
-    - Petljadoc
-    - Runestone
-    - Sphinx
+    - Развојно окружење Dev C/C++ или
+    - Code Blocks или
+    - Visual Studio Code sa C/C++ или
+    - окружење на Петљи
   toc:
     - Intro to Petljadoc INDEX.yaml
   externalLinks:  
@@ -23,13 +24,13 @@ description:
 
 
 lessons:
-  - title: Увод
+  - title: Једнодимензионални низови
     guid: 70f8c6f2-e2ee-407b-8e75-3f48d8cd3e8a
     description: Your first lesson. Description is not required attribute
-    folder: 0_Uvod
+    folder: 0_1d_niz
     activities:
       - type: reading
         title: Увод
-        file: Uvod.rst 
+        file: uvod.rst
         description: #Optional
         guid: 7cb81219-5f60-4ab1-9a4f-9584a89ced29

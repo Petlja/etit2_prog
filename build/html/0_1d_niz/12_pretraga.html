@@ -245,9 +245,7 @@
 да их постоји и више. Много питања, хајде да дамо одговоре</p>
 <p>Секвенцијално претраживање неуређеног низа</p>
 <p>Дефинисали смо један неуређени низ a од n елемената</p>
-<p>.. image:: images/Picture1.png
-:scale: 100%
-:align: center</p>
+<a class="reference internal image-reference" href="../_images/Picture1.png"><img alt="../_images/Picture1.png" class="align-center" src="../_images/Picture1.png" style="width: 80%;" /></a>
 <p>Претпоставимо да тражимо елемент t који има одређену вредност. Да пробамо да направимо
 циклус који ће приступити сваком елементу и проверити да ли има вредност t.</p>
 <p>Шта може да се утврди. Најједноставније је да се одреди индекс на коме се налази та вредност.</p>
@@ -257,31 +255,30 @@
 indeks ће остати -1 што значи да елемент није пронађен у низу.</p>
 <p>Овај начин размишљања се користи у већини програмских језика.</p>
 <p>Напишите следећи код и пробајте да схватите шта он ради</p>
-<p>.. code:: c</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#include &lt;stdio.h&gt; 
-main ()
-{
-    int a[100],n,t,i,indeks=-1;
-    printf(&quot;Unesi koliko elemenata niza unosis &quot;);
-    scanf(&quot;%d&quot;,&amp;n);
-    printf (&quot;Unesi %d elemenat niza: \n&quot;,n);
-    for (i=0; i&lt;=n-1; i++)
-    { 
-        printf (&quot;a[%d]=&quot;,i);
-        scanf (&quot;%d&quot;,&amp;a[i]);
-    }
-    printf(&quot;Unesi elemenat koji trazis &quot;);
-    scanf(&quot;%d&quot;,&amp;t);
-    for(i=0;i&lt;n;i++)
-    {
-        if(a[i]==t)
-        indeks = i;
-    }
-    if(indeks==-1)
-        printf(&quot;U nizu ne postoji trazeni element&quot;);
-    else
-        printf(&quot;Pronadjen je element na rednom broju %d odnosno sa indeksom %d&quot;, indeks+1,indeks);
-}
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
+<span class="n">main</span><span class="w"> </span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">n</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">indeks</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unesi koliko elemenata niza unosis &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Unesi %d elemenat niza: </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;a[%d]=&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">scanf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Unesi elemenat koji trazis &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">)</span>
+<span class="w">        </span><span class="n">indeks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">indeks</span><span class="o">==</span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;U nizu ne postoji trazeni element&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Pronadjen je element na rednom broju %d odnosno sa indeksom %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">indeks</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">indeks</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Први циклус служи да се унесу елементи низа док се другим циклусом приступа сваком
@@ -291,8 +288,7 @@ main ()
 у последњем if else услову.</p>
 <p>Ако се тражена вредност налази у низу добићемо на излазу</p>
 <p>Излаз:</p>
-<p>.. code:: c</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Unesi koliko elemenata niza unosis 5
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Unesi koliko elemenata niza unosis 5
 Unesi 5 elemenat niza:
 a[0]=5
 a[1]=1

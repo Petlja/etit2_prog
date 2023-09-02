@@ -39,4 +39,5 @@ III разреду. Курс је такође намењен свима кој�
 0_1d_niz/index
 1_pointer/index
 2_funkcije/index
+3_nd_niz/index
 ```

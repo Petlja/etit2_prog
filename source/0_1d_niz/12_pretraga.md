@@ -48,10 +48,10 @@
 
 Секвенцијално претраживање неуређеног низа
 
-Дефинисали смо један неуређени низ a од n елемената:
+Дефинисали смо један неуређени низ *a* од *n* елемената:
 
 ```{image} images/Picture1.png
-:width: 50%
+:width: 400
 :align: center
 ```
 
@@ -202,7 +202,7 @@ Pronadjeno je 2 elemenata, a poslednji je na 4. mestu, odnosno sa indeksom 3.
 Посматрајмо један уређен низ.
 
 ```{image} images/Picture2.png
-:width: 50%
+:width: 400
 :align: center
 ```
 
@@ -335,7 +335,7 @@ Pronadjen je element na 2. mestu, odnosno sa indeksom 1.
 a[10]={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Тражимо на пример вредност ``t = 2``.
 
 ```{image} images/Picture3.png
-:width: 50%
+:width: 400
 :align: center
 ```
 
@@ -352,7 +352,7 @@ a[10]={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Тражимо на пример вред
 С обзиром да је у питању целобројно дељење индекс елемента на средини је ``srednji = 4``.
 
 ```{image} images/Picture4.png
-:width: 50%
+:width: 500
 :align: center
 ```
 
@@ -378,7 +378,7 @@ a[10]={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Тражимо на пример вред
 случају, у питању целобројно дељење и индекс елемента на средини је ``srednji = 1``.
 
 ```{image} images/Picture5.png
-:width: 50%
+:width: 350
 :align: center
 ```
 

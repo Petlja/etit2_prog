@@ -7,23 +7,22 @@
 
 Ако је вредност функције показивач, у заглавље у део за тип вредности додаје се `*`.
 
-Пример 1:
-
+```{questionnote}
 Креирај функцију за одређивање највећег од три унета броја. Функција као вредност
 враћа показивач.
+```
 
 ```c
 #include<stdio.h>
 int* pmax(int a, int b, int c)
 {
-	int* max;
-	max = &a;
-	if (b > *max)
-		*max = b;
-	if (c > *max)
-		*max = c;
-	return max;
- 
+    int* max;
+    max = &a;
+    if (b > *max)
+        *max = b;
+    if (c > *max)
+        *max = c;
+    return max;
 }
 ```
 
@@ -35,10 +34,10 @@ int* pmax(int a, int b, int c)
 ```c
 main()
 {
-	int max;
-	int a = 7, b = 3, c = 9;
-	max = *pmax(a, b, c);
-	printf("Najveci od brojeva je %d", max);
+    int max;
+    int a = 7, b = 3, c = 9;
+    max = *pmax(a, b, c);
+    printf("Najveci od brojeva je %d", max);
 }
 ```
 
@@ -48,43 +47,48 @@ main()
 Najveci od brojeva je 9
 ```
 
-Пример 2:
-
+```{questionnote}
 Креирај функцију за одређивање суме елемената низа. Функција као вредност враћа
 показивач.
+```
 
 ```c
 #include<stdio.h>
 int* pSuma(int a[], int n)
 {
-	int s = 0;
-	int* ps, * p;
-	ps = &s;
-	for (p = a;p < a + n;p++)
-		s = *p + s;
-	return ps;
+    int s = 0;
+    int* ps, * p;
+    ps = &s;
+    for (p = a;p < a + n;p++)
+        s = *p + s;
+    return ps;
 }
-main()
+
+int main(void)
 {
-	int a[7] = { 5,8,3,11,45,33,19 };
-	int* ps, s;
-	ps = pSuma(a, 7);
-	printf("Suma elemenata nizaje: %d\n", *ps);
-	s = *pSuma(a, 7);
-	printf("Suma elemenata nizaje: %d\n", s);
+    int a[7] = {5, 8, 3, 11, 45, 33, 19};
+    int* ps, s;
+    ps = pSuma(a, 7);
+    printf("Suma elemenata nizaje: %d\n", *ps);
+    s = *pSuma(a, 7);
+    printf("Suma elemenata nizaje: %d\n", s);
+    return 0;
 }
 ```
 
-Резултат извршавања програма:
+**Резултат извршавања програма**:
 
 ```text
 Suma elemenata nizaje: 124
 Suma elemenata nizaje: 124
 ```
 
-Вежбање
+## Вежбање
 
+
+```{questionnote}
 Креирај функцију за одређивање највећег елемента низа. Функција као вредност враћа показивач.
+```
 
 ```c
 #include<stdio.h>
@@ -96,7 +100,8 @@ int* pmax(int a[], int n)
 		if (*p > *pm) pm = p;
 	return pm;
 }
-main()
+
+int main(void)
 {
 	int a[7] = { 5,8,3,11,45,33,19 };
 	int* pm, max;
@@ -104,6 +109,7 @@ main()
 	printf("Maksimalni element niza je: %d\n", *pm);
 	max = *pmax(a, 7);
 	printf("Maksimalni element niza je: %d\n", max);
+	return 0;
 }
 ```
 

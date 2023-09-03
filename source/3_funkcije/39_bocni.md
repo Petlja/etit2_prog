@@ -32,8 +32,8 @@ void napon_snaga(float R, float I, float *pU, float *pP)
 {
     *pU = R * I;
     *pP = R * I * I;
- 
 }
+
 main()
 {
     float R, I, U, P;
@@ -47,7 +47,7 @@ main()
 }
 ```
 
-**Резултат извршавања програма:**
+Резултат извршавања програма:
 
 ```text
 Unesi vrednost otpora R[Om] = 23.55
@@ -101,30 +101,34 @@ Vrednost snage P[W] = 7097.25
 :align: center
 ```
 
-2. задатак
-
+```{questionnote}
 Креирати функцију `max_min` која проналази највећи и најмањи од три броја. У
 главном програму за три унета броја исписати производ највећег и најмањег.
+```
 
 ```c
 void max_min(int a, int b, int c, int *max, int *min)
 {
-	*max = a;
-	*min = a;
-	if (b > *max) *max = b;
-       if (b < *min) *min = b;
-	if (c > *max) *max = c;
-	if (c < *min) *min = c;
-	
+    *max = a;
+    *min = a;
+    if (b > *max) 
+        *max = b;
+    if (b < *min) 
+        *min = b;
+    if (c > *max) 
+        *max = c;
+    if (c < *min) 
+        *min = c;
 }
+
 int main(void)
 {
-	int a, b, c;
-	int max, min;
-	scanf("%d%d%d", &a, &b, &c);
-	max_min(a, b, c, &max, &min);
-	printf("Proizvod max i min je: %d", max * min);
-	return 0;
+    int a, b, c;
+    int max, min;
+    scanf("%d%d%d", &a, &b, &c);
+    max_min(a, b, c, &max, &min);
+    printf("Proizvod max i min je: %d", max * min);
+    return 0;	
 }
 ```
 
@@ -210,9 +214,8 @@ scanf("%d%d", &a, &b);`
 У наредби `scanf` навели смо адресе ових променљивих у које смештамо унете вредности. 
 ```
 
-Вежбање:
+## Вежбање:
 
-1. задатак
 
 ```{mchoice}
 :answer1: funkcija(&k, &n);
@@ -255,7 +258,11 @@ int main(void)
 ```{fitb}
 :answer: "-8,10,26"
 
-За n=-13 излаз је |blank|. За n= 5 излаз је |blank|. За n=21 излаз је |blank|.
+За n = -13 излаз је |blank|. 
+
+За n = 5 излаз је |blank|. 
+
+За n = 21 излаз је |blank|.
 ```
 
 ```{questionnote}
@@ -282,7 +289,11 @@ int main(void)
 ```{fitb}
 :answer: "21,-29,0"
 
-За n = 21 излаз је |blank|. За n = -29 излаз је |blank|. За n = 0 излаз је |blank|.
+За n = 21 излаз је |blank|. 
+
+За n = -29 излаз је |blank|. 
+
+За n = 0 излаз је |blank|.
 ```
 
 Излаз је исти као улазна вредност, јер се у функцији вредност показивача увећава
@@ -312,7 +323,11 @@ int main(void)
 ```{fitb}
 :answer: "52,0,-116"
 
-За n = 51 излаз је |blank|. За n = -29 излаз је |blank|. За n = 0 излаз је |blank|.
+За n = 51 излаз је |blank|. 
+
+За n = -29 излаз је |blank|. 
+
+За n = 0 излаз је |blank|.
 ```
 
 С обзиром да заграда има већи приоритет, наредбом `*n` се прво приступа променљивој

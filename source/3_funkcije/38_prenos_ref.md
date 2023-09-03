@@ -50,8 +50,9 @@ Adresa stvarnog argumena a = 62fe1c
 Adresa parametra m = 62fdf0
 Vrednost promenljive a posle poziva funkcije izmeni je a = 3
 ```
-
+```{questionnote}
 Шта уочаваш?
+```
 
 Вредност стварног параметра се није променила, иако нам је то био циљ. Уочи да су
 вредности адреса различите, јер се предајом параметара по вредности резервише нова

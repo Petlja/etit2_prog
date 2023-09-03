@@ -15,29 +15,29 @@
 Заједничка карактеристика рекурзивних проблема је да решавају исти проблем са
 другим параметрима.
 
-Илустрација рекурзије Foto Pinterest:
-
 ```{image} images/Picture21.jpg
-:width: 40%
+:width: 250
 :align: center
 ```
+
+*Илустрација рекурзије, Foto: Pinterest*:
 
 Типичан пример рекурзије у математици је факторијел неког броја.
 
 Како можемо приказати факторијел броја 5?
 
 ```text
-5!=5*4!
-4!=4*3!
-3!=3*2!
-2!=2*1!
-1!=1*0!;
+5! = 5 * 4!
+4! = 4 * 3!
+3! = 3 * 2!
+2! = 2 * 1!
+1! = 1 * 0!;
 ```
 
 Општи облик би гласио:
 
 ```text
-n!=n*(n-1)!
+n! = n * (n - 1)!
 ```
 
 Видимо да се образац стално понавља до неке вредности, само се мења параметар `n`.
@@ -52,16 +52,16 @@ n!=n*(n-1)!
 #include<stdio.h>
 main()
 {
-	printf("1");
-	main();
-	printf("0");
+    printf("1");
+    main();
+    printf("0");
 }
 ```
 
 Резултат извршавања програма у коме главна функција позива саму себе:
 
 ```{image} images/Picture22.png
-:width: 70%
+:width: 400
 :align: center
 ```
 
@@ -84,14 +84,16 @@ main()
 ```c
 void rekurzija(int n)
 {
-	printf("%d", n);
-	if (n < 3)
-		rekurzija(n + 1);
-	printf("%d", n);
+    printf("%d", n);
+    if (n < 3)
+        rekurzija(n + 1);
+    printf("%d", n);
 }
-main()
+
+int main(void)
 {
 	rekurzija(1);
+	return 0;
 }
 ```
 
@@ -112,25 +114,25 @@ rekurzija(1);
 
 Извршава се први ред функције `printf("%d", n)` – програм ће штампати 1.
 
-Како је услов испуњен `(1<3)`, позива се функција `rekurzija (n+1)`, односно rekurzija `(2)`.
+Како је услов испуњен `(1 < 3)`, позива се функција `rekurzija (n + 1)`, односно rekurzija `(2)`.
 
 ```{infonote}
-Обрати пажњу! У првом обраћању функцији друга наредба `printf("%d", n)` није се извршила.
+У првом обраћању функцији друга наредба `printf("%d", n)` није се извршила.
 Ово нам је од суштинске важности, јер нам говори да се функција није извршила до краја.
 ```
 
-Други примерак функције, `n=2`:
+Други примерак функције, `n = 2`:
 
 Извршава се први ред функције `printf("%d", n)` – програм ће штампати 2.
 
-Како је услов испуњен `(2<3)`, позива се функција `rekurzija (n+1)`, односно rekurzija `(3)`.
+Како је услов испуњен `(2 < 3)`, позива се функција `rekurzija(n + 1)`, односно rekurzija `(3)`.
 Као и у првом примерку функције, функција се није извршила до краја.
 
-Трећи примерак функције, `n=3`:
+Трећи примерак функције, `n = 3`:
 
 Извршава се први ред функције `printf("%d", n)` – програм ће штампати 3.
 
-Како сада услов није испуњен `(3<3)`, функција rekurzija `(n+1)` се не позива, већ се
+Како сада услов није испуњен `(3 < 3)`, функција rekurzija `(n + 1)` се не позива, већ се
 извршава последњи ред функције `printf("%d", n)` – програм ће штампати 3.
 
 Извршењем ове наредбе последњи примерак позване функције је извршен до краја.
@@ -146,37 +148,40 @@ rekurzija(1);
 Графички приказ извршавања рекурзивне функције:
 
 ```{image} images/Picture23.png
-:width: 70%
+:width: 500
 :align: center
 ```
 
 Да смо извршили позив `rekurzija(2)`, на екрану бисмо добили 2 3 3 2.
 
-А шта да смо позвали функцију за параметар `n>=3`? Извршио би се само основни примерак
+А шта да смо позвали функцију за параметар `n >= 3`? Извршио би се само основни примерак
 функције, односно добили бисмо резултат `3 3, 4 4`...
 
 Наравно, сложеност рекурзије зависи од наших захтева. Да смо ставили услов у функцији
-`n<10`, за позив `rekurzija(1)` функција би била позвана 10 пута и на екрану бисмо добили:
+`n < 10`, за позив `rekurzija(1)` функција би била позвана 10 пута и на екрану бисмо добили:
+
 `1 2 3 4 5 6 7 8 9 10 10 9 8 7 6 5 4 3 2 1`
 
 За вежбу, користећи претходни пример, покушај да урадиш и анализираш функцију која исписује
-бројеве од 1 до `n` прво у инверзном, а затим директном поретку, `n,…,2,1,1,2,...,n`
+бројеве од 1 до `n` прво у инверзном, а затим директном поретку, `n, …, 2, 1, 1, 2, ..., n`
 
 ```c
 #include<stdio.h>
 void ispis(int n)
 {
-	printf("%d", n);
-	if (n > 1)
-		ispis(n - 1);
-	printf("%d", n);
+    printf("%d", n);
+    if (n > 1)
+         ispis(n - 1);
+    printf("%d", n);
 }
-main()
+
+int main(void)
 {
-	int n;
-	printf("Unesit broj\n");
-	scanf("%d", &n);
-	ispis(n);
+    int n;
+    printf("Unesit broj\n");
+    scanf("%d", &n);
+    ispis(n);
+    return 0;
 }
 ```
 
@@ -187,11 +192,13 @@ Unesi broj 5
 5 4 3 2 1 1 2 3 4 5
 ```
 
-Задаци за вежбу:
+**Задаци за вежбу:**
 
-1. Креирати рекурзивну функцију zbir која рачуна збир првих n природних бројева.
+```{questionnote}
+Креирати рекурзивну функцију zbir која рачуна збир првих n природних бројева.
+```
 
-Решење:
+**Решење**:
 
 Ово је типичан рекурзивни проблем – анализом проблема се може уочити правило. Збир првих
 `n` природних бројева је збир броја `n` и првих `n-1` бројева.
@@ -200,23 +207,24 @@ Unesi broj 5
 збир броја 9 и збира првих 8, и тако редом све до броја 1. Услов за излазак из рекурзије је
 када се функцији проследи 0.
 
-Из наведеног, општи израз је `suma(n)=n+suma(n-1)`
+Из наведеног, општи израз је `suma(n) = n + suma(n - 1)`
 
 ```c
 #include<stdio.h>
 int suma(int n)
 {
-	if (n == 0)
-		return 0;
-	return n + suma(n - 1);
+    if (n == 0)
+        return 0;
+    return n + suma(n - 1);
 }
  
-main()
+int main(void)
 {
-	int n;
-	printf("Unesi n: ");
-	scanf("%d", &n); 
-	printf("Suma prvih %d prirodnih brojeva je %d",n, suma(n));
+    int n;
+    printf("Unesi n: ");
+    scanf("%d", &n); 
+    printf("Suma prvih %d prirodnih brojeva je %d", n, suma(n));
+    return 0;
 }
 ```
 
@@ -227,9 +235,11 @@ Unesi n: 12
 Suma prvih 12 prirodnih brojeva je 78
 ```
 
-2. Креирати рекурзивну функцију stepen која рачуна n-ти степен броја а.
+```{questionnote}
+Креирати рекурзивну функцију stepen која рачуна n-ти степен броја а.
+```
 
-Решење:
+**Решење**:
 
 На основу анализе једноставног примера $2^5$…
 
@@ -239,25 +249,26 @@ $$n=3, \ 2^3=2*2^2$$
 $$n=2, \ 2^2=2*2^1$$
 $$n=1, \ 2^1=2*2^0$$
 
-…можемо доћи до општег израза $a^n-=a*a^{n-1}$:
+… можемо доћи до општег израза $a^n-=a*a^{n-1}$:
 
 ```c
 #include<stdio.h>
 int stepen(int a, int n)
 {
-	if (n == 0)
-		return 1;
-	return a * stepen(a, n - 1);
+    if (n == 0)
+        return 1;
+    return a * stepen(a, n - 1);
 }
  
-main()
+int main(void)
 {
-	int a, n;
-	printf("Unesi a: ");
-	scanf("%d", &a);
-	printf("Unesi n: ");
-	scanf("%d", &n);
-	printf("%d", stepen(a, n));
+    int a, n;
+    printf("Unesi a: ");
+    scanf("%d", &a);
+    printf("Unesi n: ");
+    scanf("%d", &n);
+    printf("%d", stepen(a, n));
+    return 0;
 }
 ```
 
@@ -269,30 +280,38 @@ Unesi n: 5
 32
 ```
 
-3. Креирати рекурзивну функцију `faktorijel` за израчунавање `n!`. У главном
+```{questionnote}
+Креирати рекурзивну функцију `faktorijel` за израчунавање `n!`. У главном
 програму исписати факторијеле свих бројева од 1 до 10.
+```
 
-I начин
+**I начин**
 
 ```c
-long faktorijel(int n )
-{
-if(n==0)
-return 1;
-return(n*faktorijel(n-1));
-}
-II начин
 long faktorijel(int n)
 {
-	if (n > 0)
-		return(n * faktorijel(n - 1));
-	return 1;
+if(n == 0)
+    return 1;
+return(n * faktorijel( n - 1));
 }
-main()
+```
+
+**II начин**
+
+```c
+long faktorijel(int n)
 {
-	int i;
-	for (i = 0;i <= 10;i++)
-		printf("%2d! = %ld\n", i, faktorijel(i));
+    if (n > 0)
+        return(n * faktorijel(n - 1));
+    return 1;
+}
+
+int main(void)
+{
+    int i;
+    for (i = 0; i <= 10; i++)
+        printf("%2d! = %ld\n", i, faktorijel(i));
+    return 0;
 }
 ```
 
@@ -312,11 +331,13 @@ main()
  10! = 3628800
 ```
 
-4. Креирати рекурзивну функцију `fibonaci` која рачуна n-ти Фибоначијев број. У главном
+```{questionnote}
+Креирати рекурзивну функцију `fibonaci` која рачуна *n*-ти Фибоначијев број. У главном
 програму исписати првих n Фибоначијевих бројева.
+```
 
-```{infonote}
-Напомена! Фибоначијеви бројеви су они чија је вредност једнака збиру претходна два броја.
+```{suggestionnote}
+Фибоначијеви бројеви су они чија је вредност једнака збиру претходна два броја.
 Прва два члана низа имају вредност 1. 1, 1, 2, 3, 5, 8, 13, 21, 34,...
 ```
 
@@ -324,19 +345,19 @@ main()
 #include<stdio.h>
 int fibonaci(int n)
 {
-	if (n > 2)
-		return fibonaci(n - 1) + fibonaci(n - 2);
-	return 1;
+    if (n > 2)
+        return fibonaci(n - 1) + fibonaci(n - 2);
+    return 1;
 }
-main()
+
+int main(void)
 {
-	int n, i;
-	printf("Unesi n: ");
-	scanf("%d", &n);
-	for (i = 1;i <= n;i++)
-	{
-		printf("%d ", fibonaci(i));
-	}
+    int n, i;
+    printf("Unesi n: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+        printf("%d ", fibonaci(i));
+    return 0;
 }
 ```
 
@@ -347,29 +368,31 @@ Unesi n: 10
 1 1 2 3 5 8 13 21 34 55
 ```
 
-5. Написати програм који рачуна новчани износ којим располаже улагач после n година
+```{questionnote}
+Написати програм који рачуна новчани износ којим располаже улагач после n година
 ако је годишња камата `р%`. Уложени новац је `s`.
+```
 
 ```c
 #include<stdio.h>
 double iznos(double n, double p, double s)
 {
-	if (n != 0)
-		return (1 + p / 100) * iznos(n - 1, p, s);
-	else
-		return s;
+    if (n != 0)
+        return (1 + p / 100) * iznos(n - 1, p, s);
+    else
+        return s;
 }
 
-main()
+int main(void)
 {
-	double n, p, s;
-	printf("Unesi broj godina: ");
-	scanf("%lf", &n);
-	printf("Unesi vrednost kamate u %: ");
-	scanf("%lf", &p);
-	printf("Unesi iznos koji ulazes: ");
-	scanf("%lf dinara", &s);
-	printf("%.2lf dinara", iznos(n, p, s));
+    double n, p, s;
+    printf("Unesi broj godina: ");
+    scanf("%lf", &n);
+    printf("Unesi vrednost kamate u %%: ");
+    scanf("%lf", &p);
+    printf("Unesi iznos koji ulazes: ");
+    scanf("%lf dinara", &s);
+    printf("\n%.2lf dinara", iznos(n, p, s));
 }
 ```
 
@@ -377,7 +400,8 @@ main()
 
 ```text
 Unesi broj godina: 5
-Unesi vrednost kamate u : 7.5
+Unesi vrednost kamate u %: 7.5
 Unesi iznos koji ulazes: 1000 dinara
-      1435.63 dinara
+
+1435.63 dinara
 ```

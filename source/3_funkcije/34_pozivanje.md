@@ -30,9 +30,9 @@ main()
     ...
     z=zbir(a, b);
     printf("Zbir brojeva a i b je %d", z);
-//или 
+    //или 
     printf("Zbir brojeva a i b je %d", zbir(a, b));  
-}
+}   
 ```
 
 Јасно је да би неправилан позив био…
@@ -51,9 +51,9 @@ main()
 ```c
 main()
 {
-	float a, b, z;
-	...
-      z = zbir(a, b); //тип аргумената
+    float a, b, z;
+    ...
+    z = zbir(a, b); //тип аргумената
 }
 ```
 

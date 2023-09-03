@@ -15,40 +15,40 @@
 ```c
 void invert(int a[], int n)
 {
-	int i, j, b;
-	for (i = 0, j = n - 1;i < j;i++, j--)
-	{
-		b = a[i];
-		a[i] = a[j];
-		a[j] = b;
-	}
+    int i, j, b;
+    for (i = 0, j = n - 1;i < j;i++, j--)
+    {
+        b = a[i];
+        a[i] = a[j];
+        a[j] = b;
+    }
 }
  
 void sort(int a[], int n) {
-	int i, j, tmp;
-	for (i = 0; i < n - 1; i++)
-		for (j = i + 1; j < n; j++)
-			if (a[i] > a[j]) {
-				tmp = a[i];
-				a[i] = a[j];
-				a[j] = tmp;
-			}
+    int i, j, tmp;
+    for (i = 0; i < n - 1; i++)
+        for (j = i + 1; j < n; j++)
+            if (a[i] > a[j]) {
+                tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            }
 }
+
 void unos_niza(int a[20], int n)
 {
-	int i;
-	for (i = 0;i < n;i++)
-	{
-		scanf("%d", &a[i]);
-	}
-	printf("\n");
+    int i;
+    for (i = 0;i < n;i++)
+        scanf("%d", &a[i]);
+    printf("\n");
 }
+
 void ispis_niza(int a[], int n)
 {
-	int i;
-	for (i = 0;i < n;i++)
-		printf("%d ", a[i]);
-	printf("\n\n");
+    int i;
+    for (i = 0;i < n;i++)
+        printf("%d ", a[i]);
+    printf("\n\n");
 }
 ```
 
@@ -67,20 +67,21 @@ void ispis_niza(int a[], int n)
 ```c
 #include<stdio.h>
 #include "nizovi.h" // или <nizovi.h>
-main()
+int main(void)
 {
-	int a[50], n, i;
-	printf("Unesi broj elemenata niza n: ");
-	scanf("%d", &n);
-	unos_niza(a, n);
-	printf("Izgled pocetnog niza: \n");
-	ispis_niza(a, n);
-	invert(a, n);
-	printf("Izgled invertovanog niza: \n");
-	ispis_niza(a, n);
-	sort(a, n);
-	printf("Izgled sortiranog niza: \n");
-	ispis_niza(a, n);
+    int a[50], n, i;
+    printf("Unesi broj elemenata niza n: ");
+    scanf("%d", &n);
+    unos_niza(a, n);
+    printf("Izgled pocetnog niza: \n");
+    ispis_niza(a, n);
+    invert(a, n);
+    printf("Izgled invertovanog niza: \n");
+    ispis_niza(a, n);
+    sort(a, n);
+    printf("Izgled sortiranog niza: \n");
+    ispis_niza(a, n);
+    return 0;
 }
 ```
 

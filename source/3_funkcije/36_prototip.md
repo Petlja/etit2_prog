@@ -17,6 +17,7 @@ int main(void)
     printf("Zbir brojeva 5 i 8 je %d", zbir(5, 8));
 	return 0;
 }
+
 int zbir(int a, int b)
 {
     return a + b;
@@ -52,7 +53,7 @@ int zbir(int a, int b)
 #include<math.h>
 double kub(double a);
 
-**Главни програм**
+//Главни програм
 
 int main(void)
 {
@@ -142,7 +143,7 @@ int main(void)
     scanf("%d", &m);
     k = faktorijel(n) / (faktorijel(m) * faktorijel(m - n));
     printf("Broj kombinacija %d elemenata %d. klase je %ld\n", n, m, k);
-	return 0;
+    return 0;
 }
 ```
 

@@ -116,9 +116,9 @@ a[1] = 9
 a[2] = 18
 
 Uneli ste elemente:
- a[0] = 2
- a[1] = 9
- a[2] = 18
+a[0] = 2
+a[1] = 9
+a[2] = 18
 ```
 
 ```{questionnote}
@@ -162,11 +162,9 @@ void sort(int a[], int n) {
 ```c
 void unos_niza(int a[20], int n)
 {
-	int i;
-	for (i = 0;i < n;i++)
-	{
-		scanf("%d", &a[i]);
-	}
+    int i;
+    for (i = 0;i < n;i++)
+        scanf("%d", &a[i]);
 }
 void ispis_niza(int a[], int n)
 {
@@ -214,6 +212,7 @@ void nizB(int a[], int n)
     }
     ispis_niza(b, k);
 }
+
 int main(void)
 {
     int a[100], n;
@@ -273,7 +272,7 @@ int main(void)
 }
 ```
 
-**Вежбање**
+## Вежбање
 
 Користећи функције и њихову примену у низовима, решићемо неколико задатака из
 Методичке збирке задатака која се налази на Петљи. Решења задатака можеш да
@@ -306,6 +305,7 @@ int main(void)
     ispis_unazad(a, n);
     return 0;
 }
+
 void unos(int a[20], int n)
 {
     int i;
@@ -357,12 +357,12 @@ int min_temp(int a[], int n)
 
 int main(void)
 {
-	int n;
-	scanf("%d", &n);
-	int a[n];
-	unos(a, n);
-	printf("%d", min_temp(a, n));
-	return 0;
+    int n;
+    scanf("%d", &n);
+    int a[n];
+    unos(a, n);
+    printf("%d", min_temp(a, n));
+    return 0;
 }
 ```
 
@@ -414,7 +414,7 @@ double min_odstupanje(double a[20], int n)
 int main(void)
 {
     int n;
-	double a[50];
+    double a[50];
     scanf("%d", &n);
     unos(a, n);
     printf("%.2lf", min_odstupanje(a, n));

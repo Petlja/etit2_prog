@@ -15,6 +15,7 @@ int zbir(int x, int y)
     int z = x + y;
     return z;
 }
+
 int razlika(int x, int y)
 {
     int z = x - y;
@@ -27,7 +28,7 @@ int razlika(int x, int y)
 функцију у којој позивамо наше креиране функције.
 
 ```c
-main()
+int main(void)
 {
     int x, y, z;
     ...
@@ -35,6 +36,7 @@ main()
     printf("Suma brojeva je: %d", z); 
     z = razlika(x, y);                        
     printf("Razlika brojeva je: %d", z);
+    return 0;
 }
 ```
 
@@ -65,18 +67,20 @@ void fun1()
 {
     s++;
 }
+
 void fun2(int a)
 {
     s = a - 5;
 }
  
-main()
+int main(void)
 {
     fun1(); // s = 8
     s = s - 5; // s = 3
     printf("Vrednost promenljive s je %d\n", s);
     fun2(3); // s = -2
     printf("Vrednost promenljive s je %d\n", s);
+    return 0;
 }
 ```
 

@@ -21,7 +21,7 @@ double (*pfun) (int, float);
 параметра типа `int`, односно типа `float`.
 
 ```{infonote}
-!Обрати пажњу! Два показивача су истог типа ако се сви ови елементи поклапају.
+Два показивача су истог типа ако се сви ови елементи поклапају.
 Показивач `double (*pfun1) (int, float)` је истог типа као `*pfun`.
 Показивач `double (*pfun2) (float, int)` није истог типа као `*pfun`.
 Показивач `int (*pfun2) (int, int)` није истог типа као `*pfun`.
@@ -35,7 +35,7 @@ double (*pfun) (int, float);
 ```c
 int zbir(int a, int b)
 {
-	return a + b;
+    return a + b;
 }
 ```
 
@@ -55,9 +55,9 @@ int (*pfun) (int, int);
 ```c
 main()
 {
-	int (*pfun)(int, int);
-	pfun = zbir;
-	printf("Zbir je %d\n", (*pfun)(10, 13));
+    int (*pfun)(int, int);
+    pfun = zbir;
+    printf("Zbir je %d\n", (*pfun)(10, 13));
 }
 ```
 
@@ -72,7 +72,7 @@ Zbir je: 23
 ```c
 int razlika(int a, int b)
 {
-	return a - b;
+    return a - b;
 }
 ```
 
@@ -81,11 +81,11 @@ int razlika(int a, int b)
 ```c
 main()
 {
-	int (*pfun)(int, int);
-	pfun = zbir;
-	printf("Zbir je %d\n", (*pfun)(10, 13));
-	pfun = razlika;
-	printf("Razlika je %d", (*pfun)(10,13));
+    int (*pfun)(int, int);
+    pfun = zbir;
+    printf("Zbir je %d\n", (*pfun)(10, 13));
+    pfun = razlika;
+    printf("Razlika je %d", (*pfun)(10,13));
 }
 ```
 
@@ -95,8 +95,9 @@ main()
 Zbir je: 23
 Razlika je -3
 ```
-
+```{questionnote}
 Шта смо урадили у програму?
+```
 
 Показивачу `pfun` доделили смо адресу функције `razlika`. Сада показивач показује
 на функцију `razlika` и прослеђивањем аргумената узимамо вредност функције.
@@ -109,50 +110,51 @@ Razlika je -3
 double (*pfun)( double, double);
 ```
 
-Задатак:
-
+```{questionnote}
 Покушај да на основу и креираних функција `zbir`, `razlika`, `proizvod`, `kolicnik` и
 дефинисаног показивача на функције одредиш вредности основних рачунских операција за
 променљиве `a` и `b`.
+```
 
 ```c
 double zbir(double a, double b)
 {
-	return a + b;
+    return a + b;
 }
 
 double razlika(double a, double b)
 {
-	return a - b;
+    return a - b;
 }
-double proizvod(double a, int b)
+double proizvod(double a, double b)
 {
-	return a * b;
-}
-
-
-double kolicnik(double a, int b)
-{
-	return a / b;
+    return a * b;
 }
 
-main()
+
+double kolicnik(double a, double b)
 {
-	double a,b,(*pfun)(double, double);
-	printf("Unesi a: ");
-	scanf("%lf", &a);
-	printf("Unesi b: ");
-	scanf("%lf", &b);
-	pfun = zbir;
-	 printf("Zbir je %.2lf\n", (*pfun)(a, b));
-	pfun = razlika;
-	 printf("Razlika je %.2lf\n", (*pfun)(a, b));
-	pfun = proizvod;
-	 printf("Proizvod je %.2lf\n", (*pfun)(a, b));
-	pfun = kolicnik;
-	 printf("Kolicnik je %.2lf", (*pfun)(a, b));
-       pfun = pow;
-       printf("Stepen je %.2lf ", (*pfun)(a, b));
+    return a / b;
+}
+
+int main(void)
+{
+    double a,b,(*pfun)(double, double);
+    printf("Unesi a: ");
+    scanf("%lf", &a);
+    printf("Unesi b: ");
+    scanf("%lf", &b);
+    pfun = zbir;
+    printf("Zbir je %.2lf\n", (*pfun)(a, b));
+    pfun = razlika;
+    printf("Razlika je %.2lf\n", (*pfun)(a, b));
+    pfun = proizvod;
+    printf("Proizvod je %.2lf\n", (*pfun)(a, b));
+    pfun = kolicnik;
+    printf("Kolicnik je %.2lf\n", (*pfun)(a, b));
+    pfun = pow;
+    printf("Stepen je %.2lf", (*pfun)(a, b));
+    return 0;
 }
 ```
 
@@ -175,25 +177,21 @@ Stepen je 81.00
 И за крај, у главном програму креираћемо низ показивача.
 
 ```c
-main()
+int main(void)
 {
-	double a, b, (*pfun)(double, double);
-	int i;
-	printf("Unesi a: ");
-	scanf("%lf", &a);
-	printf("Unesi b: ");
-	scanf("%lf", &b);
-	double (*funOperacije[5])(double, double)
-		= { zbir, razlika, proizvod, kolicnik, pow };
-	printf("Zbir je %.2lf\n", funOperacije[0](a, b));
- 
-	printf("Razlika je %.2lf\n", funOperacije[1](a, b));
- 
-	printf("Proizvod je %.2lf\n", funOperacije[2](a, b));
- 
-	printf("Kolicnik je %.2lf\n", funOperacije[3](a, b));
- 
-	printf("Stepen je %.2lf ", funOperacije[4](a, b));
+    double a, b, (*pfun)(double, double);
+    int i;
+    printf("Unesi a: ");
+    scanf("%lf", &a);
+    printf("Unesi b: ");
+    scanf("%lf", &b);
+    double (*funOperacije[5])(double, double) = { zbir, razlika, proizvod, kolicnik, pow };
+    printf("Zbir je %.2lf\n", funOperacije[0](a, b));
+     printf("Razlika je %.2lf\n", funOperacije[1](a, b));
+     printf("Proizvod je %.2lf\n", funOperacije[2](a, b));
+     printf("Kolicnik je %.2lf\n", funOperacije[3](a, b));
+     printf("Stepen je %.2lf ", funOperacije[4](a, b));
+	 return 0;
 }
 ```
 

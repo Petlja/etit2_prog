@@ -21,7 +21,7 @@ int zbir(int m, int n)
     return s;
 }
 
-main()
+int main(void)
 {
     int a, b, c, d, z;
     printf("Unesi brojeve a i b: ");
@@ -30,6 +30,7 @@ main()
     printf("Zbir brojeva a i b je %d", z);
     z = zbir(c, d);
     printf("Zbir brojeva c i d je %d", z);
+    return 0;
 }
 ```
 
@@ -115,6 +116,7 @@ double kolicnik(int m, int n)
     s = (double) m / n;
     return s;
 }
+
 int main(void)
 {
     int a, b, c, d;

@@ -231,7 +231,7 @@ int main(void)
     printf("Adresa promenljive x je: %x\n", &x);
     //indirektno preko pokazivača:
     printf("Adresa promenljive x je: %x\n", px);
-    return(0);
+    return 0;
 }
 ```
 

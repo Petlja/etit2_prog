@@ -2,7 +2,7 @@
 
 Функција се позива на следећи начин:
 
-```text
+```c
 име_функције(листа стварних параметара)
 ```
 
@@ -15,23 +15,23 @@
 ```c
 int zbir(int a, int b)
 {
-	int c;
-	c = a + b;
-	return c;
+    int c;
+    c = a + b;
+    return c;
 }
 ```
 
-…правилан позив у главном програму би гласио:
+… правилан позив у главном програму би гласио:
 
-```text
+```c
 main()
 {
-	int a,b,z;
-	...
-	z=zbir(a,b);
-	printf(“Zbir brojeva a i b je %d”,z);
-//или
-     printf(“Zbir brojeva a i b je %d”, zbir(a,b));  
+    int a, b, z;
+    ...
+    z=zbir(a, b);
+    printf("Zbir brojeva a i b je %d", z);
+//или 
+    printf("Zbir brojeva a i b je %d", zbir(a, b));  
 }
 ```
 
@@ -40,33 +40,33 @@ main()
 ```c
 main()
 {
-	int a,b,c, z;
-	...
-      z=zbir(a,b,c);	//број аргумената
+    int a, b, c, z;
+    ...
+    z=zbir(a, b, c);	//број аргумената
 }
 ```
 
-…или…
+… или…
 
 ```c
 main()
 {
-	float a,b,z;
+	float a, b, z;
 	...
-      z=zbir(a,b); //тип аргумената
+      z = zbir(a, b); //тип аргумената
 }
 ```
 
-Уколико je функција типа void, односно не враћа вредност, позива се једноставном наредбом.
+Уколико je функција типа `void`, односно не враћа вредност, позива се једноставном наредбом.
 
-```text
+```c
 void Pozdrav()
 {
-    printf (“Ova f-ja ne vraca vrednost!);
+    printf ("Ova f-ja ne vraca vrednost!");
 }
 
 main()
 {
-	Pozdrav();
+    Pozdrav();
 }
 ```

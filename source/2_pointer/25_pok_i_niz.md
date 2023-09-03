@@ -105,7 +105,7 @@ int main(void)
     for (p = a; p < a + 5; p++)
         s = s + *p;
     printf("Zbir elemenata niza je %d", s);
-	return(0);
+	return 0;
 }
 ```
 
@@ -135,7 +135,7 @@ int main(void)
     for (i = 0; i < 5; i++)
         s = s + *(a + i);
     printf("Zbir elemenata niza je %d", s);
-	return(0);
+	return 0;
 }
 ```
 
@@ -178,7 +178,7 @@ int main(void)
     printf("\nNiz u obrnutom poretku:\n");
     for (i = n - 1; i >= 0; i--)
         printf("a[%d] = %d    ", i, *(a + i));
-    return(0);
+    return 0;
 }
 ```
 
@@ -210,7 +210,7 @@ int main(void)
         scanf("%d", a + i);
     for (i = n - 1; i >= 0; i--)
         printf("%d\n", *(a + i));
-    return(0);
+    return 0;
 }
 ```
 
@@ -227,7 +227,7 @@ int main(void)
         scanf("%d", p);
     for (p = a + n - 1; p >= a; p--)
         printf("%d\n", *p);
-    return(0);
+    return 0;
 }
 ```
 
@@ -253,7 +253,7 @@ int main(void)
         min = *(a + i);
     }
     printf("%d\n", min);
-    return(0);
+    return 0;
 }
 ```
 
@@ -284,7 +284,7 @@ int main(void)
         if (fabs(*(a + i) - prosek) < min)
             min = fabs(*(a + i) - prosek);
     printf("%.2lf", min);
-    return(0);
+    return 0;
 }
 ```
 
@@ -319,7 +319,7 @@ int main(void)
     for (i = j + 1; i < n; i++)
         s2 = s2 + *(a + i);
     printf("%d", s1 - s2);
-    return(0);
+    return 0;
 }
 ```
 
@@ -344,6 +344,6 @@ int main(void)
         if (abs(*(a + i) - *(a + i + 1)) > max)
             max = abs(*(a + i) - *(a + i + 1));
     printf("%d", max);
-    return(0);
+    return 0;
 }
 ```

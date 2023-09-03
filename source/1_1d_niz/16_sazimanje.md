@@ -39,7 +39,7 @@ int main(void)
     printf("\nSazet niz izgleda ovako:\n");
     for (j = 0; j < n; j++)
         printf("a[%d] = %d\n", j, a[j]);
-    return(0);
+    return 0;
 }
 ```
 

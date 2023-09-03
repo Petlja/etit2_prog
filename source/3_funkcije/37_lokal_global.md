@@ -26,15 +26,15 @@ int razlika(int x, int y)
 `razlika`. То су две сасвим различите променљиве. Ово правило важи и за главну
 функцију у којој позивамо наше креиране функције.
 
-```text
+```c
 main()
 {
-    int x, y,z;
+    int x, y, z;
     ...
-    z = zbir(x, y));                             // ОВДЕ ИМАТЕ ВИШАК ЗАГРАДУ
-    printf("Suma brojeva je: %d",z); 
-    z = razlika(x, y));                          // ОВДЕ ИМАТЕ ВИШАК ЗАГРАДУ
-    printf("Razlika brojeva je: %d",z);
+    z = zbir(x, y);                            
+    printf("Suma brojeva je: %d", z); 
+    z = razlika(x, y);                        
+    printf("Razlika brojeva je: %d", z);
 }
 ```
 
@@ -60,7 +60,6 @@ main()
 
 ```c
 #include<stdio.h>
-#include<stdio.h>
 int s = 7;
 void fun1()
 {
@@ -73,10 +72,10 @@ void fun2(int a)
  
 main()
 {
-    fun1(); //s=8
-    s = s - 5; //s=3
+    fun1(); // s = 8
+    s = s - 5; // s = 3
     printf("Vrednost promenljive s je %d\n", s);
-    fun2(3); //s=-2
+    fun2(3); // s = -2
     printf("Vrednost promenljive s je %d\n", s);
 }
 ```

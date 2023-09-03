@@ -68,7 +68,7 @@ int main(void)
     printf("Sortirani niz u opadajucem redosledu metodom izbora izgleda ovako: \n");
     for (i = 0; i < 5; i++) 
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -231,7 +231,7 @@ int main(void)
     printf("\nSortirani niz u opadajucem redosledu metodom izbora izgleda ovako:\n");
     for (i = 0; i < n; i++)
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -304,7 +304,7 @@ int main(void)
     printf("\nSortirani niz u rastucem redosledu metodom umetanja izgleda ovako:\n");
     for (i = 0; i < 5; i++)
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -431,7 +431,7 @@ int main(void)
     printf("\nSortirani niz u rastucem redosledu dobijen metodom umetanja izgleda ovako: \n");
     for (i = 0; i < n; i++)
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -500,7 +500,7 @@ int main(void)
     printf("Sortirani niz u opadajucem redosledu dobijen metodom zamene suseda izgleda ovako:\n");
     for (i = 0; i < 5; i++)
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 ```
 
 **Излаз**:
@@ -642,7 +642,7 @@ int main(void)
     printf("\nSortirani niz u rastucem redosledu dobijen metodom zamene suseda izgleda ovako: \n");
     for (i = 0; i < n; i++)
         printf("a[%d]=%d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -699,7 +699,7 @@ int main(void)
     printf("Sortirani niz u rastucem redosledu metodom zamene suseda izgleda ovako: \n");
     for (i = 0; i < n; i++)
     printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -745,7 +745,7 @@ int main(void)
     printf("Sortirani niz u opadajucem redosledu metodom zamene suseda izgleda ovako: \n");
     for (i = 0; i < 5; i++)
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 

@@ -5,8 +5,10 @@
 смо детаљно објаснили и видели да се овом приликом стварни параметри не мењају.
 Функције на овај начин могу да врате само једну вредност.
 
+```{questionnote}
 А шта да радимо када функција треба да врати више вредности? Или када треба да
 променимо стварне параметре?
+```
 
 У овом случају се користи друга техника предаје параметара – пренос параметара по
 референци.
@@ -20,7 +22,7 @@
 ```c
 void izmeni(int m)
 {
-    printf("Adresa parametra m=%x\n", &m);
+    printf("Adresa parametra m = %x\n", &m);
     m = 100;
 }
 ```
@@ -28,14 +30,15 @@ void izmeni(int m)
 У главном програму учитавамо стварни параметар и читамо његову адресу.
 
 ```c
-main()
+int main(void)
 {
     int a;
-    printf("Unesi broj a ");
+    printf("Unesi broj a: ");
     scanf("%d", &a);
-    printf("Adresa stvarnog parametra a=%x\n", &a);
+    printf("Adresa stvarnog argumenta a = %x\n", &a);
     izmeni(a);
-    printf("Vrednost promenljive a posle poziva funkcije izmeni je a= %d\n", a);
+    printf("Vrednost promenljive a posle poziva funkcije izmeni je a = %d\n", a);
+    return 0;
 }
 ```
 
@@ -43,9 +46,9 @@ main()
 
 ```text
 Unesi broj a: 3
-Adresa stvarnog parametra a=62fe1c
-Adresa parametra m=62fdf0
-Vrednost promenljive a posle poziva funkcije izmeni je a= 3
+Adresa stvarnog argumena a = 62fe1c
+Adresa parametra m = 62fdf0
+Vrednost promenljive a posle poziva funkcije izmeni je a = 3
 ```
 
 Шта уочаваш?
@@ -62,16 +65,16 @@ Vrednost promenljive a posle poziva funkcije izmeni je a= 3
 Позивом функције копира се вредност стварног параметра у функцију:
 
 ```{image} images/Picture7.png
-:width: 70%
+:width: 500
 :align: center
 ```
 
-Затим се та вредност мења наредбом `m=100`.
+Затим се та вредност мења наредбом `m = 100`.
 
-Наредбом `m=100` локална променљива добија нову вредност:
+Наредбом `m = 100` локална променљива добија нову вредност:
 
 ```{image} images/Picture8.png
-:width: 70%
+:width: 500
 :align: center
 ```
 
@@ -83,17 +86,18 @@ Vrednost promenljive a posle poziva funkcije izmeni je a= 3
 ```c
 void izmeni(int &m)
 {
-	printf("Adresa lokalnog parametra a=%x\n", &m);
+	printf("Adresa lokalnog parametra a = %x\n", &m);
 	m = 100;
 }
-main()
+int main(void)
 {
-	int a;
-	printf("Unesi broj a ");
-	scanf("%d", &a);
-	printf("Adresa stvarnog parametra a=%x\n", &a);
-	izmeni(a);
-	printf("Vrednost promenljive a posle poziva funkcije izmeni je a= %d\n", a);
+    int a;
+    printf("Unesi broj a ");
+    scanf("%d", &a);
+    printf("Adresa stvarnog parametra a=%x\n", &a);
+    izmeni(a);
+    printf("Vrednost promenljive a posle poziva funkcije izmeni je a = %d\n", a);
+	return 0;
 }
 ```
 
@@ -103,14 +107,15 @@ main()
 Unesi broj a: 3
 Adresa stvarnog parametra a=62fe1c
 Adresa lokalnog parametra a=62fe1c
-a= 100
+a = 100
 ```
-
+```{questionnote}
 У чему је разлика?
+```
 
 Приликом предаје параметара по референци не ствара се нова меморија. Параметри
 у функцији су заправо референце у којима се чувају адресе стварних параметара.
-На овај начин свака промена параметра у функцији (`m=100`) узрокује промену
+На овај начин свака промена параметра у функцији (`m = 100`) узрокује промену
 стварног параметра `a` у главном програму.
 
 Погледајмо још један карактеристичан пример:
@@ -123,26 +128,27 @@ a= 100
 ```c
 void zameni(int m, int n)
 {
-	int t;
-	t = m;
-	m = n;
-	n = t;
+    int t;
+    t = m;
+    m = n;
+    n = t;
 }
 ```
 
-Главни програм:
+**Главни програм**:
 
 ```c
-main()
+int main(void)
 {
-	int a, b;
-	printf("Unesi broj a: ");
-	scanf("%d", &a);
-	printf("Unesi broj b: ");
-	scanf("%d", &b);
-	zameni(a, b);
-	printf("a= %d\n", a);
-	printf("b= %d\n", b);
+    int a, b;
+    printf("Unesi broj a: ");
+    scanf("%d", &a);
+    printf("Unesi broj b: ");
+    scanf("%d", &b);
+    zameni(a, b);
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    return 0;
 }
 ```
 
@@ -159,42 +165,42 @@ b= 9
 претходном примеру, све промене су се десиле унутар саме функције. Објашњење је
 слично као у претходном примеру:
 
-Приликом позива функције zameni у главном програму копирају се вредности стварних
+Приликом позива функције `zameni` у главном програму копирају се вредности стварних
 параметара у функцију.
 
 Наредбом `zameni(3, 9)` копирају се стварни параметри у функцију:
 
 ```{image} images/Picture9.png
-:width: 70%
+:width: 500
 :align: center
 ```
 
 Анализирајмо шта се дешава у функцији после следећих наредби:
 
-`t=m;`
+`t = m;`
 
-Вредности формалних параметара после наредбе `t=m`:
+Вредности формалних параметара после наредбе `t = m`:
 
 ```{image} images/Picture10.png
-:width: 40%
+:width: 270
 :align: center
 ```
 
-`m=n;`
+`m = n;`
 
-Вредности формалних параметара после наредбе `m=n`:
+Вредности формалних параметара после наредбе `m = n`:
 
 ```{image} images/Picture11.png
-:width: 40%
+:width: 270
 :align: center
 ```
 
-`n=t;`
+`n = t;`
 
-Вредности формалних параметара после наредбе `n=t`:
+Вредности формалних параметара после наредбе `n = t`:
 
 ```{image} images/Picture12.png
-:width: 40%
+:width: 270
 :align: center
 ```
 
@@ -203,7 +209,7 @@ b= 9
 Вредности стварних и формалних параметара после позива функције `zameni`:
 
 ```{image} images/Picture13.png
-:width: 70%
+:width: 500
 :align: center
 ```
 
@@ -217,21 +223,22 @@ b= 9
 ```c
 void zameni(int &m, int &n)
 {
-	int t;
-	t = m;
-	m = n;
-	n = t;
+    int t;
+    t = m;
+    m = n;
+    n = t;
 }
-main()
+int main(void)
 {
-	int a, b;
-	printf("Unesi broj a: ");
-	scanf("%d", &a);
-	printf("Unesi broj b: ");
-	scanf("%d", &b);
-	zameni(a, b);
-	printf("a= %d\n", a);
-	printf("b= %d\n", b);
+    int a, b;
+    printf("Unesi broj a: ");
+    scanf("%d", &a);
+    printf("Unesi broj b: ");
+    scanf("%d", &b);
+    zameni(a, b);
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+	return 0;
 }
 ```
 
@@ -243,8 +250,8 @@ main()
 ```text
 Unesi broj a: 3
 Unesi broj b: 9
-a= 9
-b= 3
+a = 9
+b = 3
 ```
 
 Променљиве `a` и `b` су замениле вредности. А то је управо оно што смо и желели.

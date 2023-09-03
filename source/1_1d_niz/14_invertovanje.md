@@ -40,7 +40,7 @@ int main(void)
     printf("\nInvertovani niz:\n");
     for (i = 0; i < 6; i++)
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -111,7 +111,7 @@ int main(void)
     printf("\nInvertovani niz:\n");
     for (i = 0; i < 6; i++)
        printf("a[%d] = %d\n", i, b[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -186,7 +186,7 @@ int main(void)
     printf("\nInvertovani niz:\n");
     for (i = 0; i < n; i++)
         printf("a[%d]=%d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -210,7 +210,7 @@ int main(void)
     printf("\nInvertovani niz:\n");
     for (i = 0; i < n; i++)
         printf("a[%d] = %d\n", i, a[i]);
-    return(0);
+    return 0;
 }
 ```
 

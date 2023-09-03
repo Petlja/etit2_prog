@@ -141,7 +141,7 @@ int main(void)
     printf("x = --(*p) + 7 \t x = %d\n", x);
     y = *(++p) - 4;
     printf("y = *(++p) - 4 \t y = %d\n", y);
-    return(0);
+    return 0;
 }
 ```
 

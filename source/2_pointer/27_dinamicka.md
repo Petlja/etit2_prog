@@ -22,7 +22,7 @@ int main(void)
     scanf("%d", &b);
     c = a + b;
     printf("c = %d", c);
-    return(0);
+    return 0;
 }
 ```
 
@@ -292,7 +292,7 @@ int main(void)
 		s += *(p + i);
 	printf("\ns = %d\n", s);
 	free(p);
-	return(0);
+	return 0;
 }
 ```
 

@@ -14,46 +14,46 @@
 
 Ово ћемо најлакше схватити ако анализирамо следеће задатке:
 
-1. задатак
-
+```{questionnote}
 Креирати функцију којом се за задате вредности отпора `R` и струје `I` рачунају вредности
 напона `U` и снаге `P` на отпорнику.
+```
 
 Из задатка видимо да треба да израчунамо две вредности користећи познате улазне параметре.
 Користићемо познате изразе Омовог закона и закона снаге.
 
-Напомена:
-
+```{suggestionnote}
 Како функција `napon_snaga` резултате даје преко бочних ефеката, за тип функције користимо `void`.
+```
 
 ```c
 #include<stdio.h>
 void napon_snaga(float R, float I, float *pU, float *pP)
 {
-	*pU = R * I;
-	*pP = R * I * I;
+    *pU = R * I;
+    *pP = R * I * I;
  
 }
 main()
 {
-	float R, I, U, P;
-	printf("Unesi vrednost otpora R[Om]= ");
-	scanf("%f", &R);
-	printf("Unesi vrednost struje I[A]= ");
-	scanf("%f", &I);
-	napon_snaga(R, I, &U, &P);
-	printf("Vrednost napona U[V]=%.2f\n", U);
-	printf("Vrednost snage P[W]=%.2f\n", P);
+    float R, I, U, P;
+    printf("Unesi vrednost otpora R[Om] = ");
+    scanf("%f", &R);
+    printf("Unesi vrednost struje I[A] = ");
+    scanf("%f", &I);
+    napon_snaga(R, I, &U, &P);
+    printf("Vrednost napona U[V] = %.2f\n", U);
+    printf("Vrednost snage P[W] = %.2f\n", P);
 }
 ```
 
-Резултат извршавања програма:
+**Резултат извршавања програма:**
 
 ```text
-Unesi vrednost otpora R[Om]= 23.55
-Unesi vrednost struje I[A]= 17.36
-Vrednost napona U[V]=408.83
-Vrednost snage P[W]=7097.25
+Unesi vrednost otpora R[Om] = 23.55
+Unesi vrednost struje I[A] = 17.36
+Vrednost napona U[V] = 408.83
+Vrednost snage P[W] = 7097.25
 ```
 
 А сада да детаљно погледамо:
@@ -69,7 +69,7 @@ Vrednost snage P[W]=7097.25
 
 Пренос параметара у функцију `napon_snaga`:
 
-`main()    napon_snaga(float R, float I, float *pU, float *pP)`
+`int main(void)    napon_snaga(float R, float I, float *pU, float *pP)`
 
 ```{image} images/Picture14.png
 :width: 70%
@@ -107,7 +107,7 @@ Vrednost snage P[W]=7097.25
 главном програму за три унета броја исписати производ највећег и најмањег.
 
 ```c
-void max_min(int a, int b, int c, int* max, int* min)
+void max_min(int a, int b, int c, int *max, int *min)
 {
 	*max = a;
 	*min = a;
@@ -117,13 +117,14 @@ void max_min(int a, int b, int c, int* max, int* min)
 	if (c < *min) *min = c;
 	
 }
-main()
+int main(void)
 {
 	int a, b, c;
 	int max, min;
 	scanf("%d%d%d", &a, &b, &c);
 	max_min(a, b, c, &max, &min);
 	printf("Proizvod max i min je: %d", max * min);
+	return 0;
 }
 ```
 
@@ -138,7 +139,7 @@ Proizvod max i min je: 140
 
 Пренос параметара у функцију `max_min`:
 
-`main()           max_min(int a, int, b, int c, int *max,int *min)`
+`main()           max_min(int a, int, b, int c, int *max, int *min)`
 
 ```{image} images/Picture16.png
 :width: 70%
@@ -159,7 +160,7 @@ Proizvod max i min je: 140
 
 Вредности променљивих после наредбе `*max = a` и `*min = a`:
 
-`main()           max_min(int a, int, b, int c, int *max,int *min)`
+`main()           max_min(int a, int, b, int c, int *max, int *min)`
 
 ```{image} images/Picture17.png
 :width: 70%
@@ -174,7 +175,7 @@ Proizvod max i min je: 140
 
 Вредности променљивих после наредбе `*min = b`:
 
-`main()           max_min(int a, int, b, int c, int *max,int *min)`
+`main()           max_min(int a, int, b, int c, int *max, int *min)`
 
 ```{image} images/Picture18.png
 :width: 70%
@@ -186,14 +187,14 @@ Proizvod max i min je: 140
 
 Вредности променљивих на крају извршења програма:
 
-`main()           max_min(int a, int, b, int c, int *max,int *min)`
+`main()           max_min(int a, int, b, int c, int *max, int *min)`
 
 ```{image} images/Picture19.png
 :width: 70%
 :align: center
 ```
 
-Покушај да исти задатак урадиш са измењеним вредностима, нпр. `а=17`, `b=12`, `с=5`.
+Покушај да исти задатак урадиш са измењеним вредностима, нпр. `а = 17`, `b = 12`, `с = 5`.
 
 Анализирај детаљно вредности променљивих током извршавања програма.
 
@@ -203,7 +204,7 @@ Proizvod max i min je: 140
 кôд:
 
 `int a, b;
-scanf("%d%d", &a,&b);`
+scanf("%d%d", &a, &b);`
 
 У првом реду резервисали смо меморијске локације за променљиве `а` и `b`.
 У наредби `scanf` навели смо адресе ових променљивих у које смештамо унете вредности. 
@@ -214,13 +215,15 @@ scanf("%d%d", &a,&b);`
 1. задатак
 
 ```{mchoice}
-:answer1: funkcija(&k,&n);
-:answer2: funkcija(k,n);
-:answer3: funkcija(k,m,n);
-:answer4: funkcija(2*m+1, &n);
+:answer1: funkcija(&k, &n);
+:answer2: funkcija(k, n);
+:answer3: funkcija(k, m, n);
+:answer4: funkcija(2 * m + 1, &n);
 :correct: 1, 2, 3
 
-Дата је функција void funkcija(int k, int* n);. Који од следећих позива функције су
+Дата је функција `void funkcija(int k, int* n)`. 
+
+Који од следећих позива функције су
 нетачни и зашто? Променљиве k, m и n су декларисане у главном програму.
 ```
 
@@ -229,22 +232,23 @@ scanf("%d%d", &a,&b);`
 - Позив функције под 3 је неисправан, јер се при позиву функције наводи један аргумент више.
 - Једини тачан одговор је под 4.
 
-2. задатак
-
+```{questionnote}
 Шта се исписује по извршењу програма за наведене улазне вредности?
+```
 
 ```c
 #include<stdio.h>
 void funkcija(int* n)
 {
-    *n += 5;//*n=*n+5;
+    *n += 5;// *n = *n + 5;
 }
-main()
+int main(void)
 {
     int m, n;
     scanf("%d", &n);
     funkcija(&n);
-    printf("n= %d", n);
+    printf("n = %d", n);
+	return 0;
 }
 ```
 
@@ -254,9 +258,9 @@ main()
 За n=-13 излаз је |blank|. За n= 5 излаз је |blank|. За n=21 излаз је |blank|.
 ```
 
-3. задатак
-
+```{questionnote}
 Шта се исписује по извршењу програма за наведене улазне вредности?
+```
 
 ```c
 #include<stdio.h>
@@ -264,28 +268,30 @@ void funkcija(int* n)
 {
     *n++;
 }
-main()
+
+int main(void)
 {
     int m, n;
     scanf("%d", &n);
     funkcija(&n);
     printf("n= %d", n);
+	return 0;
 }
 ```
 
 ```{fitb}
 :answer: "21,-29,0"
 
-За n=21 излаз је |blank|. За n=-29 излаз је |blank|. За n=0 излаз је |blank|.
+За n = 21 излаз је |blank|. За n = -29 излаз је |blank|. За n = 0 излаз је |blank|.
 ```
 
 Излаз је исти као улазна вредност, јер се у функцији вредност показивача увећава
 за један, а не вредност параметра `n`. Овде мораш бити обазрив – сада показивач у
 функцији показује на недозвољени део меморије.
 
-4. задатак
-
+```{questionnote}
 Шта се исписује по извршењу програма за наведене улазне вредности?
+```
 
 ```c
 #include<stdio.h>
@@ -293,19 +299,20 @@ void funkcija(int* n)
 {
     (*n)++;
 }
-main()
+int main(void)
 {
     int m, n;
     scanf("%d", &n);
     funkcija(&n);
     printf("n= %d", n);
+	return 0;
 }
 ```
 
 ```{fitb}
 :answer: "52,0,-116"
 
-За n=51 излаз је |blank|. За n=-29 излаз је |blank|. За n=0 излаз је |blank|.
+За n = 51 излаз је |blank|. За n = -29 излаз је |blank|. За n = 0 излаз је |blank|.
 ```
 
 С обзиром да заграда има већи приоритет, наредбом `*n` се прво приступа променљивој
@@ -314,18 +321,18 @@ main()
 5. Дата је функција
 
 ```c
-void funkcija(int x, int* y, int* z)
+void funkcija(int x, int *y, int *z)
 {
-	x = *y + *z;
-	(*z)--;
-	(*y)--;
+    x = *y + *z;
+    (*z)--;
+    (*y)--;
 }
 ```
 
 У главном програму су декларисане променљиве:
 
 ```c
-int a=5, b=10, c=15
+int a = 5, b = 10, c = 15
 ```
 
 ```{fitb}

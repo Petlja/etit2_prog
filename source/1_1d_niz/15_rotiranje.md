@@ -44,7 +44,7 @@ int main(void)
     printf("\nUneti niz rotiran za %d mesta ulevo izgleda ovako:\n", mesto);
     for (j = 0; j < 6; j++)
         printf("a[%d] = %d	", j, a[j]);
-    return(0);
+    return 0;
 }
 ```
 
@@ -153,7 +153,7 @@ int main(void)
     printf("\nUneti niz rotiran za %d mesta ulevo izgleda ovako:\n", mesto);
     for (j = 0; j < n; j++)
         printf("a[%d] = %d   ", j, a[j]);
-    return(0);
+    return 0;
 }
 ```
 

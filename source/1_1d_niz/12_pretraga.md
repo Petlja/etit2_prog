@@ -96,7 +96,7 @@ int main(void)
         printf("\nU nizu ne postoji trazeni element.");
     else
         printf("\nPronadjen je element na %d. mestu, odnosno sa indeksom %d.", indeks + 1, indeks);
-    return(0);
+    return 0;
 }
 ```
 
@@ -176,7 +176,7 @@ int main(void)
         printf("U nizu ne postoji trazeni element.");
     else
         printf("\nPronadjeno je %d elemenata, a poslednji je %d. mestu, odnosno sa indeksom %d.", br, indeks + 1, indeks);
-return(0);
+return 0;
 }
 ```
 
@@ -236,7 +236,7 @@ int main(void)
         printf("\nU nizu ne postoji trazeni element.");
     else
         printf("\nPronadjen je element na %d. mestu, odnosno sa indeksom %d.", indeks + 1, indeks);
-    return(0);
+    return 0;
 }
 ```
 
@@ -295,7 +295,7 @@ int main(void)
         printf("\nU nizu ne postoji trazeni element.");
     else
         printf("\nPronadjen je element na %d. mestu, odnosno sa indeksom %d.", indeks + 1, indeks);
-    return(0);
+    return 0;
 }
 ```
 
@@ -455,7 +455,7 @@ int main(void)
         printf("\nTrazeni element postoji sa indeksom %d.", indeks);
     else
         printf("\nTrazeni element ne postoji.");
-    return(0);
+    return 0;
 }
 
 ```

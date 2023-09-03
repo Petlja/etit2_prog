@@ -40,7 +40,7 @@ c=41
 Променљиве a,b,c заузимају меморију током извршавања програма:
 
 ```{image} images/Picture31.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -54,7 +54,7 @@ c=41
 Ослобађање претходно заузете меморије и додела исте другим променљивим:
 
 ```{image} images/Picture32.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -104,7 +104,7 @@ c=41
 показивач р:
 
 ```{image} images/Picture33.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -139,7 +139,7 @@ p = (int*)malloc(sizeof(int));
 Изглед оперативне меморије наредбе int *p би сликовито могао да изгледа овако:
 
 ```{image} images/Picture34.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -150,7 +150,7 @@ p = (int*)malloc(sizeof(int));
 Изглед меморије после наредбе `p = (int*)malloc(sizeof(int))`:
 
 ```{image} images/Picture35.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -160,7 +160,7 @@ p = (int*)malloc(sizeof(int));
 Изглед меморије после наредбе `*p = 5`:
 
 ```{image} images/Picture36.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -187,7 +187,7 @@ p = (int*)malloc(sizeof(int));
 смештамо у показивач р:
 
 ```{image} images/Picture37.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -209,7 +209,7 @@ p = (int*)malloc(sizeof(int));
 адресу  смештамо у показивач р:
 
 ```{image} images/Picture38.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -250,7 +250,7 @@ p=(int*)calloc(n,sizeof(int));
 смештамо у показивач р:
 
 ```{image} images/Picture39.png
-:width: 50%
+:width: 250
 :align: center
 ```
 
@@ -268,7 +268,7 @@ for(i=0;i<n; i++)
 Приступ резервисаним меморијским локацијама и унос вредности у њих:
 
 ```{image} images/Picture40.png
-:width: 50%
+:width: 250
 :align: center
 ```
 

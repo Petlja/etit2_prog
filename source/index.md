@@ -36,8 +36,8 @@ III разреду. Курс је такође намењен свима кој�
 :maxdepth: 1
 :caption: Садржај
 
-0_1d_niz/index
-1_pointer/index
-2_funkcije/index
+1_1d_niz/index
+2_pointer/index
+3_funkcije/index
 3_nd_niz/index
 ```

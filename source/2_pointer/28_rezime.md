@@ -12,6 +12,6 @@
 Оператори у језику С
 
 ```{image} images/Picture41.png
-:width: 500
+:width: 600
 :align: center
 ```

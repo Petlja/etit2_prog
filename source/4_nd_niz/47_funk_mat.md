@@ -161,18 +161,18 @@ void ispis_2d_niz(int B[][50], int n, int m)
 Unesite broj redova: 4
 Unesite broj kolona: 3
 Unesite elemente matrice:
-B[0][0]=1
-B[0][1]=2
-B[0][2]=3
-B[1][0]=4
-B[1][1]=5
-B[1][2]=6
-B[2][0]=7
-B[2][1]=8
-B[2][2]=9
-B[3][0]=10
-B[3][1]=11
-B[3][2]=12
+B[0][0] = 1
+B[0][1] = 2
+B[0][2] = 3
+B[1][0] = 4
+B[1][1] = 5
+B[1][2] = 6
+B[2][0] = 7
+B[2][1] = 8
+B[2][2] = 9
+B[3][0] = 10
+B[3][1] = 11
+B[3][2] = 12
 
 Uneli ste elemente matrice:
      1     2     3

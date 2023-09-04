@@ -11,7 +11,7 @@
 main()
 {
 	int a = 8;
-	void* pa;
+	void *pa;
 	pa = &a;
 	*pa = 23;
 	printf("a = %d", a);

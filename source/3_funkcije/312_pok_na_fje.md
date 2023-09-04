@@ -145,7 +145,7 @@ int main(void)
     printf("Unesi b: ");
     scanf("%lf", &b);
     pfun = zbir;
-    printf("Zbir je %.2lf\n", (*pfun)(a, b));
+    printf("\nZbir je %.2lf\n", (*pfun)(a, b));
     pfun = razlika;
     printf("Razlika je %.2lf\n", (*pfun)(a, b));
     pfun = proizvod;
@@ -163,6 +163,7 @@ int main(void)
 ```text
 Unesi a: 3
 Unesi b: 4
+
 Zbir je 7.00
 Razlika je -1.00
 Proizvod je 12.00
@@ -171,7 +172,7 @@ Stepen je 81.00
 ```
 
 Обрати пажњу да смо у последњем кораку позвали математичку функцију `pow`. На то
-имамо право, јер је њен општи облик, сећаш се, `pow(double,double)`, па је показивач
+имамо право, јер је њен општи облик, сећаш се, `pow(double, double)`, па је показивач
 истог типа као показивач на нашу функцију.
 
 И за крај, у главном програму креираћемо низ показивача.
@@ -185,8 +186,8 @@ int main(void)
     scanf("%lf", &a);
     printf("Unesi b: ");
     scanf("%lf", &b);
-    double (*funOperacije[5])(double, double) = { zbir, razlika, proizvod, kolicnik, pow };
-    printf("Zbir je %.2lf\n", funOperacije[0](a, b));
+    double (*funOperacije[5])(double, double) = {zbir, razlika, proizvod, kolicnik, pow};
+    printf("\nZbir je %.2lf\n", funOperacije[0](a, b));
      printf("Razlika je %.2lf\n", funOperacije[1](a, b));
      printf("Proizvod je %.2lf\n", funOperacije[2](a, b));
      printf("Kolicnik je %.2lf\n", funOperacije[3](a, b));
@@ -200,6 +201,7 @@ int main(void)
 ```text
 Unesi a: 3
 Unesi b: 4
+
 Zbir je 7.00
 Razlika je -1.00
 Proizvod je 12.00

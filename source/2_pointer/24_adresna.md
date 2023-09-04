@@ -78,8 +78,8 @@ void *p2;
 main()
 {
 	double m = 18.37;
-	double* p1;
-	void* p2;
+	double *p1;
+	void *p2;
 	p2 = &m;
 	p1 = (double*)p2;
 	printf("Vrednost promenljive m (preko pokazivaca p1) je %.2lf", *p1);
@@ -225,7 +225,7 @@ main()
     int a[] = {7, 12, 36, 4, 18};
     int *p;
     p = a;
-    *(p + 3) = *(p + 1)+*(p + 4);
+    *(p + 3) = *(p + 1)+ *(p + 4);
     printf("Novi izgled niza:\n");
     for (p = a; p < a + 5; p++)
     printf("%d", *p);
@@ -248,7 +248,7 @@ Novi izgled niza:
 
 ```{questionnote}
 Реши претходни пример, али тако да се на почетку позиционираш на трећи елемент
-`p=&a[2]`.
+`p = &a[2]`.
 ```
 
 Pешење:
@@ -258,7 +258,7 @@ Pешење:
 main()
 {
     int a[] = {7, 12, 36, 4, 18};
-    int* p;
+    int *p;
     p = a + 2;
     *(p + 1) = *(p - 1) + *(p + 2);
     printf("Novi izgled niza:\n");

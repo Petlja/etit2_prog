@@ -59,7 +59,7 @@ int* pSuma(int a[], int n)
     int s = 0;
     int* ps, * p;
     ps = &s;
-    for (p = a;p < a + n;p++)
+    for (p = a; p < a + n; p++)
         s = *p + s;
     return ps;
 }
@@ -69,9 +69,9 @@ int main(void)
     int a[7] = {5, 8, 3, 11, 45, 33, 19};
     int* ps, s;
     ps = pSuma(a, 7);
-    printf("Suma elemenata nizaje: %d\n", *ps);
+    printf("Suma elemenata niza je: %d\n", *ps);
     s = *pSuma(a, 7);
-    printf("Suma elemenata nizaje: %d\n", s);
+    printf("Suma elemenata niza je: %d\n", s);
     return 0;
 }
 ```
@@ -79,8 +79,8 @@ int main(void)
 **Резултат извршавања програма**:
 
 ```text
-Suma elemenata nizaje: 124
-Suma elemenata nizaje: 124
+Suma elemenata niza je: 124
+Suma elemenata niza je: 124
 ```
 
 ## Вежбање
@@ -96,14 +96,14 @@ int* pmax(int a[], int n)
 {
 	int* pm, * p;
 	pm = a;
-	for (p = a + 1;p < a + n;p++)
+	for (p = a + 1; p < a + n; p++)
 		if (*p > *pm) pm = p;
 	return pm;
 }
 
 int main(void)
 {
-	int a[7] = { 5,8,3,11,45,33,19 };
+	int a[7] = {5, 8, 3, 11, 45, 33, 19};
 	int* pm, max;
 	pm = pmax(a, 7);
 	printf("Maksimalni element niza je: %d\n", *pm);

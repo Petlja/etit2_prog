@@ -248,7 +248,7 @@ p = (int*)calloc(n,sizeof(int));
 for(i = 0; i < n; i++)
 {
    printf("a[%d] = ",i);
-   scanf("%d",p+i);
+   scanf("%d", p + i);
 }
 ```
 

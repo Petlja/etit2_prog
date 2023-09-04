@@ -93,7 +93,7 @@ a[6] = 6
 ```
 
 ```{image} images/Picture74.png
-:width: 300
+:width: 330
 :align: center
 ```
 
@@ -182,7 +182,8 @@ Pozicija mora biti veca od nule i manja od broja elemenata niza.
 ```c
 int i, n, a[100], p;
 p = 0;
-for (i = n - 1; i >= 0; j--) p += a[i];
+for (i = n - 1; i >= 0; j--) 
+    p += a[i];
 ```
 
 ```{mchoice}
@@ -236,7 +237,13 @@ int а[7] = {100, 150, 200, 252, 300, 350, 400};
 int i, j, n, а[100], t;
 i = 0;
 j = n - 1;
-while (i < j) {t = а[i]; а[i] = а[j]; а[j] = t; i++; j--}
+while (i < j) {
+    t = а[i]; 
+    а[i] = а[j]; 
+    а[j] = t; 
+    i++; 
+    j--
+}
 ```
 
 ```{mchoice}
@@ -254,10 +261,10 @@ while (i < j) {t = а[i]; а[i] = а[j]; а[j] = t; i++; j--}
 
 ```c
 for (i = 1; i < n; i++) {
-t = a[i];
-j = i - 1;
-while(j >= 0 && a[j] > t) a[j+1] =a [j--];
-a[j+1] = t;
+    t = a[i];
+    j = i - 1;
+while(j >= 0 && a[j] > t) a[j + 1] = a[j--];
+    a[j + 1] = t;
 }
 ```
 

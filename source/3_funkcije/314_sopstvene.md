@@ -16,7 +16,7 @@
 void invert(int a[], int n)
 {
     int i, j, b;
-    for (i = 0, j = n - 1;i < j;i++, j--)
+    for (i = 0, j = n - 1;i < j; i++, j--)
     {
         b = a[i];
         a[i] = a[j];
@@ -38,7 +38,7 @@ void sort(int a[], int n) {
 void unos_niza(int a[20], int n)
 {
     int i;
-    for (i = 0;i < n;i++)
+    for (i = 0; i < n; i++)
         scanf("%d", &a[i]);
     printf("\n");
 }
@@ -46,7 +46,7 @@ void unos_niza(int a[20], int n)
 void ispis_niza(int a[], int n)
 {
     int i;
-    for (i = 0;i < n;i++)
+    for (i = 0; i < n; i++)
         printf("%d ", a[i]);
     printf("\n\n");
 }

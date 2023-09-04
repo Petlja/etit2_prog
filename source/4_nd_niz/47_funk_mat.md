@@ -7,54 +7,55 @@
 
 ```c
 #include<stdio.h>
-void unos_niz(int b[],int n)
+void unos_niz(int b[], int n)
 {
-	int i;
-	for(i=0;i<n;i++)
-	{
-		printf("b[%d]=",i);
-		scanf("%d",&a[i]);
-	}
+    int i;
+    for (i = 0; i < n; i++)
+    {
+        printf("b[%d] = ",i);
+        scanf("%d", &a[i]);
+    }
 }
+
 void ispis_niz(int b[],int n)
 {
-	int i;
-	for(i=0;i<n;i++)
-	{
-		printf("a[%d]= %d\n",i,b[i]);
-	}
+    int i;
+    for(i = 0; i < n; i++)
+        printf("a[%d] = %d\n", i, b[i]);
 }
-main()
+
+int main(void)
 {
-	int a[10],i,n;
-	printf("Unesite broj elemenata niza ");
-	scanf("%d",&n);
-	printf("Unesite niz\n");
-	unos_niz(a,n);
-	printf("Uneli ste elemente niza: \n");
-	ispis_niz(a,n);
-		
+    int a[10], i, n;
+    printf("Unesite broj elemenata niza: ");
+    scanf("%d",&n);
+    printf("Unesite niz:\n");
+    unos_niz(a, n);
+    printf("\nUneli ste elemente niza: \n");
+    ispis_niz(a, n);
+    return 0;	
 }
 ```
 
 Излаз:
 
 ```text
-Unesite broj elemenata niza 6
-Unesite niz
-a[0]=1
-a[1]=2
-a[2]=3
-a[3]=4
-a[4]=5
-a[5]=6
+Unesite broj elemenata niza: 6
+Unesite niz:
+a[0] = 1
+a[1] = 2
+a[2] = 3
+a[3] = 4
+a[4] = 5
+a[5] = 6
+
 Uneli ste elemente niza:
-a[0]= 1
-a[1]= 2
-a[2]= 3
-a[3]= 4
-a[4]= 5
-a[5]= 6
+a[0] = 1
+a[1] = 2
+a[2] = 3
+a[3] = 4
+a[4] = 5
+a[5] = 6
 ```
 
 Као први параметар, функцији прослеђујемо низ преко адресе, а као други
@@ -72,91 +73,94 @@ a[5]= 6
 ```c
 void unos_2d_niz(int B[][50],int n, int m)
 {
-	int i,j;
-	for(i=0;i<n;i++)
-		for (j=0;j<m;j++)
-		{
-			printf("B[%d][%d]=",i,j);
-			scanf("%d",&B[i][j]);
-		} 
+    int i, j;
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+        {
+            printf("B[%d][%d] = ",i,j);
+            scanf("%d", &B[i][j]);
+        } 
 }
 ```
 
 Сада да напишемо функцију за испис матрице.
 
 ```c
-void ispis_2d_niz(int B[][50],int n, int m)
+void ispis_2d_niz(int B[][50], int n, int m)
 {
-	int i,j;
-	for(i=0;i<n;i++)
-	{
-		for (j=0;j<m;j++)
-		{
-			printf("%6d]",B[i][j]);
-			
-		}
-	printf("\n");
-	}
+    int i, j;
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < m; j++)
+            printf("%6d]", B[i][j]);
+    printf("\n");
+    }
 }
 ```
 
-Шта примећујемо? Функцији морамо да проследимо димензију матрице. Видимо да
+```{questionnote}
+Шта примећујемо? 
+```
+
+Функцији морамо да проследимо димензију матрице. Видимо да
 број резервисаних редова не мора да се унесе, док је број елемената у реду
 обавезан податак. То је зато што компајлер мора да зна одакле ће се у меморији
 позиционирати следећи ред, док је број редова ограничен капацитетом меморије.
 
-Задатак: Написати програм за унос и испис матрице целобројног типа елемената,
+```{questionnote}
+Написати програм за унос и испис матрице целобројног типа елемената,
 максималних димензија 50х50 и димензија `r` х `k`, користећи функције.
+```
 
-Решење:
+**Решење**:
 
 ```c
 #include<stdio.h>
 void unos_2d_niz(int B[][50],int n, int m);
 void ispis_2d_niz(int B[][50],int n, int m);
-main()
+int main(void)
 {
-	int A[50][50],r,k;
-	printf("Unesite broj redova ");
-	scanf("%d",&r);
-	printf("Unesite broj kolona ");
-	scanf("%d",&k);
-	printf("Unesite elemente matrice\n");
-	unos_2d_niz(A,r,k);
-	printf("Uneli ste elemente matrice: \n");
-	ispis_2d_niz(A,r,k);
+    int A[50][50], r, k;
+    printf("Unesite broj redova: ");
+    scanf("%d", &r);
+    printf("Unesite broj kolona: ");
+    scanf("%d", &k);
+    printf("Unesite elemente matrice:\n");
+    unos_2d_niz(A, r, k);
+    printf("\nUneli ste elemente matrice: \n");	
+    ispis_2d_niz(A, r, k);
+    return 0;
 }
+
 void unos_2d_niz(int B[][50],int n, int m)
 {
-	int i,j;
-	for(i=0;i<n;i++)
-		for (j=0;j<m;j++)
-		{
-			printf("B[%d][%d]=",i,j);
-			scanf("%d",&B[i][j]);
-		} 
+    int i,j;
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+        {
+            printf("B[%d][%d] = ", i, j);
+            scanf("%d", &B[i][j]);
+        } 
 }
-void ispis_2d_niz(int B[][50],int n, int m)
+
+void ispis_2d_niz(int B[][50], int n, int m)
 {
-	int i,j;
-	for(i=0;i<n;i++)
-	{
-		for (j=0;j<m;j++)
-		{
-			printf("%6d",B[i][j]);
-			
-		}
-	printf("\n");
-	}
+    int i, j;
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < m; j++)
+            printf("%6d", B[i][j]);
+        printf("\n");
+    }
 }
 ```
 
 Излаз:
 
 ```text
-Unesite broj redova 4
-Unesite broj kolona 3
-Unesite elemente matrice
+Unesite broj redova: 4
+Unesite broj kolona: 3
+Unesite elemente matrice:
 B[0][0]=1
 B[0][1]=2
 B[0][2]=3
@@ -169,69 +173,70 @@ B[2][2]=9
 B[3][0]=10
 B[3][1]=11
 B[3][2]=12
+
 Uneli ste elemente matrice:
      1     2     3
      4     5     6
      7     8     9
     10    11    12
 ```
-
-Задатак: Написати програм за унос `n` елемената матрице од максимално 50х50
+```{questionnote}
+Написати програм за унос `n` елемената матрице од максимално 50х50
 елемената. Подаци су реалног типа података. Израчунати и исписати на излазу
 збир елемената главне дијагонале.
+```
 
-Одговор:
+**Решење**:
 
 ```c
 #include<stdio.h>
-void unos_2d_niz(float B[][50],int n);
-void ispis_2d_niz(float B[][50],int n);
-float zbir_glavna(float B[][50],int n);
-main()
+void unos_2d_niz(float B[][50], int n);
+void ispis_2d_niz(float B[][50], int n);
+float zbir_glavna(float B[][50], int n);
+int main(void)
 {
-	float A[50][50],zbir1;
-	int n;
-	printf("Unesite broj redova/kolona ");
-	scanf("%d",&n);
-	printf("Unesite elemente matrice\n");
-	unos_2d_niz(A,n);
-	printf("Uneli ste elemente matrice: \n");
-	ispis_2d_niz(A,n);
-	printf("Zbir elemenata glavne dijagonale je %.2f",zbir_glavna(A,n));
+    float A[50][50];
+    int n;
+    printf("Unesite broj redova/kolona ");
+    scanf("%d", &n);
+    printf("Unesite elemente matrice\n");
+    unos_2d_niz(A, n);
+    printf("\nUneli ste elemente matrice: \n");
+    ispis_2d_niz(A, n);
+    printf("\nZbir elemenata glavne dijagonale je %.2f", zbir_glavna(A, n));
+    return 0;
 }
-void unos_2d_niz(float B[][50],int n)
+
+void unos_2d_niz(float B[][50], int n)
 {
-	int i,j;
-	for(i=0;i<n;i++)
-		for (j=0;j<n;j++)
-		{
-			printf("A[%d][%d]=",i,j);
-			scanf("%f",&B[i][j]);
-		} 
+    int i, j;
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+        {
+            printf("A[%d][%d] = ", i, j);
+            scanf("%f", &B[i][j]);
+        } 
 }
-void ispis_2d_niz(float B[][50],int n)
+
+void ispis_2d_niz(float B[][50], int n)
 {
-	int i,j;
-	for(i=0;i<n;i++)
-	{
-		for (j=0;j<n;j++)
-		{
-			printf("%6.2f",B[i][j]);
-			
-		}
-	printf("\n");
-	}
+    int i, j;
+    for(i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+            printf("%6.2f", B[i][j]);
+        printf("\n");
+    }
 }
-float zbir_glavna(float B[][50],int n)
+
+float zbir_glavna(float B[][50], int n)
 {
-	int i,j;
-	float s=0;
-	for(i=0;i<n;i++)
-		for (j=0;j<n;j++)
-		{
-			if(i==j)
-				s=s+B[i][j];	
-		}
+    int i, j;
+    float s = 0;
+    for(i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+            if(i == j)
+                s = s + B[i][j];	
 	return s;
 }
 ```
@@ -239,26 +244,30 @@ float zbir_glavna(float B[][50],int n)
 Излаз:
 
 ```text
-Unesite broj redova/kolona 3
-Unesite elemente matrice
-A[0][0]=1.256
-A[0][1]=2.358
-A[0][2]=3.12
-A[1][0]=1.25
-A[1][1]=3.00
-A[1][2]=4
-A[2][0]=5.2469
-A[2][1]=11.25
-A[2][2]=12.253
+Unesite broj redova/kolona: 3
+Unesite elemente matrice:
+A[0][0] = 1.256
+A[0][1] = 2.358
+A[0][2] = 3.12
+A[1][0] = 1.25
+A[1][1] = 3.00
+A[1][2] = 4
+A[2][0] = 5.2469
+A[2][1] = 11.25
+A[2][2] = 12.253
+
 Uneli ste elemente matrice:
   1.26  2.36  3.12
   1.25  3.00  4.00
   5.25 11.25 12.25
+
 Zbir elemenata glavne dijagonale je 16.51
 ```
 
-Задатак: За матрицу која се састоји од реалних бројева написати модул `niz.h`
+```{questionnote}
+За матрицу која се састоји од реалних бројева написати модул `niz.h`
 који ће садржати функције за…
+```
 
 - унос елемената матрице
 - испис елемената матрице
@@ -278,13 +287,16 @@ Zbir elemenata glavne dijagonale je 16.51
 - одређивање максималног елемента матрице
 - одређивање минималног елемента матрице
 
-Задатак: Користећи модул `niz.h` написати програм за рад са матрицом реалних
+
+```{questionnote}
+Користећи модул `niz.h` написати програм за рад са матрицом реалних
 бројева. Креирати мени за избор функције. У случају да се захтева да унета
 матрица мора да буде квадратна (функције за рад са дијагоналама), а број редова
 се разликује од броја колона, исписати поруку: „Матрица није квадратна. Број
 редова и колона мора бити исти.“ За проверу да ли је матрица квадратна
-користити функцију `provera(r,k)` која враћа логичку повратну вредност, где су
+користити функцију `provera(r, k)` која враћа логичку повратну вредност, где су
 параметри број редова односно колона.
+```
 
 На Петљи можете решавати задатке из Методичке збирке задатака из основа
 програмирања, део Матрице, који се налазе на линку

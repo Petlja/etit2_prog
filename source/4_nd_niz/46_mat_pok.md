@@ -5,7 +5,7 @@
 
 ## Динамичко формирање матрице
 
-Посматрајмо један дводимензионални низ `А` од целих бројева, димензија 3х4.
+Посматрајмо један дводимензионални низ `А` од целих бројева, димензија 3 х 4.
 
 ```{image} images/image19.png
 :width: 500
@@ -25,34 +25,37 @@
 :align: center
 ```
 
-Задатак: Формирати целобројну матрицу `А` од 4 врсте и 10 колона (матрица се
+```{questionnote}
+Формирати целобројну матрицу `А` од 4 врсте и 10 колона (матрица се
 састоји од узастопних бројева) помоћу 4 независна низа од по 10 компоненти у
 динамичкој зони меморије.
+```
 
 ```{image} images/image21.png
 :width: 500
 :align: center
 ```
 
-Решење:
+**Решење**:
 
 ```c
 #include<stdio.h>
 #include<stdlib.h>
-main() {
-	int **A, i, j; //matricu deklarisemo kao pokazivac na pokazivac **a
-	A=(int**)calloc(4,sizeof(int*));//pokazivacu a se dodeljuje prostor za smestanje niza od 4 pokazivaca
-	for(i=0; i<4; i++) 
-	{
-		*(A+i) = (int*)calloc(10, sizeof(int*));//za svaku vrstu se rezervise prostor za 10 elemenata te vrste
-		for(j=0; j<10; j++) 
-		{
-			*(*(A+i)+j)=10*i+j;
-			printf("%5d", *(*(A+i)+j));
-		}
-		printf("\n");
-	}
-	free(A);
+int main(void) {
+    int **A, i, j; //matricu deklarisemo kao pokazivac na pokazivac **a
+    A = (int**)calloc(4,sizeof(int*));//pokazivacu a se dodeljuje prostor za smestanje niza od 4 pokazivaca
+    for(i = 0; i < 4; i++) 
+    {
+        *(A+i) = (int*)calloc(10, sizeof(int*));//za svaku vrstu se rezervise prostor za 10 elemenata te vrste
+        for(j = 0; j < 10; j++) 
+        {
+            *(*(A + i) +j) = 10 * i + j;
+            printf("%5d", *(*(A + i) +j));
+        }
+        printf("\n");
+    }
+    free(A);
+    return 0;
 }
 ```
 
@@ -65,115 +68,118 @@ main() {
    30   31   32   33   34   35   36   37   38   39
 ```
 
-Задатак: Формирати целобројну матрицу `А` од `r` редова (врста) и `k` колона
+```{questionnote}
+Формирати целобројну матрицу `А` од `r` редова (врста) и `k` колона
 (матрица се састоји од узастопних бројева) помоћу `r` независних низова од по
 `k` компоненти у динамичкој зони меморије.
+```
 
-Решење:
+**Решење**:
 
 ```c
 #include<stdio.h>
 #include<stdlib.h>
-main() {
-	int **A, i, j,r,k; //matricu deklarisemo kao pokazivac na pokazivac **a
-	printf("Broj redova " ); 
-	scanf("%d", &r);
-	printf("Broj kolona " );
-	scanf("%d", &k);
-
-	A=(int**)calloc(r,sizeof(int*));//pokazivacu a se dodeljuje prostor za smestanje niza od r pokazivaca
-	for(i=0; i<r; i++) 
-	{
-		*(A+i) = (int*)calloc(k, sizeof(int*));//za svaku vrstu se rezervise prostor za k elemenata te vrste
-		for(j=0; j<k; j++) 
-		{
-			*(*(A+i)+j)=k*i+j;
-			printf("%5d", *(*(A+i)+j));
-		}
-		printf("\n");
-	}
-	free(A);
+int main(void) {
+    int **A, i, j, r, k; //matricu deklarisemo kao pokazivac na pokazivac **a
+    printf("Broj redova: "); 
+    scanf("%d", &r);
+    printf("Broj kolona: ");
+    scanf("%d", &k);
+    A = (int**)calloc(r,sizeof(int*));//pokazivacu a se dodeljuje prostor za smestanje niza od r pokazivaca
+    for (i = 0; i < r; i++) 
+    {
+    *(A + i) = (int*)calloc(k, sizeof(int*));//za svaku vrstu se rezervise prostor za k elemenata te vrste
+        for (j = 0; j < k; j++) 
+        {
+            *(*(A + i) + j) = k * i + j;
+            printf("%5d", *(*(A + i) + j));
+        }
+        printf("\n");
+    }
+    free(A);
+    return 0;
 }
 ```
 
 Излаз:
 
 ```text
-Broj redova 4
-Broj kolona 6
+Broj redova: 4
+Broj kolona: 6
     0    1    2    3    4    5
     6    7    8    9   10   11
    12   13   14   15   16   17
    18   19   20   21   22   23
 ```
 
-Задатак: Формирати целобројну матрицу `А` од `r` редова (врста) и `k` колона
+```{questionnote}
+Формирати целобројну матрицу `А` од `r` редова (врста) и `k` колона
 (матрица се састоји од узастопних бројева) помоћу `r` независних низова од по
 `k` компоненти у динамичкој зони меморије. На излазу исписати изглед матрице и
 адресе одговарајућих елемената.
+```
 
-Решење:
+**Решење**:
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
-main()
+int main(void)
 {
-	int **A, i, j,r,k; //matricu deklarisemo kao pokazivac na pokazivac **a
-	printf("Broj redova " ); 
-	scanf("%d", &r);
-	printf("Broj kolona " );
-	scanf("%d", &k);
-
-	A=(int**)calloc(r,sizeof(int*));//pokazivacu a se dodeljuje prostor za smestanje niza od r pokazivaca
-	for(i=0; i<r; i++) 
-	{
-		*(A+i) = (int*)calloc(k, sizeof(int*));//za svaku vrstu se rezervise prostor za k elemenata te vrste
-		for(j=0; j<k; j++) 
-		{
-			*(*(A+i)+j)=k*i+j;
-			printf("%5d", *(*(A+i)+j));
-		}
-		printf("\n");
-	}
- 	printf("Adrese elemenata matrice su:\n");
-    for(i=0;i<r;i++)
-	{
-    	for(j=0;j<k;j++)
-		{
-			printf("A[%d]%d]=%x\n",i,j,(*(A+i)+j));
-		}
-     	printf ("\n");
-	}
-    for(int i=0;i<r;i++)
-    free(*(A+i));//oslobadja se rezervisan memorijski prostor za svaki red
+    int **A, i, j, r, k; //matricu deklarisemo kao pokazivac na pokazivac **a
+    printf("Broj redova: "); 
+    scanf("%d", &r);
+    printf("Broj kolona: ");
+    scanf("%d", &k);
+    A = (int**)calloc(r,sizeof(int*));//pokazivacu a se dodeljuje prostor za smestanje niza od r pokazivaca
+    for (i = 0; i < r; i++) 
+    {
+        *(A + i) = (int*)calloc(k, sizeof(int*));//za svaku vrstu se rezervise prostor za k elemenata te vrste
+        for (j = 0; j < k; j++) 
+        {
+            *(*(A + i) + j) = k * i + j;
+            printf("%5d", *(*(A + i) + j));
+        }
+        printf("\n");
+    }
+     printf("\nAdrese elemenata matrice su:\n");
+    for (i = 0; i < r; i++)
+    {
+        for(j = 0; j < k; j++)
+            printf("A[%d][%d] = %x\n", i, j, (*(A + i) + j));
+        printf ("\n");
+    }
+    for (int i = 0; i < r; i++)
+    free(*(A + i));//oslobadja se rezervisan memorijski prostor za svaki red
     free(A);//oslobadja se rezervisan memorijski prostor za prvi elemenat matrice
+    return 0;
 }
 ```
 
 Излаз:
 
 ```text
-Broj redova 3
-Broj kolona 4
+Broj redova: 3
+Broj kolona: 4
     0    1    2    3
     4    5    6    7
     8    9   10   11
+
 Adrese elemenata matrice su:
-A[0]0]=b31440
-A[0]1]=b31444
-A[0]2]=b31448
-A[0]3]=b3144c
+A[0][0] = b31440
+A[0][1] = b31444
+A[0][2] = b31448
+A[0][3] = b3144c
 
-A[1]0]=b31470
-A[1]1]=b31474
-A[1]2]=b31478
-A[1]3]=b3147c
+A[1][0] = b31470
+A[1][1] = b31474
+A[1][2] = b31478
+A[1][3] = b3147c
 
-A[2]0]=b314a0
-A[2]1]=b314a4
-A[2]2]=b314a8
-A[2]3]=b314ac
+A[2][0] = b314a0
+A[2][1] = b314a4
+A[2][2] = b314a8
+A[2][3] = b314ac
 ```
 
 ## Зупчаста матрица
@@ -196,64 +202,68 @@ A[2]3]=b314ac
 односно број колона, а од позиције 2 (индекс 2) до позиције `k+1` (индекс `k`)
 памтимо саме елементе тог реда.
 
-Задатак: Написати програм за унос зупчасте матрице `А`, а затим приказати унету
+```{questionnote}
+Написати програм за унос зупчасте матрице `А`, а затим приказати унету
 матрицу.
-  
-Решење:
+```  
+
+**Решење**:
 
 ```c
 #include<stdio.h>
 #include<stdlib.h>
-main() 
+int main(void) 
 {
-	int **A, i, j, r, k; //matricu deklarisemo kao pokazivac na pokazivac **a
-	printf("Broj redova " ); 
-	scanf("%d", &r);
-	A = (int**)calloc(r, sizeof(int*)); //pokazivacu A se dodeljuje prostor za smestanje niza od r pokazivaca
-	for(i=0; i<r; i++) 
-	{
-	printf("Broj kolona u %d. redu ", i+1 );
-	scanf("%d",&k);
-	*(A+i) = (int*)calloc(k+1, sizeof(int*));//za svaki red se rezervise prostor za k elemenata tog reda +1 
-	A[i][0] = k; //na pocetnoj poziciji reda pamtimo duzinu tog reda
-	printf("Unesi elemente %d. red\n",i+1);
-		for(j=1; j<k+1; j++) 
-		{	
-			printf("A[%d][%d]=",i,j);
-			scanf("%d",&A[i][j]);
-		}
-	}
-	printf("Uneli ste matricu: \n");
-	for(i=0; i<r; i++)
-	{
-		k=A[i][0];// citamo broj kolona u i-tom redu
-		for(j=1; j<k+1; j++) 
-		{	
-			printf("%6d",A[i][j]);
-		}
-	printf("\n");
-	}
+    int **A, i, j, r, k; //matricu deklarisemo kao pokazivac na pokazivac **a
+    printf("Broj redova: " ); 
+    scanf("%d", &r);
+    A = (int**)calloc(r, sizeof(int*)); //pokazivacu A se dodeljuje prostor za smestanje niza od r pokazivaca
+    for(i = 0; i < r; i++) 
+    {
+    printf("\nBroj kolona u %d. redu: ", i + 1);
+    scanf("%d",&k);
+    *(A + i) = (int*)calloc(k + 1, sizeof(int*));//za svaki red se rezervise prostor za k elemenata tog reda +1 
+    A[i][0] = k; //na pocetnoj poziciji reda pamtimo duzinu tog reda
+    printf("Unesite elemente %d. reda:\n",i + 1);
+        for(j = 1; j < k + 1; j++) 
+        {	
+            printf("A[%d][%d] = ", i, j);
+            scanf("%d", &A[i][j]);
+        }
+    }
+    printf("Uneli ste matricu: \n");
+    for(i = 0; i < r; i++)
+    {
+        k = A[i][0];// citamo broj kolona u i-tom redu
+        for(j = 1; j < k + 1; j++) 	
+            printf("%6d", A[i][j]);
+    printf("\n");
+    }
+    return 0;
 }
 ```
 
 Излаз:
 
 ```text
-Broj redova 3
-Broj kolona u 1. redu 3
-Unesi elemente 1. red
-A[0][1]=1
-A[0][2]=2
-A[0][3]=3
-Broj kolona u 2. redu 4
-Unesi elemente 2. red
-A[1][1]=4
-A[1][2]=5
-A[1][3]=6
-A[1][4]=7
-Broj kolona u 3. redu 1
-Unesi elemente 3. red
-A[2][1]=8
+Broj redova: 3
+
+Broj kolona u 1. redu: 3
+Unesi elemente 1. reda:
+A[0][1] = 1
+A[0][2] = 2
+A[0][3] = 3
+
+Broj kolona u 2. redu: 4
+Unesi elemente 2. reda:
+A[1][1] = 4
+A[1][2] = 5
+A[1][3] = 6
+A[1][4] = 7
+
+Broj kolona u 3. redu: 1
+Unesi elemente 3. reda:
+A[2][1] = 8
 Uneli ste matricu:
      1     2     3
      4     5     6     7
@@ -262,21 +272,20 @@ Uneli ste matricu:
 
 Да видимо шта смо научили. Решите квиз.
 
-Питање: У програму написаном на програмском језику C дата је декларација
+```{mchoice}
+:answer1: $$\begin{bmatrix} 0&0&2&4\\4&6&7&3\\0&2&1&3\\ \end{bmatrix}$$
+:answer2: $$\begin{bmatrix} 2&4&4&6\\7&3&2&1\\0&0&0&0\\ \end{bmatrix}$$
+:answer3: $$\begin{bmatrix} 2&4&0&0\\4&6&7&3\\2&1&3&0\\ \end{bmatrix}$$
+:answer4: $$\begin{bmatrix} 2&0&0&4\\4&6&7&3\\2&1&0&3\\ \end{bmatrix}$$
+:correct: 3
+
+У програму написаном на програмском језику C дата је декларација
 дводимензионалног низа и његова иницијализација:
 
-```c
-unsigned А[3][4]={{2, 4},{4, 6, 7, 3},{2, 1, 3}};
-```
+`unsigned А[3][4] = {{2, 4}, {4, 6, 7, 3}, {2, 1, 3}};`
 
 Одредити које су исправно додељене вредности иницијализацијом матрице `А`.
-
-1. $$\begin{bmatrix} 0&0&2&4\\4&6&7&3\\0&2&1&3\\ \end{bmatrix}$$
-2. $$\begin{bmatrix} 2&4&4&6\\7&3&2&1\\0&0&0&0\\ \end{bmatrix}$$
-3. $$\begin{bmatrix} 2&4&0&0\\4&6&7&3\\2&1&3&0\\ \end{bmatrix}$$
-4. $$\begin{bmatrix} 2&0&0&4\\4&6&7&3\\2&1&0&3\\ \end{bmatrix}$$
-
-Одговор: Тачан одговор је под 3.
+```
 
 ```{mchoice}
 :answer1: матрица код које је број редова (врста) већи од броја колона 
@@ -289,113 +298,86 @@ unsigned А[3][4]={{2, 4},{4, 6, 7, 3},{2, 1, 3}};
 ```
 
 ```{mchoice}
-:answer1: i+j==n
-:answer2: i+j==n-1
-:answer3: i+j!=n
-:answer4: i+j>n
-:answer5: i+j<n-1
+:answer1: i + j == n
+:answer2: i + j == n - 1
+:answer3: i + j != n
+:answer4: i + j > n
+:answer5: i + j < n - 1
 :correct: 1
 
 За елементе главне дијагонале матрице важи услов…
 ```
 
 ```{mchoice}
-:answer1: i+j==n
-:answer2: i+j<n
-:answer3: i+j!=n-1
-:answer4: i+j>n-1
-:answer5: i+j==n-1
+:answer1: i + j == n
+:answer2: i + j < n
+:answer3: i + j != n - 1
+:answer4: i + j > n - 1
+:answer5: i + j == n - 1
 :correct: 5
 
 За елементе споредне дијагонале матрице важи услов…
 ```
 
 ```{mchoice}
-:answer1: i+j==n
-:answer2: i+j==n-1
-:answer3: i+j!=n
-:answer4: i+j>n
-:answer5: i+j<n-1
+:answer1: i + j == n
+:answer2: i + j == n - 1
+:answer3: i + j != n
+:answer4: i + j > n
+:answer5: i + j < n - 1
 :correct: 4
 
 За елементе троугла изнад главне дијагонале важи услов…
 ```
 
 ```{mchoice}
-:answer1: i+j==n
-:answer2: i+j<n
-:answer3: i+j!=n-1
-:answer4: i+j>n-1
-:answer5: i+j==n-1
+:answer1: i + j == n
+:answer2: i + j < n
+:answer3: i + j != n - 1
+:answer4: i + j > n - 1
+:answer5: i + j == n - 1
 :correct: 2
 
 За елементе троугла испод главне дијагонале важи услов…
 ```
 
 ```{mchoice}
-:answer1: i+j!=n
-:answer2: i+j<n
-:answer3: i+j<n-1
-:answer4: i+j>n-1
-:answer5: i+j==n-1
+:answer1: i + j != n
+:answer2: i + j < n
+:answer3: i + j < n - 1
+:answer4: i + j > n - 1
+:answer5: i + j == n - 1
 :correct: 3
 
 За елементе троугла изнад споредне дијагонале важи услов…
 ```
 
 ```{mchoice}
-:answer1: i+j!=n
-:answer2: i+j<n
-:answer3: i+j<n-1
-:answer4: i+j>n-1
-:answer5: i+j==n-1
+:answer1: i + j != n
+:answer2: i + j < n
+:answer3: i + j < n - 1
+:answer4: i + j > n - 1
+:answer5: i + j == n - 1
 :correct: 4
 
 За елементе троугла испод споредне дијагонале важи услов…
 ```
 
-Питање: Наредбама програмског језика C дата је декларација, а касније у коду и
-иницијализација динамичке матрице:
+```{mchoice}
+:answer1: int a [k][k];
+:answer2: int b [k][m];
+:answer3: int c [k][10];
+:answer4: int x [100][50];
+:answer5: int y [10, 10];
+:correct: 1,3,4
 
-```c
-int **mat;
-```
-
-Који су исправни начини обележавања вредности елемента који се налази у `i`-том
-реду(врсти) и `ј`-тој колони динамичке матрице `mat`:
-
-1. `*( mat[ i ] + j )`
-2. `*( mat + i + j )`
-3. `* mat[ i ] + j`
-4. `*( *(mat + i ) + j )`
-5. `**( mat + i + j )`
-6. `mat[ i ] [ j ]`
-
-Одговор: Исправно су дефинисани изрази под 1, 4 и 6.
-
-Питање: Наредбама програмског језика С дата је декларација једне симболичке
+Наредбама програмског језика С дата је декларација једне симболичке
 константе и једне променљиве:
+`#define k 50 `
 
-```c
-#define k 50 
-int m=100;
-```
+`int m=100;`
 
 Одредити исправно написане наредбе декларације дводимензионалног низа целих
 бројева (матрице):
+```
 
-1. int a [ k ][ k ];
-2. int b [ k ][ m ];
-3. int c [ k ][ 10 ];
-4. int x [100 ][ 50];
-5. int y [10, 10];
-6. int z [ m ][ 10 ];
-
-Одговор: Исправно су дефинисане матрице под бројевима 1, 3 и 4 јер су у
-угластим заградама константе.
-
-Нису исправне дефиниције:
-
-- под 2 јер број колона је променљива,
-- под 5 јер је погрешно дефинисана матрица,
-- под 6 јер број редова није константа.

@@ -176,7 +176,7 @@ int main(void)
     }
     printf("\nUneti niz:\n");
     for (i = 0; i < n; i++)
-        printf("a[%d]=%d\n", i, a[i]);
+        printf("a[%d] = %d\n", i, a[i]);
     for (i = 0, j = n - 1; i < j; i++, j--)
     {
         b = a[i];
@@ -185,7 +185,7 @@ int main(void)
     }
     printf("\nInvertovani niz:\n");
     for (i = 0; i < n; i++)
-        printf("a[%d]=%d\n", i, a[i]);
+        printf("a[%d] = %d\n", i, a[i]);
     return 0;
 }
 ```

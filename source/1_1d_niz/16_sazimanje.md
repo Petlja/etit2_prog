@@ -24,7 +24,7 @@ for (int i = 0; i < n; i++)     // 1
 ```c
 int main(void)
 {
-    int a[6] = {1, 5, 3, 2, 4, 6}, i, j, izbaci, n, k = 0;;
+    int a[6] = {1, 5, 3, 2, 4, 6}, i, j, izbaci, n, k = 0;
     printf("Uneti niz:\n");
     for (i = 0; i < 6; i++)
         printf("a[%d] = %d\n", i, a[i]);
@@ -112,7 +112,7 @@ a[4] = 6
 Пошто је  je ``n = k``, ``n = 5``  на крају је остао низ
 
 ```{image} images/Picture67.png
-:width: 35%
+:width: 220
 :align: center
 ```
 
@@ -149,7 +149,7 @@ int main(void)
         printf("\nU nizu ne postoji element za izbacivanje.");
         printf("\nNiz je ostao nepromenjen.\n");
         for (i = 0; i < n; i++)
-            printf("a[%d]=%d\n", i, a[i]);
+            printf("a[%d] = %d\n", i, a[i]);
     }
     else
     {

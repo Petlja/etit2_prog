@@ -95,7 +95,7 @@ int main(void)
     int a;
     printf("Unesi broj a ");
     scanf("%d", &a);
-    printf("Adresa stvarnog parametra a=%x\n", &a);
+    printf("Adresa stvarnog parametra a = %x\n", &a);
     izmeni(a);
     printf("Vrednost promenljive a posle poziva funkcije izmeni je a = %d\n", a);
 	return 0;
@@ -106,8 +106,8 @@ int main(void)
 
 ```text
 Unesi broj a: 3
-Adresa stvarnog parametra a=62fe1c
-Adresa lokalnog parametra a=62fe1c
+Adresa stvarnog parametra a = 62fe1c
+Adresa lokalnog parametra a = 62fe1c
 a = 100
 ```
 ```{questionnote}
@@ -158,8 +158,8 @@ int main(void)
 ```text
 Unesi broj a: 3
 Unesi broj b: 9
-a= 3
-b= 9
+a = 3
+b = 9
 ```
 
 Примећујемо да се вредности стварних параметара нису промениле. Зашто? Као и у

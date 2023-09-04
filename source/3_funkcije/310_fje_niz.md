@@ -21,8 +21,8 @@
 ```c
 int zbir(int a[], int n)
 {
-    int s = 0,i;
-    for (i = 0;i < n;i++)
+    int s = 0, i;
+    for (i = 0; i < n; i++)
         s = s + a[i];
     return s;
 }
@@ -49,7 +49,7 @@ int zbir(int a[], int n)
 ```c
 main()
 {
-    int a[7] = {1, 2 ,3, 4, 5, 6, 7};
+    int a[7] = {1, 2, 3, 4, 5, 6, 7};
     printf("Suma elemenata niza je %d", zbir(a, 7));
 }
 ```
@@ -163,13 +163,13 @@ void sort(int a[], int n) {
 void unos_niza(int a[20], int n)
 {
     int i;
-    for (i = 0;i < n;i++)
+    for (i = 0; i < n; i++)
         scanf("%d", &a[i]);
 }
 void ispis_niza(int a[], int n)
 {
     int i;
-    for (i = 0;i < n;i++)
+    for (i = 0; i < n; i++)
         printf("%d ", a[i]);
     printf("\n");
 }
@@ -342,14 +342,14 @@ void ispis_unazad(int a[], int n)
 void unos(int a[20], int n)
 {
     int i;
-    for (i = 0;i < n;i++)
+    for (i = 0; i < n; i++)
         scanf("%d", &a[i]);
 }
 
 int min_temp(int a[], int n)
 {
     int min = a[0];
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
         if (a[i] < min)
             min = a[i];
     return min;
@@ -357,9 +357,8 @@ int min_temp(int a[], int n)
 
 int main(void)
 {
-    int n;
+    int n, a[50];
     scanf("%d", &n);
-    int a[n];
     unos(a, n);
     printf("%d", min_temp(a, n));
     return 0;
@@ -456,7 +455,7 @@ int max_masa_index(int a[], int n)
 {
     int br = 0, k;
     int max = a[0];
-    for (int i = 1;i < n;i++)
+    for (int i = 1; i < n; i++)
         if (a[i] > max)
         {
             max = a[i];
@@ -474,7 +473,7 @@ int suma_do_max(int a[], int n)
 {
     int s = 0, j;
     j = max_masa_index(a, n);
-    for (int i = 0; i < j;i++)
+    for (int i = 0; i < j; i++)
         s = s + a[i];
     return s;
 }
@@ -483,7 +482,7 @@ int suma_od_max(int a[], int n)
 {
     int s = 0, j;
     j = max_masa_index(a, n);
-    for (int i = j + 1;i < n;i++)
+    for (int i = j + 1;i < n; i++)
         s = s + a[i];
     return s;
 }
@@ -520,14 +519,14 @@ int main(void)
 void unos(int a[20], int n)
 {
     int i;
-    for (i = 0;i < n;i++)
+    for (i = 0; i < n; i++)
         scanf("%d", &a[i]);
 }
 
 int max_razlika(int a[], int n)
 {
     int max = abs(a[0] - a[1]);
-    for (int i = 1;i < n - 1;i++)
+    for (int i = 1; i < n - 1; i++)
         if (abs(a[i] - a[i + 1]) > max)
             max = abs(a[i] - a[i + 1]);
     return max;

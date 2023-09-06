@@ -10,5 +10,7 @@
 53_matrica_karaktera
 54_ui_karaktera
 55_ui_stringa
-
+56_biblioteke
+57_stringovi_i_funkcije
+58_stringovi_i_pokazivaci
 ```

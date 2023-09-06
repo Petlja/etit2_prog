@@ -41,4 +41,5 @@ III разреду. Курс је такође намењен свима кој�
 3_funkcije/index
 4_nd_niz/index
 5_stringovi/index
+6_strukture/index
 ```

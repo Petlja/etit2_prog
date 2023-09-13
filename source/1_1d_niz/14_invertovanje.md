@@ -69,8 +69,8 @@ a[5] = 1
 Променљива ``b`` нам служи да привремено сачувамо вредност низа коју
 замењујемо другом вредношћу.
 
-```{image} images/Picture41.png
-:width: 70%
+```{image} images/Picture41.svg
+:scale: 30
 :align: center
 ```
 

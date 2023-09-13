@@ -74,13 +74,13 @@ a[5] = 1
 :align: center
 ```
 
-```{image} images/Picture42.png
-:width: 70%
+```{image} images/Picture42.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture43.png
-:width: 70%
+```{image} images/Picture43.svg
+:scale: 30
 :align: center
 ```
 
@@ -123,33 +123,33 @@ int main(void)
 
 Хајде да анализирамо корак по корак шта се дешава кроз циклус.
 
-```{image} images/Picture45.png
-:width: 70%
+```{image} images/Picture45.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture46.png
-:width: 70%
+```{image} images/Picture46.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture47.png
-:width: 70%
+```{image} images/Picture47.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture48.png
-:width: 70%
+```{image} images/Picture48.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture49.png
-:width: 70%
+```{image} images/Picture49.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture50.png
-:width: 70%
+```{image} images/Picture50.svg
+:scale: 30
 :align: center
 ```
 

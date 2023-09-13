@@ -67,43 +67,43 @@ a[4] = 6
 Хајде да анализирамо шта се налази у циклусу означеним бројем **1**. Унели смо да
 се избацује елемент ``izbaci =  2``.
 
-```{image} images/Picture61.png
-:width: 50%
+```{image} images/Picture61.svg
+:scale: 30
 :align: center
 ```
 
 Следећи корак - ``i = i + 1``
 
-```{image} images/Picture62.png
-:width: 50%
+```{image} images/Picture62.svg
+:scale: 30
 :align: center
 ```
 
 Следећи корак - ``i = i + 1``
 
-```{image} images/Picture63.png
-:width: 50%
+```{image} images/Picture63.svg
+:scale: 30
 :align: center
 ```
 
 Следећи корак - ``i = i + 1`` 
 
-```{image} images/Picture64.png
-:width: 50%
+```{image} images/Picture64.svg
+:scale: 30
 :align: center
 ```
 
 Следећи корак - ``i = i + 1``
 
-```{image} images/Picture65.png
-:width: 50%
+```{image} images/Picture65.svg
+:scale: 30
 :align: center
 ```
 
 Следећи корак - ``i = i + 1`` 
 
-```{image} images/Picture66.png
-:width: 50%
+```{image} images/Picture66.svg
+:scale: 30
 :align: center
 ```
 
@@ -111,8 +111,8 @@ a[4] = 6
 
 Пошто је  je ``n = k``, ``n = 5``  на крају је остао низ
 
-```{image} images/Picture67.png
-:width: 220
+```{image} images/Picture67.svg
+:scale: 30
 :align: center
 ```
 

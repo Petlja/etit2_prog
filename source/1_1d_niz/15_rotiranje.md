@@ -73,48 +73,48 @@ for (i = 0; i < mesto; i++)
     }
 ```
 
-```{image} images/Picture52.png
-:width: 70%
+```{image} images/Picture52.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture53.png
-:width: 70%
+```{image} images/Picture53.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture54.png
-:width: 70%
+```{image} images/Picture54.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture55.png
-:width: 70%
+```{image} images/Picture55.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture56.png
-:width: 70%
+```{image} images/Picture56.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture57.png
-:width: 35%
+```{image} images/Picture57.svg
+:scale: 30
 :align: center
 ```
 
 Пробај да направиш још један пролаз на идентичан начин почевши од
 
-```{image} images/Picture58.png
-:width: 70%
+```{image} images/Picture58.svg
+:scale: 30
 :align: center
 ```
 
 Настави анализу до краја као предходно треба на крају да добијеш низ где
 су елементи ротира за два места улево у односу на почетну позицију
 
-```{image} images/Picture59.png
-:width: 35%
+```{image} images/Picture59.svg
+:scale: 30
 :align: center
 ```
 

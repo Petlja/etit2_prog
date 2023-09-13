@@ -67,33 +67,33 @@ a[6] = 6
 Хајде да анализирамо шта се налази у циклусу. Унели смо да се додаје елемент
 ``k = 0`` на позицији ``j = 2``.
 
-```{image} images/Picture69.png
-:width: 300
+```{image} images/Picture69.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture70.png
-:width: 300
+```{image} images/Picture70.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture71.png
-:width: 300
+```{image} images/Picture71.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture72.png
-:width: 300
+```{image} images/Picture72.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture73.png
-:width: 300
+```{image} images/Picture73.svg
+:scale: 30
 :align: center
 ```
 
-```{image} images/Picture74.png
-:width: 330
+```{image} images/Picture74.svg
+:scale: 30
 :align: center
 ```
 

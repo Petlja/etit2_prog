@@ -50,8 +50,8 @@
 
 Дефинисали смо један неуређени низ *a* од *n* елемената:
 
-```{image} images/Picture1.png
-:width: 400
+```{image} images/Picture1.svg
+:scale: 30
 :align: center
 ```
 
@@ -201,8 +201,8 @@ Pronadjeno je 2 elemenata, a poslednji je na 4. mestu, odnosno sa indeksom 3.
 
 Посматрајмо један уређен низ.
 
-```{image} images/Picture2.png
-:width: 400
+```{image} images/Picture2.svg
+:scale: 30
 :align: center
 ```
 
@@ -334,8 +334,8 @@ Pronadjen je element na 2. mestu, odnosno sa indeksom 1.
 
 a[10]={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Тражимо на пример вредност ``t = 2``.
 
-```{image} images/Picture3.png
-:width: 400
+```{image} images/Picture3.svg
+:scale: 30
 :align: center
 ```
 
@@ -351,8 +351,8 @@ a[10]={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Тражимо на пример вред
 
 С обзиром да је у питању целобројно дељење индекс елемента на средини је ``srednji = 4``.
 
-```{image} images/Picture4.png
-:width: 500
+```{image} images/Picture4.svg
+:scale: 30
 :align: center
 ```
 
@@ -377,8 +377,8 @@ a[10]={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Тражимо на пример вред
 Рачунамо $srednji = \frac{donji+gornji} {2}$.  У нашем случају $srednji = \frac{0+3} {2}$. Као и  у предходном
 случају, у питању целобројно дељење и индекс елемента на средини је ``srednji = 1``.
 
-```{image} images/Picture5.png
-:width: 350
+```{image} images/Picture5.svg
+:scale: 30
 :align: center
 ```
 
@@ -479,7 +479,7 @@ a[7] = 8
 a[8] = 9
 a[9] = 11
 a[10] = 23
-a[11] = 45
+a[11] = 30
 a[12] = 46
 a[13] = 78
 a[14] = 99

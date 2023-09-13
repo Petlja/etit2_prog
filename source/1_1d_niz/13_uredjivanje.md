@@ -87,8 +87,8 @@ a[4] = 1
 
 Посматрајмо корак по корак како се мењају вредности ``i``  и ``j``
 
-```{image} images/Picture7.png
-:width: 250
+```{image} images/Picture7.svg
+:scale: 30
 :align: center
 ```
 
@@ -97,8 +97,8 @@ a[4] = 1
 У циклусу  означеним са **2** је ``j = 1`` услов ``ј < 5`` тачан и проверава се услов означен
 са **3** којим се врши замена елемената са индексом 0 и 1.
 
-```{image} images/Picture8.png
-:width: 550
+```{image} images/Picture8.svg
+:scale: 30
 :align: center
 ```
 
@@ -106,24 +106,24 @@ a[4] = 1
 ``j = 2`` - услов ``ј < 5`` тачан и проверава се услов означен са **3**, којим се врши замена
 елемената са индексом 0 и 2.
 
-```{image} images/Picture9.png
-:width: 600
+```{image} images/Picture9.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу  означеним са **1** се ништа не мења док је у циклусу означеним са **2**,
 ``j = 3`` - услов ``ј < 5`` тачан и проверава се услов означен са **3**.
 
-```{image} images/Picture10.png
-:width: 300
+```{image} images/Picture10.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу  означеним са **1** се ништа не мења док је у циклусу означеним са **2**,
 ``j = 4`` - услов ``ј < 5`` тачан и проверава се услов означен са **3**.
 
-```{image} images/Picture11.png
-:width: 300
+```{image} images/Picture11.svg
+:scale: 30
 :align: center
 ```
 
@@ -137,24 +137,24 @@ a[4] = 1
 
 У циклусу **1** ``i = 1``, услов ``i < 4`` је тачан прелазимо у циклус **2**. У њему је ``j = 2`` - услов ``ј < 5`` тачан и проверава се услов **3**, којим се врши замена елемената са индексом 1 и 2.
 
-```{image} images/Picture12.png
-:width: 600
+```{image} images/Picture12.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1** се ништа не мења док је у циклусу **2**, ``j = 3`` - услов ``ј < 5`` тачан и проверава
 се услов **3**.
 
-```{image} images/Picture13.png
-:width: 300
+```{image} images/Picture13.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1** се ништа не мења док је у циклусу **2**, ``j = 4`` - услов ``ј < 5`` тачан и проверава
 се услов **3**.
 
-```{image} images/Picture14.png
-:width: 300
+```{image} images/Picture14.svg
+:scale: 30
 :align: center
 ```
 
@@ -164,15 +164,15 @@ a[4] = 1
 
 У циклусу **1** ``i = 2``, услов ``i < 4`` је тачан прелазимо у циклус **2**. У њему је ``j = 3`` - услов ``ј < 5`` тачан и проверава се услов **3**.
 
-```{image} images/Picture15.png
-:width: 300
+```{image} images/Picture15.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу  **1**  се ништа не мења док је у циклусу **2**, ``j = 4`` - услов ``ј < 5`` тачан и проверава се услов **3**, којим се врши замена елемената са индексом **2** и **4**.
 
-```{image} images/Picture16.png
-:width: 600
+```{image} images/Picture16.svg
+:scale: 30
 :align: center
 ```
 
@@ -184,8 +184,8 @@ a[4] = 1
 
 У циклусу **1** ``i = 3``, услов ``i < 4`` је тачан прелазимо у циклус **2**. У њему је ``j = 4`` - услов ``ј < 5`` тачан и проверава се услов **3**, којим се врши замена елемената са индексом **3** и **4**.
 
-```{image} images/Picture17.png
-:width: 600
+```{image} images/Picture17.svg
+:scale: 30
 :align: center
 ```
 
@@ -323,8 +323,8 @@ a[4] = 5
 
 Посматрајмо корак по корак како се мењају вредности ``i`` и ``j``.
 
-```{image} images/Picture19.png
-:width: 300
+```{image} images/Picture7.svg
+:scale: 30
 :align: center
 ```
 
@@ -332,36 +332,36 @@ a[4] = 5
 означен са **2**. У њему је ``j = 0`` услов ``j >= 0 && a[0] > a[1]`` није тачан и циклус озмачен
 са **2** се прекида и контрола се враћа циклусу **1**. Редослед елемената остаје непромењен.
 
-```{image} images/Picture20.png
-:width: 300
+```{image} images/Picture7.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1**  ``i = 2`` услов ``i < 5`` је тачан прелазимо у циклус **2**. У њему је ``j = 1`` услов ``j >= 0 && a[1] > a[2]`` није тачан и циклус **2** се прекида и контрола се враћа циклусу **1**. Редослед елемената остаје непромењен.
 
-```{image} images/Picture21.png
-:width: 300
+```{image} images/Picture7.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу  **1**  ``i = 3`` услов ``i < 5`` је тачан прелазимо у циклус **2**. У њему је ``j = 2`` услов ``j >= 0 && a[2] > a[3]`` је тачан и врши се замена елемената са индексима 2 и 3.
 
-```{image} images/Picture22.png
-:width: 600
+```{image} images/Picture22.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1** се ништа не мења док у циклусу **2** ``j = 1`` услов ``j >=0 && a[2] > a[3]`` је тачан и врши се замена елемената са индексима 1 и 2.
 
-```{image} images/Picture23.png
-:width: 600
+```{image} images/Picture23.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1** се ништа не мења док у циклусу **2**  ``j = 0`` услов `` j >= 0 && a[2] > a[3] је тачан и врши се замена елемената са индексима 0 и 1.
 
-```{image} images/Picture24.png
-:width: 600
+```{image} images/Picture24.svg
+:scale: 30
 :align: center
 ```
 
@@ -369,30 +369,30 @@ a[4] = 5
 
 У циклусу **1** ``i = 4`` услов ``i < 5`` је тачан прелазимо у циклус **2**. У њему је ``j = 3`` услов ``j >= 0 && a[3] > a[4]`` је тачан и врши се замена елемената са индексима 3 и 4.
 
-```{image} images/Picture25.png
-:width: 600
+```{image} images/Picture25.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1** се ништа не мења док у циклусу **2**  ``j = 2`` услов ``j >= 0 && a[2] > a[3]`` је тачан и врши се замена елемената са индексима 2 и 3.
 
-```{image} images/Picture26.png
-:width: 600
+```{image} images/Picture26.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1** се ништа не мења док у циклусу **2**  ``j = 1`` услов ``j >= 0 && a[1] > a[2]`` није тачан циклус **2** се прекида и контрола се враћа циклусу **1**. Редослед елемената остаје непромењен.
 
-```{image} images/Picture27.png
-:width: 300
+```{image} images/Picture27.svg
+:scale: 30
 :align: center
 ```
 
 У циклусу **1** ``i = 5`` услов ``i < 5`` није тачан и он се прекида. Приметићемо да је низ уређен у
 растућем поретку.
 
-```{image} images/Picture28.png
-:width: 300
+```{image} images/Picture27.svg
+:scale: 30
 :align: center
 ```
 
@@ -518,29 +518,29 @@ a[4] = 5
 
 **Корак 1**: Поредимо да ли је ``a[0] > a[1]``. Видимо да није и низ остаје непромењен.
 
-```{image} images/Picture30.png
-:width: 300
+```{image} images/Picture7.svg
+:scale: 30
 :align: center
 ```
 
 **Корак 2**: Поредимо да ли је ``a[1] > a[2]``. Видимо да није и низ остаје непромењен.
 
-```{image} images/Picture31.png
-:width: 300
+```{image} images/Picture7.svg
+:scale: 30
 :align: center
 ```
 
 **Корак 3**: Поредимо да ли је ``a[2] > a[3]``. Видимо да јесте и та два елемента замењују места
 
-```{image} images/Picture32.png
-:width: 600
+```{image} images/Picture32.svg
+:scale: 30
 :align: center
 ```
 
 Корак **4**: Поредимо да ли је ``a[3] > a[4]``. Видимо да јесте и та два елемента замењују места
 
-```{image} images/Picture33.png
-:width: 600
+```{image} images/Picture33.svg
+:scale: 30
 :align: center
 ```
 
@@ -552,22 +552,22 @@ a[4] = 5
 
 **Корак 1**: Поредимо да ли је ``a[0] > a[1]``. Видимо да није и низ остаје непромењен.
 
-```{image} images/Picture34.png
-:width: 300
+```{image} images/Picture34.svg
+:scale: 30
 :align: center
 ```
 
 **Корак 2**: Поредимо да ли је ``a[1] > a[2]``. Видимо да јесте и та два елемента замењују места.
 
-```{image} images/Picture35.png
-:width: 600
+```{image} images/Picture35.svg
+:scale: 30
 :align: center
 ```
 
 **Корак 3**: Поредимо да ли је ``a[2] > a[3]``. Видимо да јесте и та два елемента замењују места.
 
-```{image} images/Picture36.png
-:width: 600
+```{image} images/Picture36.svg
+:scale: 30
 :align: center
 ```
 
@@ -579,15 +579,15 @@ a[4] = 5
 
 **Корак 1**: Поредимо да ли је ``a[0] > a[1]``. Видимо да јесте и та два елемента замењују места.
 
-```{image} images/Picture37.png
-:width: 600
+```{image} images/Picture37.svg
+:scale: 30
 :align: center
 ```
 
 **Корак 2**: Поредимо да ли је ``a[1] > a[2]``. Видимо да није и низ остаје непромењен.
 
-```{image} images/Picture38.png
-:width: 300
+```{image} images/Picture27.svg
+:scale: 30
 :align: center
 ```
 
@@ -601,8 +601,8 @@ a[4] = 5
 Ово значи да смо дошли до краја. Оба циклуса су се прекинула и сви су елементи
 на свом месту.
 
-```{image} images/Picture39.png
-:width: 300
+```{image} images/Picture27.svg
+:scale: 30
 :align: center
 ```
 

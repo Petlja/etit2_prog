@@ -43,4 +43,5 @@ III разреду. Курс је такође намењен свима кој�
 5_stringovi/index
 6_strukture/index
 7_datoteke/index
+8_dinamicke_strukture/index
 ```

@@ -95,7 +95,7 @@ Fajl ima 74 karaktera.
 
 ```c
 #include<stdio.h>
-   int main(void)
+int main(void)
 {
     FILE* ulaz;
     ulaz = fopen("datoteka.txt", "r");

@@ -15,5 +15,5 @@ stdin, stderr, stdout.
 На пример, следећа два израза су идентична: 
 
 ```c
-printf(“Pozdrav!”);  fprintf(stdout, “Pozdrav!”);  
+printf("Pozdrav!");  fprintf(stdout, "Pozdrav!");  
 ```

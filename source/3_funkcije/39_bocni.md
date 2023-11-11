@@ -9,8 +9,8 @@
 
 Дакле, основна идеја јесте да се у функцију проследи адреса стварне променљиве. Тако
 ћемо на индиректан начин, користећи знање које смо раније стекли о показивачима, приступити
-стварним параметрима и мењати њихове вредности. Обрати пажњу да ће функције које стварају
-бочне ефекте бити типа `void`.
+стварним параметрима и мењати њихове вредности. Функције које стварају бочне ефекте су углавном 
+ типа `void`, као у наредним примерима.
 
 Ово ћемо најлакше схватити ако анализирамо следеће задатке:
 
@@ -64,12 +64,12 @@ Vrednost snage P[W] = 7097.25
 Улазни параметри `R` и `I` се у функцију преносе помоћу вредности.
 
 Параметри `*pU` и `*pP` су показивачи у које смештамо адресе променљивих `U` и `P`.
-Префикс `p` користимо јер су у питању показивачке променљиве. Пошто су променљиве
-`U` и `P` у главном програму, добијене вредности напона и снаге смештаће се у њих.
+Префикс `p` користимо јер су у питању показивачке променљиве. Променљиве `U` и `P` 
+су дефинисане у главном програму, тако да добијене вредности напона и снаге смештамо у њих.
 
 Пренос параметара у функцију `napon_snaga`:
 
-`int main(void)    napon_snaga(float R, float I, float *pU, float *pP)`
+                               main()      napon_snaga(float R, float I, float *pU, float *pP)
 
 ```{image} images/Picture14.png
 :width: 70%
@@ -94,7 +94,7 @@ Vrednost snage P[W] = 7097.25
 
 Вредности параметара U и P представљају бочне ефекте функције napon_snaga:
 
-`main()           napon_snaga(float R, float I, float *pU, float *pP)`
+                               main()      napon_snaga(float R, float I, float *pU, float *pP)
 
 ```{image} images/Picture15.png
 :width: 70%
@@ -143,7 +143,7 @@ Proizvod max i min je: 140
 
 Пренос параметара у функцију `max_min`:
 
-`main()           max_min(int a, int, b, int c, int *max, int *min)`
+                              main()        max_min(int a, int, b, int c, int *max, int *min)
 
 ```{image} images/Picture16.png
 :width: 70%
@@ -164,7 +164,7 @@ Proizvod max i min je: 140
 
 Вредности променљивих после наредбе `*max = a` и `*min = a`:
 
-`main()           max_min(int a, int, b, int c, int *max, int *min)`
+                              main()        max_min(int a, int, b, int c, int *max, int *min)
 
 ```{image} images/Picture17.png
 :width: 70%
@@ -179,7 +179,7 @@ Proizvod max i min je: 140
 
 Вредности променљивих после наредбе `*min = b`:
 
-`main()           max_min(int a, int, b, int c, int *max, int *min)`
+                              main()        max_min(int a, int, b, int c, int *max, int *min)
 
 ```{image} images/Picture18.png
 :width: 70%
@@ -191,7 +191,7 @@ Proizvod max i min je: 140
 
 Вредности променљивих на крају извршења програма:
 
-`main()           max_min(int a, int, b, int c, int *max, int *min)`
+                              main()        max_min(int a, int, b, int c, int *max, int *min)
 
 ```{image} images/Picture19.png
 :width: 70%
@@ -207,9 +207,8 @@ Proizvod max i min je: 140
 параметри у њој адресе променљивих у које се смештају учитане вредности. Погледајмо
 кôд:
 
-`int a, b;
-scanf("%d%d", &a, &b);`
-
+`int a, b;`
+`scanf("%d%d", &a, &b);`
 У првом реду резервисали смо меморијске локације за променљиве `а` и `b`.
 У наредби `scanf` навели смо адресе ових променљивих у које смештамо унете вредности. 
 ```

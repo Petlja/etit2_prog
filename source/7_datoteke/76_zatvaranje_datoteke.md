@@ -3,7 +3,7 @@
 Затварање датотеке врши се функцијом fclose чији је општи облик: 
 
 ```c
-int fclose(ime_pokazivaca)
+int fclose(ime_pokazivaca);
 ```
 
 `ime_pokazivaca` je дефинисани показивач на датотеку која се затвара и који је дефинисан још на почетку програма. 
@@ -13,5 +13,5 @@ int fclose(ime_pokazivaca)
 
 `fclose(izlaz)`, односно
 
-`fclose(ulaz)`
+`fclose(ulaz)`;
 

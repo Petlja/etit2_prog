@@ -201,7 +201,7 @@ Pronadjeno je 2 elemenata, a poslednji je na 4. mestu, odnosno sa indeksom 3.
 
 Посматрајмо један уређен низ.
 
-```{image} images/Picture2.svg
+```{image} images/Picture1.svg
 :scale: 30
 :align: center
 ```

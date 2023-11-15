@@ -359,8 +359,8 @@
        font-size="46"
        transform="matrix(1 0 0 1 2127.12 1058)"
        id="text115">= 2</text><text
-       font-family="Calibri,Calibri_MSFontService,sans-serif"
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
-       font-size="46"
-       transform="matrix(1 0 0 1 2441.99 1058)"
-       id="text117">Након ове измене низ а има вредности</text></g></svg>
+       font-size="46px"
+       transform="translate(2441.99,1058)"
+       id="text117">Након ове ротације низ а има вредности</text></g></svg>

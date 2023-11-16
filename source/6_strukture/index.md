@@ -14,5 +14,5 @@
 67_unije
 68_bitovi
 69_nabrajanja
-
+70_kviz
 ```

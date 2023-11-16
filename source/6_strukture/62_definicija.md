@@ -23,11 +23,14 @@ tip polje, polje ... polje;
 одвојити их зарезом. Наравно, можемо их навести и појединачно.
 
 Битан је редослед навођења поља у оквиру структуре.
-
+С обзиром да структура није тип податка при дефинисању идентификатора мора се испред навести struct ime_strukture
 ```text
-struct ime_strukture
+struct ime_strukture str;
 ```
-
+Приступ пољу структурне промењиве врши се навођењем структурног идентификатора затим `.` а након тога идентификатора поља. 
+```text
+str.polje;
+```
 ```{image} images/image1.png
 :width: 600
 :align: center
@@ -96,6 +99,8 @@ typedef struct ime_strukture {
 
 Такође, при дефинисању структурног типа може се написати `ime_strukture`, али и
 не мора.
+
+Као што је претходно речено битан је редослед навођења поља у оквиру структуре.
 
 ```{questionnote}
 Дефинишите структуру `tacka` увођењем новог типа `Tacka` која се састоји
@@ -221,10 +226,13 @@ Uneli ste tacku O(0, 0) i tacku A(1, 1)
 Линијом 5 дефинисали смо структуру `krug` са члановима `r` типа `double` и
 `centar` из структуре `tacka`.
 
+Ових пет линија кода можемо посматрати као део кода у коме се демонстрира примена структуре у структури.
+
+```{questionnote}
 Задатак: Дефинисати структурни тип `Ime` који садржи чланове `ime`, `prezime`
 типа стринг (низ карактера) максималне дужине 20 карактера.
 
-Дефинисати структурни тип `Datum` који садржи чланове `dan`, `mesec` `godina`
+Дефинисати структурни тип `Datum` који садржи чланове `dan`, `mesec`, `godina`
 типа `short int`.
 
 Дефинисати структурни тип `Osoba` који садржи чланове типа `string JMBG`
@@ -233,18 +241,19 @@ Uneli ste tacku O(0, 0) i tacku A(1, 1)
 дужине 30 карактера.
 
 Креирати променљиве `lik1`, `lik2`, `lik3` из структурног типа `Osoba`.
+```
 
 **Решење**:
 
 ```C
 typedef struct {char ime[20], prezime[20];} Ime;
-typedef struct {short int dan, mesec godina;} Datum;
+typedef struct {short int dan, mesec, godina;} Datum;
 typedef struct 
 {
-    char JMBG [14];
+    char JMBG[14];
     Ime osoba;
     Datum datum_rodjenja;
-    char adresa [30];
+    char adresa[30];
 } Osoba;
 Osoba lik1, lik2, lik3; 
 ```

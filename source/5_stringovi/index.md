@@ -13,4 +13,5 @@
 56_biblioteke
 57_stringovi_i_funkcije
 58_stringovi_i_pokazivaci
+59_kviz
 ```

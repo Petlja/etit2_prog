@@ -59,7 +59,7 @@ int palindrom (char n[])
 {
     int i, j;
     for(i = 0, j = strlen(n) - 1; i < j; i++, j--)
-        if(n[i] !=n [j]) 
+        if(n[i] != n[j]) 
             return 0;
     return 1;
 }

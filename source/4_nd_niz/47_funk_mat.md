@@ -12,8 +12,8 @@ void unos_niz(int b[], int n)
     int i;
     for (i = 0; i < n; i++)
     {
-        printf("b[%d] = ",i);
-        scanf("%d", &a[i]);
+        printf("a[%d] = ",i);
+        scanf("%d", &b[i]);
     }
 }
 
@@ -77,7 +77,7 @@ void unos_2d_niz(int B[][50],int n, int m)
     for (i = 0; i < n; i++)
         for (j = 0; j < m; j++)
         {
-            printf("B[%d][%d] = ",i,j);
+            printf("A[%d][%d] = ",i,j);
             scanf("%d", &B[i][j]);
         } 
 }
@@ -138,7 +138,7 @@ void unos_2d_niz(int B[][50],int n, int m)
     for (i = 0; i < n; i++)
         for (j = 0; j < m; j++)
         {
-            printf("B[%d][%d] = ", i, j);
+            printf("A[%d][%d] = ", i, j);
             scanf("%d", &B[i][j]);
         } 
 }
@@ -304,4 +304,4 @@ Zbir elemenata glavne dijagonale je 16.51
 користећи онлајн С или С/С++ компајлер.
 
 За почетак пробајте да решите задатак из збирке који се налази на линку
-[Najniza temperatura](https://petlja.org/biblioteka/r/Zbirka/najmanja_temperatura1).
+[Sortiranje po proseku](https://petlja.org/biblioteka/r/Zbirka/sortiranje_po_proseku).

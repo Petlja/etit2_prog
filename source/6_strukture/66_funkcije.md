@@ -17,17 +17,20 @@
 
 Вредност функције такође може бити типа структуре или показивача на структуру.
 
-Задатак: Дефинишите структурни тип `Tacka` који се састоји од два поља `x`, `y`
+```{questionnote}
+Дефинишите структурни тип `Tacka` који се састоји од два поља `x`, `y`
 типа `int`. Написати следеће функције:
 
-- функцију `kr_tacku` којој су улазни параметри координате тачке `x` и `y` типа
+- функцију `postavi_tacku` којој су улазни параметри координате тачке `x` и `y` типа
 `int` и чија је повратна вредност структурног типа `Tacka`
-- функцију `saberi` којој су улазни параметри две структурне променљиве `Т1` и
-`Т2` типа `Tacka` и чија је повратна вредност структурног типа `Tacka`
-- функцију `ispis_tacka` без повратне вредности која исписује координате тачке
+- функцију `saberi_koordinate` којој су улазни параметри две структурне променљиве `Т1` и
+`Т2` типа `Tacka` и која рачуна збир координата тих тачака по x односно y оси. Повратна вредност функције је структурног типа `Tacka`
+- функцију `ispisi_tacku` без повратне вредности која исписује координате тачке
 у облику `(x,y)`
 
-Решење:
+Написати програм којим се уносе координате две тачке, врши сабирање x и y координата истих и приказује вредост координата нове тачке.
+```
+**Решење:**
 
 ```c
 #include<stdio.h>
@@ -36,7 +39,7 @@ typedef struct {
     int y;
 } Tacka;
 
-Tacka kr_tacku(int x,int y)
+Tacka postavi_tacku(int x,int y)
 {
     Tacka T;
     T.x = x;
@@ -44,7 +47,7 @@ Tacka kr_tacku(int x,int y)
     return T;
 }
 
-Tacka saberi(Tacka T1,Tacka T2)
+Tacka saberi_koordinate(Tacka T1,Tacka T2)
 {
     Tacka T;
     T.x = T1.x + T2.x;
@@ -52,7 +55,7 @@ Tacka saberi(Tacka T1,Tacka T2)
     return T;
 }
 
-void ispis_tacka(Tacka T)
+void ispisi_tacku(Tacka T)
 {
     printf("(%d, %d)", T.x, T.y);
 }
@@ -64,20 +67,20 @@ int main(void)
     scanf("%d", &x);
     printf("Unesi y koordinatu tacke A: ");
     scanf("%d", &y);
-    A = kr_tacku(x, y);
+    A = postavi_tacku(x, y);
     printf("Unesi x koordinatu tacke B: ");
     scanf("%d", &x);
     printf("Unesi y koordinatu tacke B: ");
     scanf("%d", &y);
-    B = kr_tacku(x, y);
+    B = postavi_tacku(x, y);
     printf("\nUneli ste tacke \n");
     printf("A");
-    ispis_tacka(A);
+    ispisi_tacku(A);
     printf("\nB");
-    ispis_tacka(B);
-    C = saberi(A,B);
-    printf("\nNakon sabiranja dobija se tacka C");
-    ispis_tacka(C);
+    ispisi_tacku(B);
+    C = saberi_koordinate(A,B);
+    printf("\nNakon sabiranja x i y koordinata tacaka A i B dobija se tacka C");
+    ispisi_tacku(C);
     return 0;
 }
 ```
@@ -94,20 +97,18 @@ Uneli ste tacke
 A(2, 3)
 B(7, 2)
 
-Nakon sabiranja dobija se tacka C(9,5)
+Nakon sabiranja x i y koordinata tacaka A i B dobija se tacka C(9,5)
 ```
 
 ```{questionnote}
 Дефинишите структурни тип `Tacka` који се састоји од два поља `x`, `y`
 типа `int`. Написати следеће функције:
 
-- функцију `kr_tacku` којој су улазни параметри координате тачке `x` и `y` типа
-`int` и чија је повратна вредност показивач структурног типа `Tacka`
-- функцију `saberi` којој су улазни параметри две структурне показивачке
-променљиве `p1` и `p2` типа `Tacka` и чија је повратна вредност структурног типа
-`Tacka`
-- функцију `ispis_tacka` без повратне вредности која исписује координате тачке у
-облику `(x,y)`
+- функцију `rastojanje` којој су улазни параметри две структурне променљиве `Т1` и
+`Т2` типа `Tacka`. Функција рачуна растојање између тих тачака у координатном систему. Повратна вредност функције је реалног типа.
+- функцију `najbliza` којој су улазни параметри низ тачака структурног типа `Tacka` и број унетих тачака. Повратна вредност функције је показивач на тачаку која је најближа координатном почетку.
+
+Написати програм којим се уноси низ тачака и којим се одређује и приказује тачка  која је најближа координатном почетку NULA(0,0). 
 ```
 
 **Решење**:
@@ -157,7 +158,7 @@ int main(void)
         scanf("%d", &niz[i].y);		
     }
     p = najbliza(niz, n);
-    printf("%d %d je najbliza", p->x, p->y);
+    printf("Tacka sa koordinatama %d i %d je najbliza koordinatnom pocetku", p->x, p->y);
     return 0;
 }
 ```
@@ -174,5 +175,5 @@ Unesi x koordinatu tacke 3: 2
 Unesi y koordinatu tacke 3: 2
 Unesi x koordinatu tacke 4: 3
 Unesi y koordinatu tacke 4: 2
-0 1 je najbliza
+Tacka sa koordinatama 0 i 1 je najbliza koordinatnom pocetku
 ```

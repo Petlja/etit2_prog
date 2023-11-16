@@ -8,7 +8,7 @@
 ```text
 enum ime_nabrajanja { ime_konstante = vrednost, 
                  ....			
-            ime konstante = vrednost};
+            ime_konstante = vrednost};
 ```
 
 `ime_nabrajanja` и `ime_konstante` су идентификатори.
@@ -40,9 +40,9 @@ enum karte{
     TREF
 };
 ```
+- набројиви тип:
 
 ```c
-- набројиви тип:
 typedef enum{
     KARO,
     PIK,
@@ -79,7 +79,7 @@ typedef enum {CRNA, CRVENA, ZUTA, PLAVA, BELA} Boja;
 Boja boja = CRVENA + 2;
 ```
 
-У ствари, `boja` има вредност `PLAVA`.
+Промењивој `boja` била би додељена вредност `PLAVA`.
 
 Могуће је и експлицитно навођење целобројних вредности, на пример:
 

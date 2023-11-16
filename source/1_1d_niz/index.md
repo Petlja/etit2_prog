@@ -12,4 +12,5 @@
 15_rotiranje
 16_sazimanje
 17_prosirivanje
+18_kviz
 ```

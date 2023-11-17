@@ -11,7 +11,7 @@ typedef struct
     int razred;
     int ocene[10];
 } Ucenik; 
-
+...
 Ucenik razred[30];
 ```
 ```{mchoice}
@@ -40,7 +40,7 @@ typedef struct
     char ime[20], prezime[20];
     Predmet predmeti[10];
 } Ucenik;
-
+...
 Ucenik razred[30];
 ```
 
@@ -129,7 +129,7 @@ typedef struct
     char naziv[50];
     Zaposleni radnici[200];
 } Firma;
-
+...
 Firma marketing;
 ```
 
@@ -189,15 +189,15 @@ Piramida *p;
 `double`). 
 ```
 ```{mchoice}
-:answer1: typedef struct ucenik{char ime[30]; char prezime[30]; double prosek;}Ucenik;
-:answer2: typedef struct ucenik{char ime[31]; char prezime[31]; double prosek;}Ucenik;
-:answer3: struct ucenik{char ime[30]; char prezime[30]; double prosek;}Ucenik;
-:answer4: typedef struct ucenik{char ime[31], prezime[31]; double prosek;}Ucenik;
+:answer1: typedef struct ucenik{ char ime[30]; char prezime[30]; double prosek;}Ucenik;
+:answer2: typedef struct ucenik{ char ime[31]; char prezime[31]; double prosek;}Ucenik;
+:answer3: struct ucenik{ char ime[30]; char prezime[30]; double prosek;}Ucenik;
+:answer4: typedef struct ucenik{ char ime[31], prezime[31]; double prosek;}Ucenik;
 :correct: 2,4
 Одредити исправно написане декларације структурног типа `Ucenik`:
 ```
-<!---  OVO NE MOŽE OVAKO DA PROĐE U ODGOVORIMA...
-Питање: У програмском језику C декларисан је структурни тип података `Ucenik`,
+```{questionnote}
+У програмском језику C декларисан је структурни тип података `Ucenik`,
 а затим и променљива типа `Ucenik`:
 
 ```text
@@ -213,7 +213,7 @@ int i; Ucenik djak;
 
 ```{mchoice}
 :answer1: djak.ocene[i]
-:answer2: *djak.razred
+:answer2: \*djak.razred
 :answer3: djak->ime
 :answer4: djak[i].ocene
 :answer5: djak.ime
@@ -221,4 +221,42 @@ int i; Ucenik djak;
 
 Одредити исправне начине приступа пољима структурне променљиве `djak`:
 ```
---->
+
+```{questionnote}
+У програмском језику C декларисан је структурни тип података `Putovanje`,
+а затим и показивачка променљива `p`:
+
+```text
+ typedef struct
+{
+char start[50], cilj[50];
+int predjeno_km;
+}Putovanje; 
+…
+Putovanje *p;
+```
+```{mchoice}
+:answer1: \*p-> predjeno_km
+:answer2: (*p). predjeno_km
+:answer3: \&p-> predjeno_km
+:answer4: p->start
+:answer5: \*(p).start
+:correct: 2,4
+
+Одредити исправне начине приступа пољима структурне променљиве:
+```
+```{questionnote}
+Дата је декларација набројивог типа податка `boja`:
+
+```c
+enum boja {crna, plava=2, zelena, crvena=4, bela=15};
+```
+```{mchoice}
+:answer1: crna = 0, plava = 2, zelena=3, crvena = 4, bela = 15
+:answer2: crna = 1, plava = 2, zelena=3, crvena = 4, bela = 15
+:answer3: crna = 0, plava = 1, zelena=3, crvena = 4, bela = 15
+:correct: 1
+
+Имајући у виду дефиницију набројивог типа податка, одредити вредности које
+имају константе `crna`, `plava`, `zelena`, `crvena` и `bela`.
+```

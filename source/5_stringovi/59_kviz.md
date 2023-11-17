@@ -167,6 +167,162 @@ int main(void)
 
 Шта се исписује на излазу?
 ```
+### Библиотека <ctype.h>
+Провери своје знање. Пробај да решиш квиз.
+```{questionnote}
+Библиотечке функције за рад са знаковима налазе се у библиотеци: 
+```
+```{mchoice}
+:answer1: stdio.h
+:answer2: ctype.h
+:answer3: string.h
+:answer4: stdlib.h
+:correct: 2
+
+Изаберите исправан одговор.
+```
+Пробајте да напишете следеће програме:
+```{questionnote}
+Саставити програм који броји децималне цифре у улазном тексту до ознаке за крај уноса `ЕОF`. Написати програм без коришћења функција за проверу карактера, а затим користећи функцију `isdigit`.
+```
+**Решење 1:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, n=0;
+    printf("Unesi tekst pa enter i ctrl+z na kraju\n" );
+    while((c=getchar()) != EOF)
+        if(c>='0'&& c<='9') 
+            n++;
+    printf("\n Broj cifara: %d.\n", n); 
+return(0);
+}
+
+```
+**Решење 2:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, n=0;
+    printf("Unesi tekst pa enter i ctrl+z na kraju\n" );
+    while((c=getchar()) != EOF)
+        if(isdigit(c)) n++;
+            printf("\n Broj cifara: %d.\n",n); 
+return(0);
+}
+
+```
+Излаз:
+```text
+Unesi tekst pa enter i ctrl+z na kraju
+Ovaj red 123 mora da ima 4 cifre i zavrsen je sa ctrl+z
+^Z 
+Broj cifara: 4.
+```
+```{questionnote}
+Саставити програм за одређивање броја великих слова, малих слова и цифара у улазном тексту. Унос текста се завршава сигналом ЕОF. Написати програм без коришћења функција за проверу карактера, а затим користећи функцију `isdigit`.
+```
+**Решење 1:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, veliko=0, malo=0, cifra=0;
+    while((c = getchar()) != EOF)
+    {
+        if(c >= 'A' && c <= 'Z')
+            veliko++; 
+        if(c >= 'a' && c <= 'z')	
+            malo++; 
+        if(c >= '0' && c <= '9')	
+            cifra++;
+    }
+    printf(" Velika: %d\n", veliko); 
+    printf(" Mala:	%d\n", malo); 
+    printf(" Cifre:	%d\n",cifra); 
+    return(0);
+}
+
+```
+**Решење 2:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, veliko=0, malo=0, cifra=0;
+    while((c = getchar()) != EOF)
+    {
+        veliko = veliko+(isupper(c) != 0);
+        malo = malo+(islower(c) != 0);
+        cifra =cifra+(isdigit(c) != 0);
+    }
+    printf(" Velika: %d\n", veliko);
+    printf(" Mala:	%d\n", malo); 
+    printf(" Cifre:	%d\n", cifra);
+    return(0);
+}
+
+```
+Излаз:
+```text
+Ovaj red sadrzi VELIKA mala slova i cifre 123 i zavrsava se sa ctrl+Z
+^Z
+Velika: 9
+Mala: 43
+Cifre: 3 
+```
+```{questionnote}
+Саставити програм за одређивање броја појављивања слова А у улазном тексту и изразити ту вредност процентуално у односу на све унете знаке. Унос текста се завршава сигналом `ЕОF`.
+```
+**Решење:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, n=0, u=0;
+    float p;
+    while((c = getchar()) != EOF)
+    {
+        u++;
+        if(c=='A')
+            n++;
+    }
+    p=(float)n/u*100;
+    printf("\nUkupno znakova: %d", u); 
+    printf("\nUkupno slovo A: %d", n); 
+    printf("\nU procentima: %.2f%\n", p);
+    return(0);
+}
+
+```
+Излаз:
+```text
+Ovde ima dva velika slova AA
+^Z
+
+Ukupno znakova: 29
+Ukupno slovo A: 2
+U procentima: 6.90
+```
+### Домаћи задатак
+Пробај за домаћи да решиш следеће задатке. Решења задатака можете видети на дну ове странице.
+```{questionnote}
+Домаћи 1. Саставити програм који броји празне знакове (размак, хоризонтални табулатор и нови ред), слова, децималне цифре, као и све знакове улазног текста до ознаке за крај уноса `ЕОF`. Програм написати без коришћења библиотечких функција, а затим са коришћењем библиотечких функција.
+```
+```{questionnote}
+Домаћи 2. Саставити програм за одређивање броја самогласника и сугласника у улазном тексту. Унос текста се завршава сигналом `ЕОF`.
+```
+```{questionnote}
+Домаћи 3. Саставити програм који броји карактере улазног текста до прве децималне цифре. Унос текста се завршава сигналом `EOF`.
+```
+```{questionnote}
+Домаћи 4.Саставити програм који врши конверзију унетих великих слова у мала. Унос текста се завршава сигналом `EOF`.
+```
+```{questionnote}
+Домаћи 5. Написати програм за проналажење најдужег учитаног реда текста. Унос редова се прекида кад се *** учита из реда.
+```
 ### Пробај да одговориш на следећа питања
 
 ```{questionnote}
@@ -494,6 +650,170 @@ int main(void)
 
 Одредити вредност стринга `s3` по извршењу програма 
 ```
+### Решења домаћих задатака
+
+**Домаћи 1 Решење 1:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, nk=0, nr=0, nb=0, ns=0;
+    while((c=getchar()) != EOF)
+    {
+        if((c==' ') || (c=='\t') || (c=='\n'))	
+            nr++;
+        if(c>='0' && c<='9')	
+            nb++;
+        if((c>='a' && c<='z') || (c>='A' && c<='Z'))	
+            ns++; 
+        nk++;
+    }
+     printf("Razmaci: %d\n", nr); 
+    printf("Cifre: %d\n", nb); 
+    printf("Slova: %d\n", ns); 
+    printf("Ukupno: %d\n",nk);
+    return(0);
+}
+
+```
+**Домаћи 1 Решење 2:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, nk=0, nr=0, nb=0, ns=0;
+    while((c=getchar()) != EOF)
+    {
+        if(isspace(c)) 
+            nr++; 
+        if(isdigit(c)) 
+            nb++; 
+        if(isalpha(c)) 
+            ns++; 
+        nk++;
+    }
+	printf(" Razmaci: %d\n", nr); 
+	printf(" Cifre: %d\n", nb); 
+	printf(" Slova: %d\n", ns); 
+	printf(" Ukupno: %d\n",nk);
+    return(0);
+}
+
+```
+Излаз:
+```text
+Broj 1 i        broj 158
+^Z
+Razmaci: 12
+Cifre: 4
+Slova: 9
+Ukupno: 25 
+```
+**Домаћи 2 Решење :**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, sugl=0, samog=0;
+    while((c=getchar()) != EOF)
+    {
+        if((c>='a' && c<='z') || (c>='A' && c<='Z'))
+        if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u'|| c=='A' || c=='E' || c=='I' || c=='O' || c=='U') 
+            samog++;
+        else
+            sugl++;;
+    }
+    printf("Samoglasnika: %d\n", samog); 
+    printf("Suglasnika: %d\n", sugl); 
+    return(0);
+}
+```
+Излаз:
+```text
+Programski jezik C
+^Z
+Samoglasnika: 5
+Suglasnika: 11
+```
+**Домаћи 3 Решење :**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c, n=0;
+    while((c=getchar()) != EOF)
+    {
+        if(isdigit(c)) 
+        break; 
+        n++;
+    }
+    printf("Broj znakova: %d\n", n); 
+    return(0);
+}
+```
+Излаз:
+```text
+Do broja 1 ce prebrojati broj karaktera
+Broj znakova: 9
+```
+**Домаћи 4 Решење 1:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c;
+    while((c=getchar()) != EOF)
+    {
+        if(c >= 'A' && c <= 'Z')
+        c = c -'A' + 'a';
+        putchar(c);
+    }
+    return(0);
+}
+```
+**Домаћи 4 Решење 2:**
+```c
+#include <stdio.h>
+int main(void)
+{
+    int c;
+    while((c=getchar()) != EOF) 
+        putchar(tolower(c));
+    return(0);
+}
+```
+Излаз:
+```text
+ovaj program PrEtVaRa sva VELIKA SLOVA u mala
+ovaj program pretvara sva velika slova u mala
+```
+**Домаћи 5 Решење :**
+```c
+#include <stdio.h>
+int main(void)
+{
+    char red[100], max[100]="";
+    while (1)
+    {
+        gets (red);
+        if (strcmp(red, "***")==0) 
+        break;
+        if (strlen(red)> 
+        strlen(max)) 
+        strcpy (max,red);
+    }
+    puts(max);
+    return(0);
+}
+```
+Излаз:
+```text
+Pronalazi najduzi ucitan red
+I prekida se kada se ucita u novom redu
+***
+I prekida se kada se ucita u novom redu
+```
+
 На Петљи можете решавати задатке из Методичке збирке задатака из основа програмирања, део „Карактери и ниске“ који се налазе на линку
 [Metodicka zbirka zadataka](https://petlja.org/biblioteka/r/Zbirka/04%20Nizovi/02%20niske)
 кристећи он лајн С или С/С++ компајлер. За почетак пробајте да решите задатак

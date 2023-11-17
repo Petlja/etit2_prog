@@ -581,7 +581,7 @@ isdigit (<) Ne
 ```
 Функција `islower(c)` проверава да ли је знак `c` мало слово.
 ```{questionnote}
-Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај мало слово.
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак мало слово.
 ```
 **Решење**
 
@@ -597,8 +597,8 @@ int main(void)
             printf("islower(%c) Da \n", i);
         else
             printf("islower(%c) Ne\n", i);
-    return 0;
     }
+    return 0;
 }
 ```
 Излаз:
@@ -620,3 +620,378 @@ islower(d) Da
 islower(e) Da
 ...
 ```
+Функција `isupper(c)` проверава да ли је знак `c` велико слово.
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак велико слово.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i < 128; i++)
+    {
+        if(isupper(i))
+            printf("isupper(%c) Da \n", i);
+        else
+            printf("isupper(%c) Ne\n", i);
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+isupper(S) Da
+isupper(T) Da
+isupper(U) Da
+isupper(V) Da
+isupper(W) Da
+isupper(X) Da
+isupper(Y) Da
+isupper(Z) Da
+isupper([) Ne
+...
+isupper(_) Ne
+isupper(`) Ne
+isupper(a) Ne
+isupper(b) Ne
+isupper(c) Ne
+...
+```
+Функција `isspace(c)` проверава да ли је знак `c` бели знак.
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак бели знак.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i <128; i++)
+    {
+        if(isspace(i))
+            printf("isspace(%c) Da \n", i);
+        else
+            printf("isspace(%c) Ne\n", i);
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+isspace(∟) Ne
+isspace(↔) Ne
+isspace(▲) Ne
+isspace(▼) Ne
+isspace( ) Da
+isspace(!) Ne
+isspace(") Ne
+isspace(#) Ne
+isspace($) Ne
+isspace(%) Ne
+isspace(&) Ne
+...
+```
+Функција `iscntrl(c)` проверава да ли је знак `c` управљачки или контролни знак.
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак управљачки или контролни знак.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i <128; i++)
+    {
+        if(iscntrl(i))
+            printf("iscntrl(%d-%c) Da \n", i,i);
+        else
+            printf("iscntrl(%d-%c) Ne\n", i,i);
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+scntrl(23-↨) Da
+iscntrl(24-↑) Da
+iscntrl(25-↓) Da
+iscntrl(26-→) Da
+iscntrl(27-←) Da
+iscntrl(28-∟) Da
+iscntrl(29-↔) Da
+iscntrl(30-▲) Da
+iscntrl(31-▼) Da
+iscntrl(32- ) Ne
+iscntrl(33-!) Ne
+iscntrl(34-") Ne
+iscntrl(35-#) Ne
+iscntrl(36-$) Ne
+iscntrl(37-%) Ne
+...
+```
+Функција `ispunct(c)` проверава да ли је знак `c` специјални знак.
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак специјални знак.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i <128; i++)
+    {
+        if(ispunct(i))
+            printf("ispunct(%d-%c) Da \n", i,i);
+        else
+            printf(" ispunct(%d-%c) Ne\n", i,i);
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+ispunct(42-*) Da
+ispunct(43-+) Da
+ispunct(44-,) Da
+ispunct(45--) Da
+ispunct(46-.) Da
+ispunct(47-/) Da
+ispunct(48-0) Ne
+ispunct(49-1) Ne
+ispunct(50-2) Ne
+ispunct(51-3) Ne
+ispunct(52-4) Ne
+ispunct(53-5) Ne
+...
+```
+
+Функција `isxdigit(c)` проверава да ли је знак `c` хексадецимални број.
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак хексадецимални број.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i < 128; i++)
+    {
+        if(isxdigit(i))
+            printf("isxdigit (%c) Da \n", i);
+        else
+            printf("isxdigit (%c) Ne\n", i); 
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+isxdigit (7) Da
+isxdigit (8) Da
+isxdigit (9) Da
+isxdigit (:) Ne
+isxdigit (;) Ne
+...
+isxdigit (?) Ne
+isxdigit (@) Ne
+isxdigit (A) Da
+isxdigit (B) Da
+isxdigit (C) Da
+isxdigit (D) Da
+isxdigit (E) Da
+isxdigit (F) Da
+isxdigit (G) Ne
+isxdigit (H) Ne
+isxdigit (I) Ne
+isxdigit (J) Ne
+...
+```
+Функција `isgraph(c)` проверава да ли је знак `c` штампајући знак, али не и размак
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак штампајући знак, али не и размак.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i < 128; i++)
+    {
+        if(isgraph(i))
+            printf("isgraph(%c) Da \n", i);
+        else
+            printf("isgraph(%c) Ne\n", i); 
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+isgraph(↓) Ne
+isgraph(→) Ne
+isgraph(←) Ne
+isgraph(∟) Ne
+isgraph(↔) Ne
+isgraph(▲) Ne
+isgraph(▼) Ne
+isgraph( ) Ne
+isgraph(!) Da
+isgraph(") Da
+isgraph(#) Da
+isgraph($) Da
+isgraph(%) Da
+isgraph(&) Da
+...
+```
+Функција `isprint(c)` проверава да ли је знак `c` штампајући знак, укључујући и размак
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак штампајући знак, укључујући и размак.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i < 128; i++)
+    {
+        if(isprint(i))
+            printf("isprint(%c) Da \n", i);
+        else
+            printf("isprint(%c) Ne\n", i); 
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+isprint(↓) Ne
+isprint(→) Ne
+isprint(←) Ne
+isprint(∟) Ne
+isprint(↔) Ne
+isprint(▲) Ne
+isprint(▼) Ne
+isprint( ) Da
+isprint(!) Da
+isprint(") Da
+isprint(#) Da
+isprint($) Da
+isprint(%) Da
+isprint(&) Da
+...
+```
+Осим горе наведених функција, за испитивање знакова користе се и функције за конверзију у библиотеци `<ctype.h>`.
+Овде иде слика!!!!!!!!!!!!
+
+Уколико карактер с није слово, повратна вредност је карактер с.
+Функција `tolower(c)` уколико је карактер `с` велико слово конвертује га у мало – у супротном, повратна вредност је сâм карактер `с`.
+```{questionnote}
+Написати програм који ће сваки знак од 32 до 127 из ascii табеле конвертовати – велика слова у мала.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    unsigned char i;
+    for (i = 0x20; i < 0x7F; i++) /* od 32 do 127*/
+        printf ("tolower(%c) = %c\n", i, tolower(i));
+    return 0;
+}
+```
+Излаз:
+```text
+...
+tolower(T) = t
+tolower(U) = u
+tolower(V) = v
+tolower(W) = w
+tolower(X) = x
+tolower(Y) = y
+tolower(Z) = z
+tolower([) = [
+tolower(\) = \
+...
+tolower(`) = `
+tolower(a) = a
+tolower(b) = b
+tolower(c) = c
+tolower(d) = d
+tolower(e) = e
+tolower(f) = f
+...
+```
+Функција `toupper(c)` уколико је карактер `с` уколико је карактер с мало слово, конвертује га у велико – у супротном, повратна вредност је сâм карактер `с`.
+```{questionnote}
+Написати програм који ће сваки знак од 32 до 127 из ascii табеле конвертовати – мала слова у велика.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    unsigned char i;
+    for (i = 0x20; i < 0x7F; i++) /* od 32 do 127*/
+        printf ("toupper(%c) = %c\n", i, toupper(i));
+    return 0;
+}
+```
+Излаз:
+```text
+...
+toupper(W) = W
+toupper(X) = X
+toupper(Y) = Y
+toupper(Z) = Z
+toupper([) = [
+toupper(\) = \
+toupper(]) = ]
+toupper(^) = ^
+toupper(_) = _
+toupper(`) = `
+toupper(a) = A
+toupper(b) = B
+toupper(c) = C
+toupper(d) = D
+toupper(e) = E
+toupper(f) = F
+toupper(g) = G
+...
+```
+
+
+
+

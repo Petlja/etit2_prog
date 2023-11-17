@@ -1,5 +1,180 @@
 # Шта смо научили
 ## Реши квиз
+### Библиотека <stdio.h>
+Провери своје знање. Пробај да решиш квиз.
+```{mchoice}
+:answer1: scanf 
+:answer2: printf
+:answer3: putchar
+:answer4: getchar
+:correct: 1
+
+Функција за форматирани унос знака је (са конверзијом):
+```
+
+```{mchoice}
+:answer1: scanf 
+:answer2: printf
+:answer3: putchar
+:answer4: getchar
+:correct: 4
+
+Функција за неформатирани унос знака (без конверзије) је:
+```
+
+```{mchoice}
+:answer1: scanf 
+:answer2: getchar
+:answer3: putchar
+:answer4: printf
+:correct: 4
+
+Функција за форматирани испис знака је (са конверзијом):
+```
+
+```{mchoice}
+:answer1: scanf 
+:answer2: printf
+:answer3: putchar
+:answer4: getchar
+:correct: 3
+
+Функција за неформатирани испис знака (без конверзије) је:
+```
+
+```{mchoice}
+:answer1: puts, gets
+:answer2: putchar, gets
+:answer3: getchar, puts
+:answer4: printf, scanf 
+:correct: 1
+
+Функције за неформатирани унос и испис стринга (без конверзије) су:
+```
+
+```{mchoice}
+:answer1: puts, gets
+:answer2: putchar, gets
+:answer3: getchar, puts
+:answer4: printf, scanf 
+:correct: 4
+
+Функције за форматирани унос и испис стринга (са конверзијом) су:
+```
+
+
+Дате су линије кода: 
+
+```c
+#include <stdio.h>
+int main(void)
+{
+    char s[] = "Petrovic Pero";
+    printf("Ime je %-10.3s", s);
+    return 0;
+}
+```
+
+```{questionnote}
+Шта ће бити исписано на излазу?
+```
+
+**Одговор**:
+
+`   Ime je      Per`
+
+-10.3 резервише 10 места за испис стринга који почиње од леве ивице за 3 карактера.
+
+### Библиотека <string.h>
+
+Провери своје знање. Пробај да решиш квиз.
+
+```{mchoice}
+:answer1: Дописује низ s на крај низа t
+:answer2: Преписује знаковни низ s у низ t укључујући и \0
+:answer3: Преписује знаковни низ t у низ s укључујући и \0
+:answer4: Дописује низ t на крај низа s
+:correct: 2
+
+Функција strcpy(t, s): 
+```
+
+```{mchoice}
+:answer1: Дописује низ s на крај низа t
+:answer2: Преписује знаковни низ s у низ t укључујући и \0
+:answer3: Преписује знаковни низ t у низ s укључујући и \0
+:answer4: Дописује низ t на крај низа s
+:correct: 1
+
+Функција strcat(t, s): 
+```
+
+```{questionnote}
+Нa програмском језику С, декларисани су и иницијализовани стрингови:
+
+```c
+char s1[] = "crvena zvezda";
+char s2[] = "zelengora";
+```
+Одредити садржај стрингова по извршењу следеће наредбе:
+
+```c
+strncpy(s1,s2,3);
+```
+
+**Решење**: 
+
+```text
+s1 = "zelena zvezda"
+s2 =" zelengora"
+```
+
+```{questionnote}
+Нa програмском језику С, декларисани су стрингови:
+
+```c
+char s1[100] = "", s2[100] = "biografija";
+char *t = "planarna geometrija";
+```
+Са леве стране написани су изрази. Одредити вредност стринга по извршењу наведене наредбе (наредбе не посматрати као секвенцу, већ независно једну од друге):
+```text
+strcpy(s1, t);                      s1 = "planarna geometrija"
+strncpy(s1, t, 4);                  s1 = "plan"
+strcpy(s2, t);                      s2 = "planarna geometrija"
+strncpy(s2, t + 9, 3);              s2 = "geografija"
+```
+### Библиотека <stdlib.h>
+Провери своје знање. Пробај да решиш квиз.
+```{questionnote}
+Дата је линија кода: 
+
+```c
+#include<stdio.h>
+int main(void)
+{
+    char a[] = "k234";
+    int b = 5, c;
+    printf("c = %d",atoi(a) + b);
+    return 0;
+}
+```
+
+```{mchoice}
+:answer1: c = 0
+:answer2: c = 5
+:answer3: c = 238
+:correct: 2
+
+Шта се исписује на излазу?
+```
+### Пробај да одговориш на следећа питања
+
+```{questionnote}
+Дат је прототип функције написан у програмском језику С:\
+`void test(char *a, char k);`\
+У main функцији дате су следеће декларације променљивих:\
+`char s1[20], *s2, s3;`
+```
 ```{mchoice}
 :answer1: test (s2, s1[i]);
 :answer2: (s2, s1);
@@ -9,57 +184,33 @@
 :answer6: (s3, &s1);
 :correct: 1,3,4
 
-Дат је прототип функције написан у програмском језику С:
-`void test(char *a, char k);`
-У main функцији дате су следеће декларације променљивих:
-`char s1[20], *s2, s3;`
 Одредити који су исправно написани позиви декларисане функције
 ```
-**Образложење**
-Исправно су написани позиви функција под 1, 3 и 4 јер је први параметар у функцији показивач, а други карактер. 
-
-У одговору под 2 test (s2, s1);  s1 је низ а не карактер. 
-
-У одговору под 5 test (*s2, s3); s2 је показивач на показивач.
-
-У одговору под 6 test (s3, &s1); s3 није низ, а s1 је адреса а не карактер.
-
 ```{questionnote}
-Дат је програм написан у програмском језику С. 
-```
-```c
-#include<stdio.h>
-int main(void)
-{
-    char izbor;
-    printf("Za izbor unesite D ili N: ");
-    do
-    {
-        izbor = getchar();
-    }
-    while(izbor!= 'D'&& izbor!='N');
-    putchar(izbor);
-    return(0);
-}
+Дат је прототип функције написан у програмском језику С:\
+`void test(char *a, char k);`\
+У main функцији дате су следеће декларације променљивих:\
+`char s1[20], *s2, s3;`
 ```
 ```{mchoice}
-:answer1: На екрану се приказује унето слово d, излази се из петље и наставља са извршењем програма
-:answer2: На екрану се приказује унето слово d, али се не излази из петље већ се чека унос слова D или N
-:answer3: На екрану се не приказује ништа и програм се понаша као да „не реагује“ на унос слова d
-:answer4: На екрану се не приказује унето слово, већ само порука којом се тражи поновни унос
-:correct: 3
+:answer1: test (s2, s1[i]);
+:answer2: (s2, s1);
+:answer3: (s2, ‘A’);
+:answer4: (s1, s3);
+:answer5: (*s2, s3);
+:answer6: (s3, &s1);
+:correct: 1,3,4
 
-Одредити шта ће се исписати на екрану након уноса слова d са конзоле
+Одредити који су исправно написани позиви декларисане функције
 ```
+
 ```{questionnote}
 Дат је кôд функције **funkcija** написане у програмском језику C 
 ```
 ```c
 int funkcija(char c)
 {
-return ((c>='a'&&c<='z') ||
-(c>='A'&&c<='Z') ||
-(c>='0'&&c<='9')) ? 1 : 0;
+    return ((c>='a'&&c<='z') || (c>='A'&&c<='Z') || (c>='0'&&c<='9')) ? 1 : 0;
 }
 ```
 ```{mchoice}
@@ -79,7 +230,7 @@ return ((c>='a'&&c<='z') ||
 ```c
 int funkcija() (char c)
 {
-return (c>='A'&& c<='Z') ? 1 : 0;
+    return (c>='A'&& c<='Z') ? 1 : 0;
 }
 ```
 ```{mchoice}
@@ -100,7 +251,8 @@ return (c>='A'&& c<='Z') ? 1 : 0;
 int funkcija(char *s) 
 {
     int n, sign;
-    while(*s==' ' || *s=='\t') s++;
+    while(*s==' ' || *s=='\t') 
+    s++;
     sign = (*s=='-') ? -1 : 1;
     if(*s=='+' || *s=='-') s++;
     for(n=0; *s>='0'&& *s<='9'; s++) n=10*n+ *s - '0';
@@ -127,7 +279,8 @@ char * funkcija(char *s)
 {
     char c,*temp;
     temp=s;
-    while((c=getchar())!='\n')*temp++=c;
+    while((c=getchar())!='\n')
+        *temp++=c;
     *temp='\0';
     return s;
 }
@@ -259,15 +412,15 @@ char *t="nacrtna geometrija";
 #include <string.h>
 int main(void)
 {
-char s1[]="Kratka Servisna Poruka", *s2, *s3;
-s2=strchr(s1,'S');
-s3=strrchr(s2,'P');
-strncpy(s1+1,s2,1);
-strcpy(s1+2,s3);
-puts(s1);
-puts(s2);
-puts(s3);
-return(0);
+    char s1[]="Kratka Servisna Poruka", *s2, *s3;
+    s2=strchr(s1,'S');
+    s3=strrchr(s2,'P');
+    strncpy(s1+1,s2,1);
+    strcpy(s1+2,s3);
+    puts(s1);
+    puts(s2);
+    puts(s3);
+    return(0);
 }
 
 ```
@@ -289,15 +442,15 @@ return(0);
 #include <string.h>
 int main(void)
 {
-char s1[]="Kratka Servisna Poruka", *s2, *s3;
-s2=strchr(s1,'S');
-s3=strrchr(s2,'P');
-strncpy(s1+1,s2,1);
-strcpy(s1+2,s3);
-puts(s1);
-puts(s2);
-puts(s3);
-return(0);
+    char s1[]="Kratka Servisna Poruka", *s2, *s3;
+    s2=strchr(s1,'S');
+    s3=strrchr(s2,'P');
+    strncpy(s1+1,s2,1);
+    strcpy(s1+2,s3);
+    puts(s1);
+    puts(s2);
+    puts(s3);
+    return(0);
 }
 
 ```
@@ -319,15 +472,15 @@ return(0);
 #include <string.h>
 int main(void)
 {
-char s1[]="Kratka Servisna Poruka", *s2, *s3;
-s2=strchr(s1,'S');
-s3=strrchr(s2,'P');
-strncpy(s1+1,s2,1);
-strcpy(s1+2,s3);
-puts(s1);
-puts(s2);
-puts(s3);
-return(0);
+    char s1[]="Kratka Servisna Poruka", *s2, *s3;
+    s2=strchr(s1,'S');
+    s3=strrchr(s2,'P');
+    strncpy(s1+1,s2,1);
+    strcpy(s1+2,s3);
+    puts(s1);
+    puts(s2);
+    puts(s3);
+    return(0);
 }
 
 ```
@@ -341,7 +494,7 @@ return(0);
 
 Одредити вредност стринга `s3` по извршењу програма 
 ```
-На Петљи можете решавати задатке из Методичке збирке задатака из основа програмирања, део „Матрице“ који се налазе на линку
+На Петљи можете решавати задатке из Методичке збирке задатака из основа програмирања, део „Карактери и ниске“ који се налазе на линку
 [Metodicka zbirka zadataka](https://petlja.org/biblioteka/r/Zbirka/04%20Nizovi/02%20niske)
 кристећи он лајн С или С/С++ компајлер. За почетак пробајте да решите задатак
 из збирке који се налази на линку

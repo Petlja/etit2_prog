@@ -33,90 +33,6 @@
 
 Све наведене функције налазе се у библиотеци `stdio.h`.
 
-```{mchoice}
-:answer1: scanf 
-:answer2: printf
-:answer3: putchar
-:answer4: getchar
-:correct: 1
-
-Функција за форматирани унос знака је (са конверзијом):
-```
-
-```{mchoice}
-:answer1: scanf 
-:answer2: printf
-:answer3: putchar
-:answer4: getchar
-:correct: 4
-
-Функција за неформатирани унос знака (без конверзије) је:
-```
-
-```{mchoice}
-:answer1: scanf 
-:answer2: getchar
-:answer3: putchar
-:answer4: printf
-:correct: 4
-
-Функција за форматирани испис знака је (са конверзијом):
-```
-
-```{mchoice}
-:answer1: scanf 
-:answer2: printf
-:answer3: putchar
-:answer4: getchar
-:correct: 3
-
-Функција за неформатирани испис знака (без конверзије) је:
-```
-
-```{mchoice}
-:answer1: puts, gets
-:answer2: putchar, gets
-:answer3: getchar, puts
-:answer4: printf, scanf 
-:correct: 1
-
-Функције за неформатирани унос и испис стринга (без конверзије) су:
-```
-
-```{mchoice}
-:answer1: puts, gets
-:answer2: putchar, gets
-:answer3: getchar, puts
-:answer4: printf, scanf 
-:correct: 4
-
-Функције за форматирани унос и испис стринга (са конверзијом) су:
-```
-
-
-Дате су линије кода: 
-
-```c
-#include <stdio.h>
-int main(void)
-{
-    char s[] = "Petrovic Pero";
-    printf("Ime je %-10.3s", s);
-    return 0;
-}
-```
-
-```{questionnote}
-Шта ће бити исписано на излазу?
-```
-
-**Одговор**:
-
-`   Ime je      Per`
-
--10.3 резервише 10 места за испис стринга који почиње од леве ивице за 3 карактера.
-
-
 ## Библиотека `<string.h>`
 
 У С језику не постоји ни један оператор за обраду стрингова.
@@ -437,64 +353,6 @@ int int main(void)
 Pronadjena pozicija je 10
 ```
 
-Провери своје знање. Пробај да решиш квиз.
-
-```{mchoice}
-:answer1: Дописује низ s на крај низа t
-:answer2: Преписује знаковни низ s у низ t укључујући и \0
-:answer3: Преписује знаковни низ t у низ s укључујући и \0
-:answer4: Дописује низ t на крај низа s
-:correct: 2
-
-Функција strcpy(t, s): 
-```
-
-```{mchoice}
-:answer1: Дописује низ s на крај низа t
-:answer2: Преписује знаковни низ s у низ t укључујући и \0
-:answer3: Преписује знаковни низ t у низ s укључујући и \0
-:answer4: Дописује низ t на крај низа s
-:correct: 1
-
-Функција strcat(t, s): 
-```
-
-```{questionnote}
-Нa програмском језику С, декларисани су и иницијализовани стрингови:
-
-```c
-char s1[] = "crvena zvezda";
-char s2[] = "zelengora";
-```
-Одредити садржај стрингова по извршењу следеће наредбе:
-
-```c
-strncpy(s1,s2,3);
-```
-
-**Решење**: 
-
-```text
-s1 = "zelena zvezda"
-s2 =" zelengora"
-```
-
-```{questionnote}
-Нa програмском језику С, декларисани су стрингови:
-
-```c
-char s1[100] = "", s2[100] = "biografija";
-char *t = "planarna geometrija";
-```
-
-Са леве стране написани су изрази. Одредити вредност стринга по извршењу наведене наредбе (наредбе не посматрати као секвенцу, већ независно једну од друге):
-```text
-strcpy(s1, t);                      s1 = "planarna geometrija"
-strncpy(s1, t, 4);                  s1 = "plan"
-strcpy(s2, t);                      s2 = "planarna geometrija"
-strncpy(s2, t + 9, 3);              s2 = "geografija"
-```
-
 ## Библиотека <stdlib.h>
 
 Уколико желимо да стринг конвертујемо у нумеричку вредност, користимо функције које се налазе у библиотеци `stdlib.h.`
@@ -596,30 +454,6 @@ Unesite broj: 123456789
 Uneta vrednost je 123456789, a njena dvostruka vrednost je 246913578
 ```
 
-Провери своје знање. Пробај да решиш квиз.
-
-Дата је линија кода: 
-
-```c
-#include<stdio.h>
-int main(void)
-{
-    char a[] = "k234";
-    int b = 5, c;
-    printf("c = %d",atoi(a) + b);
-    return 0;
-}
-```
-
-```{mchoice}
-:answer1: c = 0
-:answer2: c = 5
-:answer3: c = 238
-:correct: 2
-
-Шта се исписује на излазу?
-```
-
 ## Библиотека <ctype.h>
 
 С обзиром да је стринг низ карактера, понекад је потребно проверавати карактере и то користити за решавање проблема. За испитивање знакова користе се функције у библиотеци `<ctype.h>`. Оне испитују у коју категорију спада знак `c`.
@@ -628,10 +462,10 @@ int main(void)
 :width: 600
 :align: center
 ```
-Функција isalnum(c) проверава да ли је знак c слово или цифра. 
+Функција `isalnum(c)` проверава да ли је знак `c` слово или цифра. 
 
 ```{questionnote}
-Написати програм којим се уноси *n* елемената целобројног низа а, затим врши сортирање методом избора у нерастућем редоследу. Исписати сортирани низНаписати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је знак слово или цифра.
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је знак слово или цифра.
 
 ```
 **Решење**
@@ -641,43 +475,148 @@ int main(void)
 #include <stdio.h>
 int main(void)
 {
-	short int i;
-	for (i = 0; i < 128; i++)
-		if (isalnum(i))
-			printf("isalnum (%c) \t Da \n", i);
-		else
-			printf("isalnum (%c)\t Ne\n", i);
-	return 0;
+    short int i;
+    for (i = 0; i < 128; i++)
+        if (isalnum(i))
+            printf("isalnum (%c) \t Da \n", i);
+        else
+            printf("isalnum (%c)\t Ne\n", i);
+    return 0;
 }
 ```
-
+Излаз:
 ```text
 isalnum (.)      Ne
 isalnum (/)      Ne
 isalnum (0)      Da
 isalnum (1)      Da
-isalnum (2)      Da
-isalnum (3)      Da
-isalnum (4)      Da
-isalnum (5)      Da
-isalnum (6)      Da
-isalnum (7)      Da
-isalnum (8)      Da
+...
 isalnum (9)      Da
 isalnum (:)      Ne
 isalnum (;)      Ne
-isalnum (<)      Ne
-isalnum (=)      Ne
-isalnum (>)      Ne
+...
 isalnum (?)      Ne
 isalnum (@)      Ne
 isalnum (A)      Da
 isalnum (B)      Da
-isalnum (C)      Da
+...
 isalnum (D)      Da
 isalnum (E)      Da
-isalnum (F)      Da
-isalnum (G)      Da
-isalnum (H)      Da
-isalnum (I)      Da
+...
+```
+Функција `isalpha(c)` проверава да ли је знак `с` слово. 
+
+```{questionnote}
+Написати програм који ће за сваки карактер од 0 до 127 из ascii табеле проверити да ли је тај знак слово.
+
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i < 128; i++)
+        if (isalnum(i))
+            printf("isalnum (%c) \t Da \n", i);
+        else
+            printf("isalnum (%c)\t Ne\n", i);
+    return 0;
+}
+```
+Излаз:
+```text
+...
+isalpha (<) Ne
+isalpha (=) Ne
+isalpha (>) Ne
+isalpha (?) Ne
+isalpha (@) Ne
+isalpha (A) Da
+isalpha (B) Da
+isalpha (C) Da
+...
+```
+Функција `isdigit(c)` проверава да ли је знак `c` цифра.
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај знак цифра.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i < 128; i++)
+    {
+        if(isdigit(i))
+            printf("isdigit (%c) Da \n", i);
+        else
+            printf("isdigit (%c) Ne\n", i); 
+    }
+    return 0;
+}
+```
+Излаз:
+```text
+...
+isdigit (,) Ne
+isdigit (-) Ne
+isdigit (.) Ne
+isdigit (/) Ne
+isdigit (0) Da
+isdigit (1) Da
+isdigit (2) Da
+...
+isdigit (8) Da
+isdigit (9) Da
+isdigit (:) Ne
+isdigit (;) Ne
+isdigit (<) Ne
+...
+```
+Функција `islower(c)` проверава да ли је знак `c` мало слово.
+```{questionnote}
+Написати програм који ће за сваки знак од 0 до 127 из ascii табеле проверити да ли је тај мало слово.
+```
+**Решење**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+int main(void)
+{
+    short int i;
+    for (i = 0; i < 128; i++)
+    {
+        if(islower(i))
+            printf("islower(%c) Da \n", i);
+        else
+            printf("islower(%c) Ne\n", i);
+    return 0;
+    }
+}
+```
+Излаз:
+```text
+...
+islower(U) Ne
+islower(V) Ne
+...
+islower(Y) Ne
+islower(Z) Ne
+islower([) Ne
+...
+islower(_) Ne
+islower(`) Ne
+islower(a) Da
+islower(b) Da
+islower(c) Da
+islower(d) Da
+islower(e) Da
+...
 ```

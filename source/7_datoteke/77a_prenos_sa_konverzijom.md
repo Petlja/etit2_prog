@@ -460,29 +460,55 @@ void unosMatrice(FILE* izlaz1, FILE* izlaz2)
 {
     int i, j, n, ** M;
     int suma = 0;
-    printf("Uneti dimenzije matrice: ");
+    // Unos dimenzija matrice
+    printf("Unesi dimenzije matrice: ");
     scanf("%d", &n);
+    // Alokacija memorije za matricu
     M = (int**)malloc(n * sizeof(int*));
-    printf("Uneti elemente matrice: ");
     for (i = 0; i < n; i++) 
     {
         *(M + i) = (int*)malloc(n * sizeof(int));
+    }
+    // Unos elemenata matrice
+    printf("Unesi elemente matrice: ");
+    for (i = 0; i < n; i++) 
+    {        
         for (j = 0; j < n; j++)
         {
+            scanf("%d", &M[i][j]);
             fprintf(izlaz1, "%d\t", M[i][j]);
             suma += M[i][j];
         }
         fprintf(izlaz1, "\n");
     }
+        
+    // Upis sume u izlaznu datoteku
     fprintf(izlaz2, "Suma elemenata matrice je: %d\n", suma);
-}
+    // Oslobadanje alocirane memorije
+    for (i = 0; i < n; i++) 
+    {
+        free(M[i]);
+    }
+    free(M);
+    }
+ 
+
 
 int main(void)
 {
     FILE* izlaz1, * izlaz2;
+    // Otvori izlazne datoteke za pisanje
     izlaz1 = fopen("matrica.txt", "w");
     izlaz2 = fopen("zbir.txt", "w");
+     // Provera da li su datoteke uspešno otvorene
+    if (izlaz1 == NULL || izlaz2 == NULL) 
+    {
+        printf("Greška prilikom otvaranja datoteka.\n");
+        return 1;
+    }
+    // Poziv funkcije za unos matrice
     unosMatrice(izlaz1, izlaz2);
+    // Zatvaranje datoteka
     fclose(izlaz1);
     fclose(izlaz2);
     return 0;
@@ -495,13 +521,10 @@ int main(void)
 Uneti dimenzije matrice: 3
 Uneti elemente matrice:
 1 2 3 4 5 6 7 8 9
-
+```
 Датотека *matrica.txt*
-
 ```text
-Uneti dimenzije matrice: 3
-Uneti elemente matrice:
-1 2 3 
+1 2 3
 4 5 6 
 7 8 9
 ```

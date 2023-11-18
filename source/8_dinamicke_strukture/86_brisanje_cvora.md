@@ -11,7 +11,7 @@
 :align: center
 ```
 
-Након брисања чвора два имамо листу:
+Након брисања чвора 2 имамо листу:
 
 ```{image} images/image19.png
 :width: 470
@@ -134,7 +134,7 @@ Lista *brisi(Lista *p, int k)
  
 
  ```c
-while (tekuci -> podatak == broj)//u tekuci se upisuje adresa cvora za brisanje
+while (tekuci -> podatak != broj)//u tekuci se upisuje adresa cvora za brisanje
     {
         prethodni = tekuci;
         tekuci = tekuci->sl_adresa;

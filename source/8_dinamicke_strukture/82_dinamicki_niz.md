@@ -14,8 +14,10 @@ int main(void)
     scanf("%d", &n);
     pa = (int*)malloc(n*sizeof(int));
     printf("Unesi elemente:\n");
-    for (i = 0 ; i < n; scanf("%d", &pa[i++]));
-    for (s = i = 0;i < n; s+ = pa[i++]);
+    for (i = 0 ; i < n; i++ )
+        scanf("%d", &pa[i]);
+    for (s = i = 0; i < n; i++ )
+        s = s + pa[i];
     printf("\nZbir elemenata niza je %d\n", s);
     free(pa);
     return 0;

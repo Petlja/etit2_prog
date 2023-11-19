@@ -36,13 +36,14 @@ int fseek(datoteka, pomeraj, odakle)
 
 ## ftell
 
-Функција `ftell` даје тренутну вредност показивача у односу на почетак фајла. Њен облик је: 
+Функција `ftell` даје тренутну вредност показивача у односу на почетак фајла. 
+Њен облик је: 
 
 ```c
-ftell(dat); 
+ftell(datoteka); 
 ```
 
- Резултат ове функције представља број који означава број бајтова од почетка фајла до тренутне позиције.
+ Резултат ове функције представља број бајтова од почетка фајла до тренутне позиције.
 
 
 ## rewind
@@ -51,5 +52,62 @@ ftell(dat);
 Њен облик је:
 
 ```c
-rewind(dat).
+rewind(datoteka).
 ```
+```{infonote}
+У следећем примеру датотека има 41 знак и њен садржај гласи:
+*Ovo je primer za funkcije ftell i rewind.*
+```
+
+Пример за функције ftell i rewind:
+```c
+#include<stdio.h>
+int main(void)	
+{
+    FILE *ulaz;
+    int i,broj,n;
+    ulaz=fopen("datoteka.txt","r");	
+    if(ulaz==NULL) 
+    {
+        printf("Greska!");
+        return 1;
+    }
+//pokazivac se pozicionira na dva mesta do kraja fajla
+    fseek(ulaz,-2,SEEK_END);
+
+//ftell vraca broj bajtova od pocetka fajla do trenutne pozicije
+    int p=ftell(ulaz); // vraca 39 (41-2)
+    printf("%d\n",p);
+
+//rewind vraca pokazivac na pocetak fajla
+    rewind(ulaz);
+    p=ftell(ulaz);// vraca 0 (pocetak fajla)
+    printf("%d\n",p);
+
+//pokazivac se pozicionira na sedam mesta od pocetka fajla
+    fseek(ulaz,7,SEEK_SET);
+    p=ftell(ulaz); //vraca 7
+    printf("%d\n",p);
+
+//pokazivac se pozicionira na tri mesta od trenutne pozicije u fajlu
+    fseek(ulaz,3,SEEK_CUR);
+    p=ftell(ulaz); //vraca 10 (7+3)
+    printf("%d\n",p);
+    fclose (ulaz);
+    return 0;
+}
+```
+Датотека *datoteka.txt*
+```text
+Ovo je primer za funkcije ftell i rewind.
+```
+
+**Резултат извршавања програма**:
+
+```text
+39
+0
+7
+10
+```
+

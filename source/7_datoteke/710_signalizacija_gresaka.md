@@ -1,13 +1,12 @@
 # Сигнализација грешака
 
-Сада још нешто о функцији `feof`.
-
-Функција коју смо већ користили испитује да ли се приликом читања дошло до краја фајла. 
+Размотримо мало детаљније функцију `feof`.
+Подсетимо се да она испитује да ли се приликом читања дошло до краја датотеке.
 
 Њен облик је:
 
 ```c
-int feof(dat); 
+int feof(datoteka); 
 ```
 
 Приликом читања података из датотеке, показивач пролази кроз датотеку и као повратну вредност враћа 0. Када дође до краја датотеке, враћа вредност различиту од нуле.
@@ -16,7 +15,7 @@ int feof(dat);
 Њен садржај је:
 
 ```text
-Funkcija ftel daje trenutnu vrednost pokazivaca u odnosu na pocetak fajla.
+Funkcija ftell daje trenutnu vrednost pokazivaca u odnosu na pocetak fajla.
 ```
 
 ```{questionnote}
@@ -51,14 +50,14 @@ int main(void)
 
 ```text
 Citamo fajl od 13. pozicije:
-l daje trenutnu vrednost pokazivaca u odnosu na pocetak fajla.
+ll daje trenutnu vrednost pokazivaca u odnosu na pocetak fajla.
 ```
 
 Наредбом `fseek(ulaz, 12, SEEK_SET)` позиционирали смо се после 12. знака јер, подсетимо се, сваки карактер заузима један бајт: 
 	
-Funkcija `fte|l` daje trenutnu vrednost pokazivaca u odnosu na pocetak fajla.
+Funkcija `ftell` daje trenutnu vrednost pokazivaca u odnosu na pocetak датотеке.
  
-Наредбом `int p = ftell(ulaz)` прочитали смо вредност показивача од почетка датотеке.
+Наредбом `int p = ftell(ulaz)` чита се вредност показивача од почетка датотеке и додељује променљивој p.
 Од наредног, 13. знака читамо садржај датотеке до краја. 
 
 ```{questionnote}
@@ -86,7 +85,7 @@ Funkcija `fte|l` daje trenutnu vrednost pokazivaca u odnosu na pocetak fajla.
 **Резултат извршавања програма**:
 
 ```text
-Fajl ima 74 karaktera.
+Fajl ima 75 karaktera.
 ```
 
 ```{questionnote}
@@ -121,9 +120,9 @@ int main(void)
 la.
 ```
 
-Наредбом `fseek(ulaz, -3, SEEK_END)` показивач је позициониран за три места пре краја датотеке:
+Наредбом `fseek(ulaz, -3, SEEK_END)` показивач је позициониран за три места пре краја датотеке.
 
-Funkcija `ftel` daje trenutnu vrednost pokazivaca u odnosu na pocetak faj|la.
+Funkcija `ftell` daje trenutnu vrednost pokazivaca u odnosu na pocetak faj|la.
 
 Од те позиције до краја датотеке се чита њен садржај.
 
@@ -155,25 +154,7 @@ Funkcija `ftel` daje trenutnu vrednost pokazivaca u odnosu na pocetak faj|la.
 :answer3: Показивач dat се позиционира на почетак датотеке и омогућава поновно читање и писање
 :answer4: Ништа од наведеног
 :correct: 3
-3.	У наставку је дат део кода. Заокружи број испред тврдње која  тачно описује улогу функције rewind у програму:
-```c
-int main(void)
-{
-    FILE* dat = fopen("datoteka.txt", "r");
-    if (file == NULL) {
-        printf("Greska!\n");
-        return 1;
-    }
-    ...
-        //ucitavanje podataka u datoteku 
-        //citanje podataka iz datoteke 
-    ...
-        rewind(dat);
- 
-        // ponovno citanje ili upisivanje...
-    ...
-        fclose(dat);
-}
+Заокружи број испред тврдње која тачно описује улогу функције *rewind(dat)* у програму:
 ```
 
 
@@ -181,7 +162,7 @@ int main(void)
 :answer1: Тачно
 :answer2: Нетачно
 :correct: 1
-Дефинисан је низ  int a[50] и показивач на бинарну датотеку *dat. 
+Дефинисан је низ  int a[50] и показивач на бинарну датотеку dat. 
 
 Означи да ли је следећа тврдња тачна: 
 
@@ -194,7 +175,7 @@ int main(void)
 :answer3: fwrite(&podatak, 2, 1, dat);
 :answer4: fwrite(&podatak, 1, 2, dat);
 :correct: 3
-Декларисани су променљива podatak и показивач *dat која представља показивач на бинарну датотеку.
+Декларисани су променљива podatak и показивач dat која представља показивач на бинарну датотеку.
 
 Означи кружић испред исправно написане наредбе којом се 2 бајта уписују у бинарну датотеку:
 

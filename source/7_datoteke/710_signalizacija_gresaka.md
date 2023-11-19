@@ -154,26 +154,7 @@ Funkcija `ftell` daje trenutnu vrednost pokazivaca u odnosu na pocetak faj|la.
 :answer3: Показивач dat се позиционира на почетак датотеке и омогућава поновно читање и писање
 :answer4: Ништа од наведеног
 :correct: 3
-У наставку је дат део кода. Заокружи број испред тврдње која тачно описује улогу функције rewind у програму:
-```c
-int main(void)
-{
-    FILE* dat = fopen("datoteka.txt", "r");
-    if (file == NULL) {
-        printf("Greska!\n");
-        return 1;
-    }
-    ...
-        //ucitavanje podataka u datoteku 
-        //citanje podataka iz datoteke 
-    ...
-        rewind(dat);
- 
-        // ponovno citanje ili upisivanje...
-    ...
-        fclose(dat);
-}
-
+Заокружи број испред тврдње која тачно описује улогу функције *rewind(dat)* у програму:
 ```
 
 
@@ -194,7 +175,7 @@ int main(void)
 :answer3: fwrite(&podatak, 2, 1, dat);
 :answer4: fwrite(&podatak, 1, 2, dat);
 :correct: 3
-Декларисани су променљива podatak и показивач *dat која представља показивач на бинарну датотеку.
+Декларисани су променљива podatak и показивач dat која представља показивач на бинарну датотеку.
 
 Означи кружић испред исправно написане наредбе којом се 2 бајта уписују у бинарну датотеку:
 

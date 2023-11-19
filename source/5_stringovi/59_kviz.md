@@ -324,7 +324,6 @@ U procentima: 6.90
 
 ```{questionnote}
 Дат је кôд функције **funkcija** написане у програмском језику C 
-```
 ```c
 int funkcija(char c)
 {
@@ -389,9 +388,15 @@ int funkcija(char *s)
 
 Изабрати којој функцији из стандардне библиотеке одговара дата функција
 ```
-```{questionnote}
+```{mchoice}
+:answer1: isupper
+:answer2: isalpha
+:answer3: isalnum
+:answer4: strchr
+:answer5: atoi
+:answer6: gets
+:correct: 6
 Дат је кôд функције **funkcija** написане у програмском језику C 
-```
 ```c
 char * funkcija(char *s) 
 {
@@ -402,17 +407,6 @@ char * funkcija(char *s)
     *temp='\0';
     return s;
 }
-
-```
-```{mchoice}
-:answer1: isupper
-:answer2: isalpha
-:answer3: isalnum
-:answer4: strchr
-:answer5: atoi
-:answer6: gets
-:correct: 6
-
 Изабрати којој функцији из стандардне библиотеке одговара дата функција
 ```
 ```{questionnote}

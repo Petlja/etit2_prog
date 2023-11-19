@@ -19,4 +19,5 @@
 78b_citanje_iz_binarne
 79_pozicioniranja
 710_signalizacija_gresaka
+711_kviz
 ```

@@ -225,7 +225,7 @@ Lista *brisi_prvi(Lista *p)
 ```
 
 ```{questionnote}
-Написати функцију за брисање чвора на крају листе. Користити функцију која одређује дужину листе.
+Написати функцију за брисање чвора листе на крају листе. Користити функцију која одређује дужину листе.
 ```
 
 **Решење**:
@@ -289,12 +289,12 @@ Lista *brisi_poslednji(Lista *p)
 ```c
 void brisi(Lista *p) 
 {
-    Lista *tekuci;
-    while (tekuci) 
+    Lista *tekuci=NULL;
+    while (p!=NULL) 
     {
-        tekuci = p;
-        p = p -> sl_adresa;
+        tekuci = p -> sl_adresa;
         free(tekuci);
+        p = tekuci; 
     }
 }
 ```

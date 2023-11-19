@@ -18,8 +18,8 @@ void sortiraj(Lista *p)
 {
     Lista *i, *j;
     int temp;
-    for (i = p; i; i = i -> sl_adresa)
-        for (j = p; j; j = j -> sl_adresa)
+    for (i = p; i != NULL; i = i -> sl_adresa)
+        for (j = p; j!= NULL; j = j -> sl_adresa)
             if (j -> podatak < i -> podatak) 
             {
                 temp = i -> podatak;

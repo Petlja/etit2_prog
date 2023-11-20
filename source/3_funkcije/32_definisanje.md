@@ -27,7 +27,7 @@
 
 Општи облик функције изгледа овако:
 
-```{image} images/Picture1.png
+```{image} images/110.jpg
 :width: 60%
 :align: center
 ```

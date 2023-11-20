@@ -23,7 +23,7 @@ int *p;
 
 Стање оперативне меморије после наредби `int a[] = {7, 12, 36, 4, 18}, x, y, *p`:
 
-```{image} images/Picture23.png
+```{image} images/Slika23.jpg
 :width: 350
 :align: center
 ```

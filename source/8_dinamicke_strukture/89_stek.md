@@ -114,7 +114,7 @@ Lista* skini_sa_steka(Lista* vrh, int* podatak)
 }
 ```
 
-```{image} images/image31.png
+```{image} images/311.png
 :width: 600
 :align: center
 :alt: Брисање елемента са врха стека

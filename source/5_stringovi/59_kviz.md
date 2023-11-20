@@ -1,7 +1,8 @@
 # Шта смо научили
 ## Реши квиз
 ### Библиотека <stdio.h>
-Провери своје знање. Пробај да решиш квиз.
+Провери своје знање. Пробај да решиш квиз.\
+**Питање 1:**
 ```{mchoice}
 :answer1: scanf 
 :answer2: printf
@@ -11,7 +12,7 @@
 
 Функција за форматирани унос знака је (са конверзијом):
 ```
-
+**Питање 2:**
 ```{mchoice}
 :answer1: scanf 
 :answer2: printf
@@ -21,7 +22,7 @@
 
 Функција за неформатирани унос знака (без конверзије) је:
 ```
-
+**Питање 3:**
 ```{mchoice}
 :answer1: scanf 
 :answer2: getchar
@@ -31,7 +32,7 @@
 
 Функција за форматирани испис знака је (са конверзијом):
 ```
-
+**Питање 4:**
 ```{mchoice}
 :answer1: scanf 
 :answer2: printf
@@ -41,7 +42,7 @@
 
 Функција за неформатирани испис знака (без конверзије) је:
 ```
-
+**Питање 5:**
 ```{mchoice}
 :answer1: puts, gets
 :answer2: putchar, gets
@@ -51,23 +52,18 @@
 
 Функције за неформатирани унос и испис стринга (без конверзије) су:
 ```
-
+**Питање 6:**
 ```{mchoice}
 :answer1: puts, gets
 :answer2: putchar, gets
 :answer3: getchar, puts
 :answer4: printf, scanf 
 :correct: 4
-
 Функције за форматирани унос и испис стринга (са конверзијом) су:
 ```
-```{mchoice}
-:answer1: (`Ime je       Per`)
-:answer2: (`Ime je         Pero`)
-:answer3: (`Ime je Petrovic Per`)
-:correct: 1
+**Питање 7:**
+Дате су линије кода:
 
-Дате су линије кода: 
 ```c
 #include <stdio.h>
 int main(void)
@@ -76,12 +72,18 @@ int main(void)
     printf("(Ime je %-10.3s)", s);
     return 0;
 }
-Шта ће бити исписано на излазу?:
+```
+```{mchoice}
+:answer1: (`Ime je       Per`)
+:answer2: (`Ime je         Pero`)
+:answer3: (`Ime je Petrovic Per`)
+:correct: 1
+Шта ће бити исписано на излазу?
 ```
 
 ### Библиотека <string.h>
 
-Провери своје знање. Пробај да решиш квиз.
+**Питање 8:**
 
 ```{mchoice}
 :answer1: Дописује низ s на крај низа t
@@ -92,7 +94,7 @@ int main(void)
 
 Функција strcpy(t, s): 
 ```
-
+**Питање 9:**
 ```{mchoice}
 :answer1: Дописује низ s на крај низа t
 :answer2: Преписује знаковни низ s у низ t укључујући и \0
@@ -103,14 +105,7 @@ int main(void)
 Функција strcat(t, s): 
 ```
 ### Библиотека <stdlib.h>
-Провери своје знање. Пробај да решиш квиз.
-
-```{mchoice}
-:answer1: c = 0
-:answer2: c = 5
-:answer3: c = 238
-:correct: 2
-
+**Питање 10:**
 Дата је линија кода: 
 
 ```c
@@ -122,10 +117,17 @@ int main(void)
     printf("c = %d",atoi(a) + b);
     return 0;
 }
+```
+```{mchoice}
+:answer1: c = 0
+:answer2: c = 5
+:answer3: c = 238
+:correct: 2
+
 Шта се исписује на излазу?
 ```
 ### Библиотека <ctype.h>
-Провери своје знање. Пробај да решиш квиз.
+**Питање 11:**
 ```{mchoice}
 :answer1: stdio.h
 :answer2: ctype.h
@@ -134,6 +136,308 @@ int main(void)
 :correct: 2
 Библиотечке функције за рад са знаковима налазе се у библиотеци:
 Изаберите исправан одговор.
+```
+### Пробај да одговориш на следећа питања
+
+**Питање 12:**
+Дат је прототип функције написан у програмском језику С:\
+`void test(char *a, char k);`\
+У main функцији дате су следеће декларације променљивих:\
+`char s1[20], *s2, s3;`
+```{mchoice}
+:answer1: test (s2, s1[i]);
+:answer2: (s2, s1);
+:answer3: (s2, ‘A’);
+:answer4: (s1, s3);
+:answer5: (*s2, s3);
+:answer6: (s3, &s1);
+:correct: 1,3,4
+
+Одредити који су исправно написани позиви декларисане функције
+```
+**Питање 13:**
+Дат је прототип функције написан у програмском језику С:\
+`void test(char *a, char k);`\
+У main функцији дате су следеће декларације променљивих:\
+`char s1[20], *s2, s3;`
+```{mchoice}
+:answer1: test (s2, s1[i]);
+:answer2: (s2, s1);
+:answer3: (s2, ‘A’);
+:answer4: (s1, s3);
+:answer5: (*s2, s3);
+:answer6: (s3, &s1);
+:correct: 1,3,4
+
+Одредити који су исправно написани позиви декларисане функције
+```
+**Питање 14:**
+Дат је кôд функције **funkcija** написане у програмском језику C 
+```c
+int funkcija(char c)
+{
+    return ((c>='a'&&c<='z') || (c>='A'&&c<='Z') || (c>='0'&&c<='9')) ? 1 : 0;
+}
+```
+```{mchoice}
+:answer1: isupper
+:answer2: isalpha
+:answer3: isalnum
+:answer4: strchr
+:answer5: atoi
+:answer6: gets
+:correct: 3
+
+Изабрати којој функцији из стандардне библиотеке функција **ctype.h** одговара дата функција
+```
+**Питање 15:**
+Дат је кôд функције **funkcija** написане у програмском језику C 
+
+```c
+int funkcija() (char c)
+{
+    return (c>='A'&& c<='Z') ? 1 : 0;
+}
+```
+
+```{mchoice}
+:answer1: isupper
+:answer2: isalpha
+:answer3: isalnum
+:answer4: strchr
+:answer5: atoi
+:answer6: strcmp
+:correct: 1
+
+Изабрати којој функцији из стандардне библиотеке функција ctype.h\ одговара дата функција
+```
+**Питање 16:**
+Дат је кôд функције **funkcija** написане у програмском језику C 
+```c
+int funkcija(char *s) 
+{
+    int n, sign;
+    while(*s==' ' || *s=='\t') 
+    s++;
+    sign = (*s=='-') ? -1 : 1;
+    if(*s=='+' || *s=='-') s++;
+    for(n=0; *s>='0'&& *s<='9'; s++) n=10*n+ *s - '0';
+    return (!*s) ? sign*n : 0;
+}
+```
+```{mchoice}
+:answer1: isupper
+:answer2: isalpha
+:answer3: strcmp
+:answer4: strchr
+:answer5: atoi
+:answer6: gets
+:correct: 5
+
+Изабрати којој функцији из стандардне библиотеке одговара дата функција
+```
+**Питање 17:**
+Дат је кôд функције **funkcija** написане у програмском језику C 
+```c
+char * funkcija(char *s) 
+{
+    char c,*temp;
+    temp=s;
+    while((c=getchar())!='\n')
+        *temp++=c;
+    *temp='\0';
+    return s;
+}
+```
+```{mchoice}
+:answer1: isupper
+:answer2: isalpha
+:answer3: isalnum
+:answer4: strchr
+:answer5: atoi
+:answer6: gets
+:correct: 6
+
+Изабрати којој функцији из стандардне библиотеке одговара дата функција
+```
+**Питање 18:**
+Дат је кôд функције **funkcija** написане у програмском језику C 
+
+```c
+int funkcija(char *s, char *t) 
+{
+    char tempt, temps;
+    while(*s && *t)
+    {
+        if(*t>='A'&& *t<='Z') 
+            tempt = 'a' + *t -'A';
+        else 
+            tempt=*t;
+        if(*s>='A'&& *s<='Z') 
+            temps = 'a' + *s -'A';
+        else 
+            temps=*s;
+        if(temps != tempt) 
+            return temps - tempt;
+        else s++, t++;
+    }
+    return *s - *t; .
+}
+```
+```{mchoice}
+:answer1: isupper
+:answer2: isalpha
+:answer3: isalnum
+:answer4: strchr
+:answer5: strcmp
+:answer6: gets
+:correct: 5
+
+Изабрати којој функцији из стандардне библиотеке одговара дата функција
+```
+**Питање 19:**
+На програмском језику C декларисани су стрингови:
+
+```c
+char s1[100]="", s2[100]="geografija";
+char *t="nacrtna geometrija";
+```
+```{mchoice}
+:answer1: nacrtna geometrija
+:answer2: nacr
+:answer3: nacrtna
+:answer4: eomgrafija
+:correct: 1
+Одредити вредност стринга s1 по извршењу наведене наредбе strcpy(s1, t);
+```
+**Питање 20:**
+На програмском језику C декларисани су стрингови:
+```c
+char s1[100]="", s2[100]="geografija";
+char *t="nacrtna geometrija";
+```
+```{mchoice}
+:answer1: geometrija
+:answer2: eomgrafija
+:answer3: nacrtna geometrija
+:answer4: nacr
+:correct: 4
+Одредити вредност стринга `s1` по извршењу наведене наредбе `strncpy(s1, t, 4); 
+```
+**Питање 21:**
+На програмском језику C декларисани су стрингови:
+
+```c
+char s1[100]="", s2[100]="geografija";
+char *t="nacrtna geometrija";
+```
+```{mchoice}
+:answer1: nacrtna geometrija
+:answer2: eomgrafija
+:answer3: nacrtnageometrija
+:answer4: nacr
+:correct: 1
+
+Одредити вредност стринга `s2` по извршењу наведене наредбе `strcpy(s2, t);` 
+```
+**Питање 22:**
+На програмском језику C декларисани су стрингови:
+```c
+char s1[100]="", s2[100]="geografija";
+char *t="nacrtna geometrija";
+```
+```{mchoice}
+:answer1: nacrtna geometrija
+:answer2: eomgrafija
+:answer3: grafija
+:answer4: nacr
+:correct: 1
+
+Одредити вредност стринга `s2` по извршењу наведене наредбе `strncpy(s2,t+9,3);` 
+```
+**Питање 23:**
+У програмском језику C дат је кôд :
+```c
+#include<stdio.h>
+#include <string.h>
+int main(void)
+{
+    char s1[]="Kratka Servisna Poruka", *s2, *s3;
+    s2=strchr(s1,'S');
+    s3=strrchr(s2,'P');
+    strncpy(s1+1,s2,1);
+    strcpy(s1+2,s3);
+    puts(s1);
+    puts(s2);
+    puts(s3);
+    return(0);
+}
+```
+```{mchoice}
+:answer1: Poruka
+:answer2: KSP
+:answer3: KSPoruka
+:answer4: SerPoruka
+:answer5: а
+:correct: 3
+
+Одредити вредност стринга `s1` по извршењу програма 
+```
+**Питање 24:**
+У програмском језику C дат је кôд:
+```c
+#include<stdio.h>
+#include <string.h>
+int main(void)
+{
+    char s1[]="Kratka Servisna Poruka", *s2, *s3;
+    s2=strchr(s1,'S');
+    s3=strrchr(s2,'P');
+    strncpy(s1+1,s2,1);
+    strcpy(s1+2,s3);
+    puts(s1);
+    puts(s2);
+    puts(s3);
+    return(0);
+}
+```
+```{mchoice}
+:answer1: Poruka
+:answer2: KSP
+:answer3: KSPoruka
+:answer4: SerPoruka
+:answer5: а
+:correct: 5
+
+Одредити вредност стринга s2 по извршењу програма 
+```
+**Питање 25:**
+У програмском језику C дат је кôд: 
+```c
+#include<stdio.h>
+#include <string.h>
+int main(void)
+{
+    char s1[]="Kratka Servisna Poruka", *s2, *s3;
+    s2=strchr(s1,'S');
+    s3=strrchr(s2,'P');
+    strncpy(s1+1,s2,1);
+    strcpy(s1+2,s3);
+    puts(s1);
+    puts(s2);
+    puts(s3);
+    return(0);
+}
+```
+```{mchoice}
+:answer1: Poruka
+:answer2: KSP
+:answer3: KSPoruka
+:answer4: SerPoruka
+:answer5: а
+:correct: 1
+
+Одредити вредност стринга `s3` по извршењу програма 
 ```
 ### Пробајте да напишете следеће програме:
 ```{questionnote}
@@ -277,274 +581,7 @@ U procentima: 6.90
 ```{questionnote}
 Домаћи 5. Написати програм за проналажење најдужег учитаног реда текста. Унос редова се прекида кад се *** учита из реда.
 ```
-### Пробај да одговориш на следећа питања
 
-```{mchoice}
-:answer1: test (s2, s1[i]);
-:answer2: (s2, s1);
-:answer3: (s2, ‘A’);
-:answer4: (s1, s3);
-:answer5: (*s2, s3);
-:answer6: (s3, &s1);
-:correct: 1,3,4
-
-Дат је прототип функције написан у програмском језику С:\
-`void test(char *a, char k);`\
-У main функцији дате су следеће декларације променљивих:\
-`char s1[20], *s2, s3;`\
-Одредити који су исправно написани позиви декларисане функције
-```
-```{mchoice}
-:answer1: test (s2, s1[i]);
-:answer2: (s2, s1);
-:answer3: (s2, ‘A’);
-:answer4: (s1, s3);
-:answer5: (*s2, s3);
-:answer6: (s3, &s1);
-:correct: 1,3,4
-Дат је прототип функције написан у програмском језику С:\
-`void test(char *a, char k);`\
-У main функцији дате су следеће декларације променљивих:\
-`char s1[20], *s2, s3;`\
-Одредити који су исправно написани позиви декларисане функције
-```
-```{mchoice}
-:answer1: isupper
-:answer2: isalpha
-:answer3: isalnum
-:answer4: strchr
-:answer5: atoi
-:answer6: gets
-:correct: 3
-Дат је кôд функције **funkcija** написане у програмском језику C 
-```c
-int funkcija(char c)
-{
-    return ((c>='a'&&c<='z') || (c>='A'&&c<='Z') || (c>='0'&&c<='9')) ? 1 : 0;
-}
-Изабрати којој функцији из стандардне библиотеке функција **ctype.h** одговара дата функција
-```
-```{mchoice}
-:answer1: isupper
-:answer2: isalpha
-:answer3: isalnum
-:answer4: strchr
-:answer5: atoi
-:answer6: strcmp
-:correct: 1
-Дат је кôд функције **funkcija** написане у програмском језику C 
-```
-```text
-int funkcija() (char c)
-{
-    return (c>='A'&& c<='Z') ? 1 : 0;
-}
-Изабрати којој функцији из стандардне библиотеке функција ctype.h\ одговара дата функција
-```
-```{mchoice}
-:answer1: isupper
-:answer2: isalpha
-:answer3: strcmp
-:answer4: strchr
-:answer5: atoi
-:answer6: gets
-:correct: 5
-Дат је кôд функције **funkcija** написане у програмском језику C 
-```text
-int funkcija(char *s) 
-{
-    int n, sign;
-    while(*s==' ' || *s=='\t') 
-    s++;
-    sign = (*s=='-') ? -1 : 1;
-    if(*s=='+' || *s=='-') s++;
-    for(n=0; *s>='0'&& *s<='9'; s++) n=10*n+ *s - '0';
-    return (!*s) ? sign*n : 0;
-}
-Изабрати којој функцији из стандардне библиотеке одговара дата функција
-```
-```{mchoice}
-:answer1: isupper
-:answer2: isalpha
-:answer3: isalnum
-:answer4: strchr
-:answer5: atoi
-:answer6: gets
-:correct: 6
-Дат је кôд функције **funkcija** написане у програмском језику C 
-```text
-char * funkcija(char *s) 
-{
-    char c,*temp;
-    temp=s;
-    while((c=getchar())!='\n')
-        *temp++=c;
-    *temp='\0';
-    return s;
-}
-Изабрати којој функцији из стандардне библиотеке одговара дата функција
-```
-```{mchoice}
-:answer1: isupper
-:answer2: isalpha
-:answer3: isalnum
-:answer4: strchr
-:answer5: strcmp
-:answer6: gets
-:correct: 5
-Дат је кôд функције **funkcija** написане у програмском језику C 
-
-```text
-int funkcija(char *s, char *t) 
-{
-    char tempt, temps;
-    while(*s && *t)
-    {
-        if(*t>='A'&& *t<='Z') 
-            tempt = 'a' + *t -'A';
-        else 
-            tempt=*t;
-        if(*s>='A'&& *s<='Z') 
-            temps = 'a' + *s -'A';
-        else 
-            temps=*s;
-        if(temps != tempt) 
-            return temps - tempt;
-        else s++, t++;
-    }
-    return *s - *t; .
-}
-Изабрати којој функцији из стандардне библиотеке одговара дата функција
-```
-
-```{mchoice}
-:answer1: nacrtna geometrija
-:answer2: nacr
-:answer3: nacrtna
-:answer4: eomgrafija
-:correct: 1
-На програмском језику C декларисани су стрингови:
-
-```text
-char s1[100]="", s2[100]="geografija";
-char *t="nacrtna geometrija";
-
-Одредити вредност стринга s1 по извршењу наведене наредбе strcpy(s1, t);
-```
-```{mchoice}
-:answer1: geometrija
-:answer2: eomgrafija
-:answer3: nacrtna geometrija
-:answer4: nacr
-:correct: 4
-На програмском језику C декларисани су стрингови:
-```text
-char s1[100]="", s2[100]="geografija";
-char *t="nacrtna geometrija";
-Одредити вредност стринга `s1` по извршењу наведене наредбе `strncpy(s1, t, 4); 
-```
-```{mchoice}
-:answer1: nacrtna geometrija
-:answer2: eomgrafija
-:answer3: nacrtnageometrija
-:answer4: nacr
-:correct: 1
-На програмском језику C декларисани су стрингови:
-
-```text
-char s1[100]="", s2[100]="geografija";
-char *t="nacrtna geometrija";
-
-Одредити вредност стринга `s2` по извршењу наведене наредбе `strcpy(s2, t);` 
-```
-```{mchoice}
-:answer1: nacrtna geometrija
-:answer2: eomgrafija
-:answer3: grafija
-:answer4: nacr
-:correct: 1
-На програмском језику C декларисани су стрингови:
-```text
-char s1[100]="", s2[100]="geografija";
-char *t="nacrtna geometrija";
-Одредити вредност стринга `s2` по извршењу наведене наредбе `strncpy(s2,t+9,3);` 
-```
-```{mchoice}
-:answer1: Poruka
-:answer2: KSP
-:answer3: KSPoruka
-:answer4: SerPoruka
-:answer5: а
-:correct: 3
-У програмском језику C дат је кôд :
-```text
-#include<stdio.h>
-#include <string.h>
-int main(void)
-{
-    char s1[]="Kratka Servisna Poruka", *s2, *s3;
-    s2=strchr(s1,'S');
-    s3=strrchr(s2,'P');
-    strncpy(s1+1,s2,1);
-    strcpy(s1+2,s3);
-    puts(s1);
-    puts(s2);
-    puts(s3);
-    return(0);
-}
-
-Одредити вредност стринга `s1` по извршењу програма 
-```
-```{mchoice}
-:answer1: Poruka
-:answer2: KSP
-:answer3: KSPoruka
-:answer4: SerPoruka
-:answer5: а
-:correct: 5
-У програмском језику C дат је кôд:
-```text
-#include<stdio.h>
-#include <string.h>
-int main(void)
-{
-    char s1[]="Kratka Servisna Poruka", *s2, *s3;
-    s2=strchr(s1,'S');
-    s3=strrchr(s2,'P');
-    strncpy(s1+1,s2,1);
-    strcpy(s1+2,s3);
-    puts(s1);
-    puts(s2);
-    puts(s3);
-    return(0);
-}
-Одредити вредност стринга s2 по извршењу програма 
-```
-```{mchoice}
-:answer1: Poruka
-:answer2: KSP
-:answer3: KSPoruka
-:answer4: SerPoruka
-:answer5: а
-:correct: 1
-У програмском језику C дат је кôд: 
-```text
-#include<stdio.h>
-#include <string.h>
-int main(void)
-{
-    char s1[]="Kratka Servisna Poruka", *s2, *s3;
-    s2=strchr(s1,'S');
-    s3=strrchr(s2,'P');
-    strncpy(s1+1,s2,1);
-    strcpy(s1+2,s3);
-    puts(s1);
-    puts(s2);
-    puts(s3);
-    return(0);
-}
-Одредити вредност стринга `s3` по извршењу програма 
-```
 ### Решења домаћих задатака
 
 **Домаћи 1 Решење 1:**

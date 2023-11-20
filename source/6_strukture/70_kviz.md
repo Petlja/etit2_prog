@@ -209,7 +209,7 @@ int i; Ucenik djak;
 
 ```{mchoice}
 :answer1: djak.ocene[i]
-:answer2: \*djak.razred
+:answer2: djak.razred
 :answer3: djak->ime
 :answer4: djak[i].ocene
 :answer5: djak.ime

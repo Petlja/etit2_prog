@@ -24,7 +24,7 @@ int zbir(int a, int b)
 … правилан позив у главном програму би гласио:
 
 ```c
-main()
+int main(void)
 {
     int a, b, z;
     ...
@@ -32,28 +32,31 @@ main()
     printf("Zbir brojeva a i b je %d", z);
     //или 
     printf("Zbir brojeva a i b je %d", zbir(a, b));  
+    return 0;
 }   
 ```
 
 Јасно је да би неправилан позив био…
 
 ```c
-main()
+int main(void)
 {
     int a, b, c, z;
     ...
     z = zbir(a, b, c);	//број аргумената
+    return 0;
 }
 ```
 
 … или…
 
 ```c
-main()
+int main(void)
 {
     float a, b, z;
     ...
     z = zbir(a, b); //тип аргумената
+    return 0;
 }
 ```
 
@@ -65,7 +68,7 @@ void Pozdrav()
     printf ("Ova f-ja ne vraca vrednost!");
 }
 
-main()
+int main(void)
 {
     Pozdrav();
 }

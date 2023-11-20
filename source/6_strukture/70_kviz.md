@@ -11,7 +11,7 @@ typedef struct
     int razred;
     int ocene[10];
 } Ucenik; 
-...
+..
 Ucenik razred[30];
 ```
 ```{mchoice}
@@ -40,7 +40,7 @@ typedef struct
     char ime[20], prezime[20];
     Predmet predmeti[10];
 } Ucenik;
-...
+..
 Ucenik razred[30];
 ```
 
@@ -127,7 +127,7 @@ typedef struct
     char naziv[50];
     Zaposleni radnici[200];
 } Firma;
-...
+..
 Firma marketing;
 ```
 
@@ -165,7 +165,7 @@ typedef struct
     Poligon osnova;
     float visina;
 } Piramida;
-...
+..
 Piramida *p;
 ```
 ```{mchoice}
@@ -203,13 +203,13 @@ char ime[50];
 int razred;
 int ocene[10];
 }Ucenik; 
-
+..
 int i; Ucenik djak;
 ```
 
 ```{mchoice}
 :answer1: djak.ocene[i]
-:answer2: djak.razred
+:answer2: \*djak.razred
 :answer3: djak->ime
 :answer4: djak[i].ocene
 :answer5: djak.ime
@@ -228,7 +228,7 @@ int i; Ucenik djak;
 char start[50], cilj[50];
 int predjeno_km;
 }Putovanje; 
-
+..
 Putovanje *p;
 ```
 ```{mchoice}

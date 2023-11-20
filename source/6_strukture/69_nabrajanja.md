@@ -94,3 +94,24 @@ TREF = 8
 
 Набројиви типови могу да учествују у изградњи других сложених типова.
 
+Пример програма за набрајање
+```c
+#include <stdio.h>
+enum dani
+{
+    Pon,Uto,Sre,Cet,Pet,Sub,Ned
+};
+main()
+{
+    enum dani danas=Sre;
+    if(danas==6||danas==7)//Ovde moze biti i uslov  if(danas==Sub||danas==Ned)
+    {
+        printf("Dana nije radni dan ");
+    }	
+    else 
+    {
+        printf("Danas se radi ");
+    }	
+}
+```
+

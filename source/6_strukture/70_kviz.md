@@ -203,7 +203,7 @@ char ime[50];
 int razred;
 int ocene[10];
 }Ucenik; 
-…
+
 int i; Ucenik djak;
 ```
 
@@ -228,7 +228,7 @@ int i; Ucenik djak;
 char start[50], cilj[50];
 int predjeno_km;
 }Putovanje; 
-…
+
 Putovanje *p;
 ```
 ```{mchoice}

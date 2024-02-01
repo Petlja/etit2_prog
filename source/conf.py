@@ -14,10 +14,10 @@ author = 'Петља'
 extensions = [ "myst_parser",
                "sphinx_design",
                "sphinx_copybutton",
-               #"sphinxpackagingtool.builder.petlja_builder",
-               "petlja_sphinx_extensions.extensions.notes",
-               "petlja_sphinx_extensions.extensions.multiple_choice",            
-               "petlja_sphinx_extensions.extensions.fill_in_the_blank"]
+               "plct_bulder_for_sphinx.builder.plct_builder",
+               "plct_sphinx_components.extensions.notes",
+               "plct_sphinx_components.extensions.multiple_choice",            
+               "plct_sphinx_components.extensions.fill_in_the_blank"]
 
 myst_enable_extensions = [ "colon_fence",
                            "dollarmath",
@@ -25,8 +25,8 @@ myst_enable_extensions = [ "colon_fence",
 templates_path = ['_templates']
 exclude_patterns = []
 language = 'sr'
-import petlja_sphinx_extensions
-html_static_path = petlja_sphinx_extensions.extensions.static_dirs()
+import plct_sphinx_components
+html_static_path = plct_sphinx_components.extensions.static_dirs()
 
 
 html_title = 'Програмирање II за информатичке профиле у електротехничким школама'
@@ -50,4 +50,7 @@ html_context = {
 }
 html_show_copyright = False
 html_show_sourcelink = False
+
+#additional_build_targets =['scorm' , 'moodle']
+content_uri = 'https://petljastorage.blob.core.windows.net/kursevi/2023/etit2_prog/'
 
